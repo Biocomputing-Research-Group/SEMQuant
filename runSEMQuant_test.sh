@@ -6,7 +6,6 @@ configfile=""
 Working_Directory=""
 Number_threads=""
 FASTA_Database="" #yeast_ups1.fasta
-Ionquant_dir=""
 
 while [[ $# >0 ]]
 do
@@ -84,7 +83,6 @@ for folder in ${Working_Directory}/result/*; do python SE2IQ/SE2Ionquant.py /${F
 ##IQ
 #create filelist use generate.py and copy modmasses file to sample file
 conda activate py3
-cd 
 python SE2IQ/generate_filelist.py ${config_file} ${FASTA_Database}
 
 # generate filelist_ionquant.txt
@@ -96,13 +94,14 @@ conda deactivate
 # IonQuant
 # Need to download IonQuant 1.10.12 from https://msfragger.arsci.com/ionquant/
 conda activate mono
+file_counts=""
+file_counts=$(ls -l ${rawfile_folder}/*raw| wc -l)
 
-
-java -Xmx23G -Dlibs.bruker.dir=/home/UNT/bz0053/Documents/Projects/fragpipe/tools/MSFragger-4.0/ext/bruker \
-     -Dlibs.thermo.dir=/home/UNT/bz0053/Documents/Projects/fragpipe/tools/MSFragger-4.0/ext/thermo \
-     -cp /home/UNT/bz0053/Documents/Projects/fragpipe/tools/jfreechart-1.5.3.jar:/home/UNT/bz0053/Documents/Projects/fragpipe/tools/batmass-io-1.30.0.jar:/home/UNT/bz0053/Documents/Projects/fragpipe/tools/IonQuant-1.10.12.jar ionquant.IonQuant \
+java -Xmx23G -Dlibs.bruker.dir=bruker \
+     -Dlibs.thermo.dir=thermo \
+     -cp jfreechart-1.5.3.jar:batmass-io-1.30.0.jar:IonQuant-1.10.12.jar ionquant.IonQuant \
      --threads 23 --perform-ms1quant 1 --perform-isoquant 0 --isotol 20.0 --isolevel 2 --isotype tmt10 --ionmobility 1 --site-reports 1 --minexps 1 \
-     --mbr 1 --maxlfq 1 --requantify 1 --mztol 10 --imtol 0.05 --rttol 0.4 --mbrmincorr 0 --mbrrttol 1 --mbrimtol 0.05 --mbrtoprun 3 --ionfdr 0.01 --proteinfdr 1 \
+     --mbr 1 --maxlfq 1 --requantify 1 --mztol 10 --imtol 0.05 --rttol 0.4 --mbrmincorr 0 --mbrrttol 1 --mbrimtol 0.05 --mbrtoprun $file_counts --ionfdr 0.01 --proteinfdr 1 \
      --peptidefdr 1 --normalization 1 --minisotopes 2 --minscans 3 --writeindex 0 --tp 0 --minfreq 0 --minions 2 --locprob 0.75 --uniqueness 0 --multidir . \
      --filelist ${Working_Directory}/result/filelist_ionquant.txt \
      --modlist ${Working_Directory}/result/modmasses_ionquant.txt
@@ -112,12 +111,13 @@ java -Xmx23G -Dlibs.bruker.dir=/home/UNT/bz0053/Documents/Projects/fragpipe/tool
 #run in the SEMQuant folder
 #wd=/home/UNT/bz0053/Documents/Projects/MBR/SEMQuant
 
-rawfile_folder=/home/UNT/bz0053/Documents/Projects/test/raw
-Working_Directory=/home/UNT/bz0053/Documents/Projects/test
-Number_threads=23
-FASTA_Database=/home/UNT/bz0053/Documents/Projects/test/yeast_ups.fasta
-config_file=/home/UNT/bz0053/Documents/Projects/MBR/SEMQuant/SiprosConfigBenchmark.cfg
+#rawfile_folder=/home/UNT/bz0053/Documents/Projects/test/raw
+#Working_Directory=/home/UNT/bz0053/Documents/Projects/test
+#Number_threads=23
+#FASTA_Database=/home/UNT/bz0053/Documents/Projects/test/yeast_ups.fasta
+#config_file=/home/UNT/bz0053/Documents/Projects/MBR/SEMQuant/SiprosConfigBenchmark.cfg
 
 
 
-for folder in ${Working_Directory}/result/*; do echo ${folder}; done
+
+
