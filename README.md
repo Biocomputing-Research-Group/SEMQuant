@@ -10,12 +10,12 @@ under review
 
 ### Install environment
 
-# Raxport relies on .net. Some scripts rely on python2 and R.
+# Raxport relies on .net. Some scripts rely on python2, python3, and R.
 
 ```bash
 conda create -n py2 scikit-learn python=2.7
 conda create -n mono -c conda-forge mono
-conda create -n r -c conda-forge -c bioconda r-base r-stringr r-tidyr bioconductor-biostrings
+conda create -n py3 python=3.10
 ```
 
 ### Make folder for the workflow
