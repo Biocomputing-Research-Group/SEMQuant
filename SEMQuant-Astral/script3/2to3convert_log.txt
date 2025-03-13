@@ -1,0 +1,885 @@
+WARNING: --write-unchanged-files/-W implies -w.
+lib2to3.main: Output in 'script3' will mirror the input directory 'script' layout.
+RefactoringTool: Skipping optional fixer: buffer
+RefactoringTool: Skipping optional fixer: idioms
+RefactoringTool: Skipping optional fixer: set_literal
+RefactoringTool: Skipping optional fixer: ws_comma
+RefactoringTool: Refactored script/ClusterSip.py
+--- script/ClusterSip.py        (original)
++++ script/ClusterSip.py        (refactored)
+@@ -33,7 +33,7 @@
+     # Basic options
+     for option, value in opts:
+         if option in ("-h", "--help"):
+-            print "-c configurefile -w workingdirectory"
++            print("-c configurefile -w workingdirectory")
+             sys.exit(1)
+         if option in ("-w", "--working-dir"):
+             working_dir = value
+@@ -73,12 +73,12 @@
+                 file_list.append(file_path_name)
+ 
+         if len(file_list) == 0:
+-            print >> sys.stderr, "\nCannot open %s file(s)." % (file_ext)
++            print("\nCannot open %s file(s)." % (file_ext), file=sys.stderr)
+             die("Program exit!")
+         file_list = sorted(file_list)
+ 
+     else:
+-        print >> sys.stderr, "\nCannot open working directory", working_dir
++        print("\nCannot open working directory", working_dir, file=sys.stderr)
+         die("Program exit!")
+ 
+     return file_list
+@@ -88,7 +88,7 @@
+        try:
+                iColumnId = ColumnName_list.index(ColumnName)
+        except ValueError:
+-               print "can't find column "+ColumnName
++               print("can't find column "+ColumnName)
+                sys.exit(0)
+        #print iColumnId
+        return iColumnId
+@@ -210,7 +210,7 @@
+                        sThisSpectrumCombineString = allSpectrumStringLists[i][j]
+                        for k in range(i+1, len(allSpectrumStringLists)) :
+                                iLengthSubList = len(allSpectrumStringLists[k])
+-                               for r in reversed(range(iLengthSubList)) :
++                               for r in reversed(list(range(iLengthSubList))) :
+                                        if (allSpectrumStringLists[k][r] == sThisSpectrumCombineString) :
+                                                sThatProteinLine = allProteinLineData[k][r]
+                                                allThatProteinInfo = sThatProteinLine.split("\t")
+RefactoringTool: Writing converted script/ClusterSip.py to script3/ClusterSip.py.
+RefactoringTool: Refactored script/ConstructDatabase.py
+--- script/ConstructDatabase.py (original)
++++ script/ConstructDatabase.py (refactored)
+@@ -67,7 +67,7 @@
+             print(help_message)
+             sys.exit(0)
+         if option in ("-v", "-V", "--version"):
+-            print("ConstructDatabase.py {}".format(get_version()))
++            print(("ConstructDatabase.py {}".format(get_version())))
+             sys.exit(0)
+         if option in ("-w", "--working-directory"):
+             working_directory = value
+@@ -186,8 +186,8 @@
+         fw.write(sequence_str)
+         fw.write('\n')
+     
+-    print(str(protein_count))
+-    print(str(len(protein_set)))
++    print((str(protein_count)))
++    print((str(len(protein_set))))
+     
+     fw.close()
+     
+RefactoringTool: Writing converted script/ConstructDatabase.py to script3/ConstructDatabase.py.
+RefactoringTool: Refactored script/HierarchicalClustering.py
+--- script/HierarchicalClustering.py    (original)
++++ script/HierarchicalClustering.py    (refactored)
+@@ -16,7 +16,7 @@
+                averageFirst  = sum(CandidateCluster[i])/float(len(CandidateCluster[i]))
+                averageSecond = sum(CandidateCluster[i+1])/float(len(CandidateCluster[i+1]))
+                if (averageFirst > averageSecond) :
+-                       print "wrong rank!"
++                       print("wrong rank!")
+                        sys.exit(0) 
+                currentDistance = averageSecond - averageFirst
+                if ( currentDistance  <= distanceThreshold) :
+RefactoringTool: Writing converted script/HierarchicalClustering.py to script3/HierarchicalClustering.py.
+RefactoringTool: Refactored script/configure_subdb.py
+--- script/configure_subdb.py   (original)
++++ script/configure_subdb.py   (refactored)
+@@ -1,6 +1,6 @@
+ import getopt, sys
+-from urllib import urlencode
+-import cookielib, urllib2, os, re, copy, string, operator
++from urllib.parse import urlencode
++import http.cookiejar, urllib.request, urllib.error, urllib.parse, os, re, copy, string, operator
+ 
+ 
+ def NewSearchName(currentLine, fileId) :
+RefactoringTool: Writing converted script/configure_subdb.py to script3/configure_subdb.py.
+RefactoringTool: Refactored script/parseconfig.py
+--- script/parseconfig.py       (original)
++++ script/parseconfig.py       (refactored)
+@@ -5,7 +5,7 @@
+ 
+ def getConfigMasterKeyValue (sMasterKey, dictConfigKeyValues) :
+        dictKeyValueSet = {}
+-       for currentKey, currentValue in dictConfigKeyValues.items() :
++       for currentKey, currentValue in list(dictConfigKeyValues.items()) :
+                if( currentKey.startswith(sMasterKey+"{") and currentKey.endswith("}") and ((len(sMasterKey) + 2) < len(currentKey))) :
+                        coreKey = currentKey[len(sMasterKey)+1: len(currentKey)-1]
+                        dictKeyValueSet [coreKey] = currentValue
+@@ -24,7 +24,7 @@
+        else :
+                twoParts = sLine.split("=")
+                if (len(twoParts) != 2) :
+-                       print("wrong line: "+sLine)
++                       print(("wrong line: "+sLine))
+                else :
+                        currentKey   = sSectionName[0] + twoParts[0].rstrip()
+                        currentValue = twoParts[1].lstrip()
+@@ -52,7 +52,7 @@
+                                if (dictConfigKeyValues.get(currentKey) == None ):
+                                        dictConfigKeyValues[currentKey] = currentValue
+                                else :
+-                                       print(currentKey + " has existed")
++                                       print((currentKey + " has existed"))
+        configFile.close()
+ #      for currentKey, currentValue in dictConfigKeyValues.items() :
+ #              print(currentKey, currentValue)
+@@ -71,7 +71,7 @@
+        element_dict = {}
+        compound_list_dict = {}
+        element_modification_list_dict = {}
+-       for e_key, e_value in dictConfigKeyValues.iteritems():
++       for e_key, e_value in dictConfigKeyValues.items():
+                if e_key.startswith('[Peptide_Identification]Element_Masses'):
+                        m = p.search(e_key)
+                        e_str = m.group(0)[1:-1]
+@@ -89,7 +89,7 @@
+                if e_key.startswith('[Peptide_Identification]Residue'):
+                        m = p.search(e_key)
+                        e_str = m.group(0)[1:-1]
+-                       compound_list_dict[e_str] = map(int, patt.findall(e_value))
++                       compound_list_dict[e_str] = list(map(int, patt.findall(e_value)))
+                if e_key.startswith('[Peptide_Identification]PTM'):
+                        m = p.search(e_key)
+                        e_str = m.group(0)[1:-1]
+@@ -104,16 +104,16 @@
+ 
+ 
+ 
+-       for e_key, e_value in element_mass_list_dict.iteritems():
+-               mass_list = map(float, patt.findall(e_value))
+-               pert_list = map(float, patt.findall(element_pert_list_dict[e_key]))
++       for e_key, e_value in element_mass_list_dict.items():
++               mass_list = list(map(float, patt.findall(e_value)))
++               pert_list = list(map(float, patt.findall(element_pert_list_dict[e_key])))
+                max_value = max(pert_list)
+                max_index = pert_list.index(max_value)
+                element_mass_dict[e_key] = mass_list[max_index]
+ 
+        # get the mass for all compound
+        compound_mass_dict = {}
+-       for e_key, e_value in compound_list_dict.iteritems():
++       for e_key, e_value in compound_list_dict.items():
+                '''
+                if e_key.isalpha():
+                        continue
+RefactoringTool: Writing converted script/parseconfig.py to script3/parseconfig.py.
+RefactoringTool: Refactored script/protein_update.py
+--- script/protein_update.py    (original)
++++ script/protein_update.py    (refactored)
+@@ -48,7 +48,7 @@
+             print(help_message)
+             sys.exit(0)
+         elif option in ("-v"):
+-            print(get_version())
++            print((get_version()))
+             sys.exit(0)
+         elif option in ("-d"):
+             database_file = value
+RefactoringTool: Writing converted script/protein_update.py to script3/protein_update.py.
+RefactoringTool: No changes to script/separate_scan_folder.py
+RefactoringTool: Writing converted script/separate_scan_folder.py to script3/separate_scan_folder.py.
+RefactoringTool: Refactored script/separate_scans.py
+--- script/separate_scans.py    (original)
++++ script/separate_scans.py    (refactored)
+@@ -2,8 +2,8 @@
+ 
+  
+ import getopt, sys 
+-from urllib import urlencode
+-import cookielib, urllib2, os, re, copy, string, operator
++from urllib.parse import urlencode
++import http.cookiejar, urllib.request, urllib.error, urllib.parse, os, re, copy, string, operator
+ 
+ def divide_ms2_file(FT2FileName, output_dir_str, filenum):
+ 
+@@ -71,7 +71,7 @@
+        if argv is None:
+                argv = sys.argv
+ 
+-       print(' '.join(sys.argv))
++       print((' '.join(sys.argv)))
+ 
+        # parse options
+        [ms2_file_str, num_split, output_dir_str] = parse_options(argv)
+RefactoringTool: Writing converted script/separate_scans.py to script3/separate_scans.py.
+RefactoringTool: Refactored script/sip.py
+--- script/sip.py       (original)
++++ script/sip.py       (refactored)
+@@ -15,7 +15,7 @@
+                                      "config-file"])
+ 
+     # Error handling of options
+-    except getopt.error, msg:
++    except getopt.error as msg:
+         raise Usage(msg)
+ 
+     # Default working dir and config file
+@@ -25,7 +25,7 @@
+     # Basic options
+     for option, value in opts:
+         if option in ("-h", "--help"):
+-            print "-c configure file -w working directory"
++            print("-c configure file -w working directory")
+            sys.exit(0)
+         if option in ("-w", "--working-dir"):
+             working_dir = value
+@@ -121,7 +121,7 @@
+        sEnrichmentLevelIncrement = wholeDict.get("[Stable_Isotope_Probing]Enrichment_Level_Increment")
+ 
+        if ((sMaxEnrichmentLevel == None) or (sMinEnrichmentLevel == None) or (sEnrichmentLevelIncrement == None)) :
+-               print "Enrichment level information is incomplete."
++               print("Enrichment level information is incomplete.")
+                sys.exit(0)
+        dMaxEnrichmentLevel  =  float(sMaxEnrichmentLevel[0:-1])/100
+        dMinEnrichmentLevel  =  float(sMinEnrichmentLevel[0:-1])/100
+@@ -130,21 +130,21 @@
+        sSIPElement = wholeDict.get("[Stable_Isotope_Probing]SIP_Element")
+        sSIPElementIsotope = wholeDict.get("[Stable_Isotope_Probing]SIP_Element_Isotope")
+        if ((sSIPElement == None) or (sSIPElementIsotope == None)) :
+-               print "SIP information is incomplete."
++               print("SIP information is incomplete.")
+                sys.exit(0)
+        iSIPElementIsotope = int(sSIPElementIsotope)
+        #print sSIPElement, iSIPElementIsotope
+        sElementMasses = wholeDict.get("[Peptide_Identification]Element_Masses{"+sSIPElement+"}")
+        sElementPercent = wholeDict.get("[Peptide_Identification]Element_Percent{"+sSIPElement+"}")
+        if ((sElementMasses == None) or (sElementPercent == None)) :
+-               print "[Peptide_Identification]Element {"+sSIPElement+"}" + "is not available"
++               print("[Peptide_Identification]Element {"+sSIPElement+"}" + "is not available")
+                sys.exit(0)
+        sElementMasses   = sElementMasses.strip(",")
+        sElementPercent  = sElementPercent.strip(",")
+        lsElementMasses  = sElementMasses.split(",")
+        lsElementPercent = sElementPercent.split(",")
+        if (len(lsElementMasses) != len(lsElementPercent)) or (len(lsElementMasses) == 1):
+-               print "The number of elements is wrong"
++               print("The number of elements is wrong")
+                sys.exit(0)
+        ldElementPercent = []
+        iSipElementIndex = -1
+@@ -153,10 +153,10 @@
+                if (int(round(float(lsElementMasses[i])))  ==  iSIPElementIsotope) :
+                        iSipElementIndex = i
+        if (iSipElementIndex == -1) :
+-               print "can't find the target element parcent."
++               print("can't find the target element parcent.")
+                sys.exit(0)
+        if (iSipElementIndex == 0) :#################################
+-               print "The first element can't be the target."
++               print("The first element can't be the target.")
+                sys.exit(0)
+        GenerateSipConfig(config_filename, working_dir, lsElementPercent, dMaxEnrichmentLevel, 
+                dMinEnrichmentLevel, dEnrichmentLevelIncrement, iSipElementIndex, sSIPElement, iSIPElementIsotope)
+RefactoringTool: Writing converted script/sip.py to script3/sip.py.
+RefactoringTool: Refactored script/sipros_ensemble_filtering.py
+--- script/sipros_ensemble_filtering.py (original)
++++ script/sipros_ensemble_filtering.py (refactored)
+@@ -345,7 +345,7 @@
+             print(help_message)
+             sys.exit(0)
+         elif option in ("-v", "-V", "--version"):
+-            print("{} version {}".format(__file__, get_version()))
++            print(("{} version {}".format(__file__, get_version())))
+             sys.exit(0)
+         elif option in ("-i"):
+             input_file = value
+@@ -495,7 +495,7 @@
+     for file_str in sip_files_list:
+         f = csv.reader(CommentedFile(open(file_str, 'rb')), delimiter='\t')
+         # skip header
+-        _sHeader = f.next()
++        _sHeader = next(f)
+         # get data
+         for sLine in f:
+             PsmFields_obj = PsmFields4._make(sLine)
+@@ -661,7 +661,7 @@
+             else:
+                 psm_dict[sId] = oPsm
+ 
+-    for _key, value in psm_dict.iteritems():
++    for _key, value in psm_dict.items():
+         psm_new_list.append(value)
+     
+     return psm_new_list
+@@ -880,7 +880,7 @@
+             
+ 
+     pattern = re.compile('[^\w\[\]]')
+-    for key, _value in peptide_with_modification_dict.iteritems():
++    for key, _value in peptide_with_modification_dict.items():
+         peptide_str = pattern.sub('', key)
+         if peptide_str in peptide_dict:
+             # peptide_dict[peptide_str] += 1
+@@ -910,12 +910,12 @@
+                 changed_flag = True
+                 if not print_flag:
+                     print(pro_list)
+-                    print(oPsm.protein_list)
++                    print((oPsm.protein_list))
+                     print_flag = True
+                 oPsm.protein_list.append(protein)
+         if len(oPsm.protein_list) != len(pro_list):
+             print('check 4')
+-            print(oPsm.protein_list)
++            print((oPsm.protein_list))
+             print(pro_list)
+             exit(1)
+             
+@@ -974,7 +974,7 @@
+                     pro_shared_pep_dict[pro] = l
+     if num_changed != 0:
+         if not print_flag:
+-            print("num changed %d" % num_changed)
++            print(("num changed %d" % num_changed))
+     
+     # collect features
+     num_unique_per_pro = 0
+@@ -1122,7 +1122,7 @@
+             
+ 
+     pattern = re.compile('[^\w\[\]]')
+-    for key, _value in peptide_with_modification_dict.iteritems():
++    for key, _value in peptide_with_modification_dict.items():
+         peptide_str = pattern.sub('', key)
+         if peptide_str in peptide_dict:
+             # peptide_dict[peptide_str] += 1
+@@ -1158,12 +1158,12 @@
+                 changed_flag = True
+                 if not print_flag:
+                     print(pro_list)
+-                    print(oPsm.protein_list)
++                    print((oPsm.protein_list))
+                     print_flag = True
+                 oPsm.protein_list.append(protein)
+         if len(oPsm.protein_list) != len(pro_list):
+             print('check 4')
+-            print(oPsm.protein_list)
++            print((oPsm.protein_list))
+             print(pro_list)
+             exit(1)
+             
+@@ -1228,7 +1228,7 @@
+                     pro_shared_pep_dict[pro] = l
+     if num_changed != 0:
+         if not print_flag:
+-            print("num changed %d" % num_changed)
++            print(("num changed %d" % num_changed))
+     
+     # collect features
+     num_unique_per_pro = 0
+@@ -1350,7 +1350,7 @@
+ ## Exit system with error message
+ def die(msg=None):
+     if msg is not None:
+-        print >> sys.stderr, msg
++        print(msg, file=sys.stderr)
+         sys.exit(1)
+ 
+ ## Check file exist
+@@ -1359,7 +1359,7 @@
+     try:
+         with open(filename) as _f: pass
+     except IOError as _e:
+-        print >> sys.stderr, '\nCannot open', filename
++        print('\nCannot open', filename, file=sys.stderr)
+         die("Program exit!")
+ 
+ ## parameters used to read configuration file
+@@ -1718,7 +1718,7 @@
+                     'ScanType',             #9
+                     'SearchName']           #10
+         fw.write('\t'.join(pep_out_list) + '\n')
+-        for _pep_id, oPeptide in pep_sub_dict.iteritems():
++        for _pep_id, oPeptide in pep_sub_dict.items():
+             fw.write(repr(oPeptide))
+             fw.write('\n')
+     
+RefactoringTool: Writing converted script/sipros_ensemble_filtering.py to script3/sipros_ensemble_filtering.py.
+RefactoringTool: Refactored script/sipros_peptides_assembling.py
+--- script/sipros_peptides_assembling.py        (original)
++++ script/sipros_peptides_assembling.py        (refactored)
+@@ -13,7 +13,7 @@
+ """
+ 
+ ## Import standard modules
+-from __future__ import division
++
+ import sys, getopt, warnings, os, re
+ from datetime import datetime, date, time
+ from collections import defaultdict
+@@ -175,7 +175,7 @@
+             print(help_message)
+             sys.exit(0)
+         if option in ("-v", "-V", "--version"):
+-            print("sipros_peptides_assembling.py V%s" % (get_version()))
++            print(("sipros_peptides_assembling.py V%s" % (get_version())))
+             sys.exit(0)
+         if option in ("-w", "--working-dir"):
+             working_dir = value
+@@ -212,7 +212,7 @@
+     config_dict[min_peptide_per_protein_str] = min_peptide_per_protein
+     config_dict[min_unique_peptide_per_protein_str] = min_unique_peptide_per_protein
+     config_dict[remove_decoy_identification_str] = remove_decoy_identification
+-    for key, value in all_config_dict.items():
++    for key, value in list(all_config_dict.items()):
+         if key == (pep_iden_str + fasta_database_str):
+             config_dict[fasta_database_str] = value
+         elif key == (pro_iden_str + testing_decoy_prefix_str):
+@@ -262,8 +262,8 @@
+                 with open(fasta_filename_dir) as f: pass
+                 fasta_file = open(fasta_filename_dir, 'r')
+             except:
+-                print >> sys.stderr, '\nCannot open', fasta_filename
+-                print >> sys.stderr, 'Check your config file!'
++                print('\nCannot open', fasta_filename, file=sys.stderr)
++                print('Check your config file!', file=sys.stderr)
+                 die("Program exit!")
+ 
+     # save the fasta ID and description to the fasta_ID_dict
+@@ -341,8 +341,8 @@
+                 with open(fasta_filename_dir) as f: pass
+                 fasta_file = open(fasta_filename_dir, 'r')
+             except:
+-                print >> sys.stderr, '\nCannot open', fasta_filename
+-                print >> sys.stderr, 'Check your config file!'
++                print('\nCannot open', fasta_filename, file=sys.stderr)
++                print('Check your config file!', file=sys.stderr)
+                 die("Program exit!")
+ 
+     # save the fasta ID and description to the fasta_ID_dict
+@@ -449,13 +449,13 @@
+     pep_pro_dict = defaultdict(list)
+ 
+     # key = pep_file, val = run_num , sorted by Run# index
+-    for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++    for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+ 
+         # read line with csv
+         pep_reader = csv.reader(CommentedFile(open(pep_file, 'rb')),
+                                    delimiter='\t')
+         # skip header
+-        headline = pep_reader.next()
++        headline = next(pep_reader)
+ 
+         # get data
+         for pep_line in pep_reader:
+@@ -489,13 +489,13 @@
+ 
+     # try to find indistinguishable set
+     indistin_pro_dict = defaultdict(list)
+-    for pro_key, pep_list in pro_pep_dict.items():
++    for pro_key, pep_list in list(pro_pep_dict.items()):
+         sorted_pep_list = sorted(set(pep_list))
+         sorted_pep_list_join = '_'.join(sorted_pep_list)
+         indistin_pro_dict[sorted_pep_list_join].append(pro_key)
+ 
+     # indistin_key = str(sorted(pep_list)), indistin_value=pro_key list
+-    for indistin_key, indistin_value in indistin_pro_dict.items():
++    for indistin_key, indistin_value in list(indistin_pro_dict.items()):
+         # if proteins have a same set of peptides
+ 
+         if len(indistin_value) > 1:
+@@ -523,7 +523,7 @@
+                 del pro_pep_dict[indistin_pro]
+ 
+     # key = pep_file, val = run_num , sorted by Run# index
+-    for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++    for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+ 
+         # If base common prefix ends with '.pep.txt', then remove '.pep.txt'
+         base_pep_file = pep_file.replace(pep_file_ext, "")
+@@ -538,7 +538,7 @@
+         psm_reader = csv.reader(CommentedFile(open(psm_file, 'rb')),
+                                    delimiter='\t')
+         # skip header
+-        headline = psm_reader.next()
++        headline = next(psm_reader)
+ 
+         # get data
+         for psm_line in psm_reader:
+@@ -586,18 +586,18 @@
+ 
+     # copy pro_pep_dict to pro_pep_dict_red for reduction in greedy steps
+     pro_pep_dict_red = defaultdict(list)
+-    for pro_key, pep_list in pro_pep_dict.items():
++    for pro_key, pep_list in list(pro_pep_dict.items()):
+         for pep_list_one in pep_list:
+             pro_pep_dict_red[pro_key].append(pep_list_one)
+ 
+     # copy pep_pro_dict to pep_pro_dict_red for reduction in greedy steps
+     pep_pro_dict_red = defaultdict(list)
+-    for pep_key, pro_list in pep_pro_dict.items():
++    for pep_key, pro_list in list(pep_pro_dict.items()):
+         for pro_list_one in pro_list:
+             pep_pro_dict_red[pep_key].append(pro_list_one)
+ 
+     # for loop of pro_pep_dict
+-    for pro_key, pep_list in pro_pep_dict.items():
++    for pro_key, pep_list in list(pro_pep_dict.items()):
+ 
+         # if proteins that have >= min_peptide_per_protein
+         if len(pep_list) >= min_peptide_per_protein:
+@@ -642,7 +642,7 @@
+                                 pass
+ 
+     # Second, iteratively extract a protein at a time that covers the most peptides
+-    if len(pro_pep_dict_red.keys()) > 0:
++    if len(list(pro_pep_dict_red.keys())) > 0:
+         # Run greedy iterations until it converges
+         converge = False
+ 
+@@ -654,7 +654,7 @@
+ 
+             # find a protein that covers the most peptides
+             ppdr_idx = 0
+-            for key_ppdr, val_ppdr in pro_pep_dict_red.items():
++            for key_ppdr, val_ppdr in list(pro_pep_dict_red.items()):
+                 if ppdr_idx == 0:
+                     max_key_ppdr = key_ppdr
+                     max_len_val_ppdr = len(val_ppdr)
+@@ -731,7 +731,7 @@
+                 converge = True
+ 
+             # if there is no protein, then converge
+-            if len(pro_pep_dict_red.keys()) == 0:
++            if len(list(pro_pep_dict_red.keys())) == 0:
+                 converge = True
+ 
+         # greedy algorithm done
+@@ -832,9 +832,9 @@
+     decoy_prefix = config_dict[testing_decoy_prefix_str]
+ 
+     # total number of proteins
+-    total_proteins_before_filtering = len(pro_pep_dict.keys())
++    total_proteins_before_filtering = len(list(pro_pep_dict.keys()))
+     decoy_proteins_before_filtering = 0
+-    for key, val in pro_pep_dict.items():
++    for key, val in list(pro_pep_dict.items()):
+         check_decoy_match_val = check_decoy_match(key, decoy_prefix)
+         if check_decoy_match_val is False:
+             decoy_proteins_before_filtering += 1
+@@ -872,11 +872,11 @@
+     def_para_msg += "#\t[Input_Files]\n"
+     def_para_msg += "#\t\n"
+     # key = psm_file, val = run_num , sorted by Run# index
+-    for psm_file, run_num in sorted(psm_run_num_dict.items(), key=lambda x: x[1][-1]):
++    for psm_file, run_num in sorted(list(psm_run_num_dict.items()), key=lambda x: x[1][-1]):
+         def_para_msg += "#\tpsm{" + run_num + "} = " + str(psm_file) + "\n"
+     def_para_msg += "#\t\n"
+     # key = pep_file, val = run_num , sorted by Run# index
+-    for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++    for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+         def_para_msg += "#\tpep{" + run_num + "} = " + str(pep_file) + "\n"
+     def_para_msg += "#\t\n"
+     def_para_msg += "#\t########################\n"
+@@ -1018,7 +1018,7 @@
+ 
+     # pro_out list
+     pro_out_list = ['ProteinID']
+-    for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++    for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+         pro_out_iter_list = [run_num + '_UniquePeptideCounts',
+                              run_num + '_TotalPeptideCounts',
+                              run_num + '_UniqueSpectrumCounts',
+@@ -1060,7 +1060,7 @@
+             normalized_balanced_spectrum_counts_dict = {}
+ 
+             # for loop Run#
+-            for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++            for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+ 
+                 # get pep_list from pro_pep_dict
+                 pep_list = pro_pep_dict[protein_one]
+@@ -1137,7 +1137,7 @@
+             first_bsc_idx = 0    # the first column index of BalancedSpectrumCounts
+             first_nbsc_idx = 0    # the first column index of NormalizedBalancedSpectrumCounts
+             inc_int = 0    # the increment integer for each run
+-            for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++            for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+                 run_inc_index = 0    # for column[0]:ProteinID
+                 pro_out_list.append(str(unique_peptide_counts_dict[run_num]))
+                 run_inc_index += 1
+@@ -1165,7 +1165,7 @@
+         sum_bsc_list = []    # save sum_bsc for each run into list
+ 
+         # for loop each run to calculate avg_sum_bsc
+-        for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++        for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+             run_int = int(run_num[3:])    # run integer (Run1 -> 1)
+             bsc_idx = first_bsc_idx + inc_int*(run_int-1)    # calculate BalancedSpectrumCounts index for each run
+             sum_bsc = sum(float(item[bsc_idx]) for item in pro_out_data)    # sum of BSC
+@@ -1175,7 +1175,7 @@
+         # for loop of pro_out_data
+         for pro_out_data_idx, pro_out_data_item in enumerate(pro_out_data):
+             # for loop each run
+-            for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++            for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+                 run_int = int(run_num[3:])    # run integer (Run1 -> 1)
+                 bsc_idx = first_bsc_idx + inc_int*(run_int-1)    # calculate BalancedSpectrumCounts column index
+                 nbsc_idx = first_nbsc_idx + inc_int*(run_int-1)    # calculate NormalizedBalancedSpectrumCounts column index
+@@ -1220,7 +1220,7 @@
+             for pep_list_item in pep_list:                                                                          
+ 
+                 # for loop Run#
+-                for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++                for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+ 
+                     pep_run_id = pep_list_item + "_" + run_num
+                     pep_data_one = pep_data_dict[pep_run_id]                                                         
+@@ -1273,7 +1273,7 @@
+                 for pro_ID_one in pro_ID_list:
+ 
+                     # for loop Run#
+-                    for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++                    for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+ 
+                         psm_run_id = pro_ID_one + "_" + run_num
+                         psm_list = psm_data_dict[psm_run_id]
+@@ -1290,7 +1290,7 @@
+                         
+             else:
+                 # for loop Run#
+-                for pep_file, run_num in sorted(run_num_dict.items(), key=lambda x: x[1][-1]):
++                for pep_file, run_num in sorted(list(run_num_dict.items()), key=lambda x: x[1][-1]):
+ 
+                     psm_run_id = pro_ID + "_" + run_num
+                     psm_list = psm_data_dict[psm_run_id]
+RefactoringTool: Writing converted script/sipros_peptides_assembling.py to script3/sipros_peptides_assembling.py.
+RefactoringTool: Refactored script/sipros_post_module.py
+--- script/sipros_post_module.py        (original)
++++ script/sipros_post_module.py        (refactored)
+@@ -35,10 +35,10 @@
+     def __init__(self, f, comment_string="#"):
+         self.f = f
+         self.comment_string = comment_string
+-    def next(self):
+-        line = self.f.next()
++    def __next__(self):
++        line = next(self.f)
+         while line.startswith(self.comment_string):
+-            line = self.f.next()
++            line = next(self.f)
+         return line
+     def __iter__(self):
+         return self
+@@ -47,7 +47,7 @@
+ # # Exit system with error message
+ def die(msg=None):
+     if msg is not None:
+-        print >> sys.stderr, msg
++        print(msg, file=sys.stderr)
+         sys.exit(1)
+ 
+ 
+@@ -80,7 +80,7 @@
+     try:
+         result = x / y
+     except ZeroDivisionError as detail:
+-        print >> sys.stderr, 'Handling run-time error:', detail
++        print('Handling run-time error:', detail, file=sys.stderr)
+         die('Program exit!')
+     else:
+         return result
+@@ -92,7 +92,7 @@
+     try:
+         with open(filename) as _f: pass
+     except IOError as _e:
+-        print >> sys.stderr, '\nCannot open', filename
++        print('\nCannot open', filename, file=sys.stderr)
+         die("Program exit!")
+ 
+ 
+@@ -113,12 +113,12 @@
+                 file_list.append(file_path_name)
+ 
+         if len(file_list) == 0:
+-            print >> sys.stderr, "\nCannot open %s file(s)." % (file_ext)
++            print("\nCannot open %s file(s)." % (file_ext), file=sys.stderr)
+             die("Program exit!")
+         file_list = sorted(file_list)
+ 
+     else:
+-        print >> sys.stderr, "\nCannot open working directory", working_dir
++        print("\nCannot open working directory", working_dir, file=sys.stderr)
+         die("Program exit!")
+ 
+     return file_list
+@@ -422,7 +422,7 @@
+ 
+         return peptide_output
+     except AttributeError:
+-        print >> sys.stderr, '\nCannot parse peptide correctly.\n'
++        print('\nCannot parse peptide correctly.\n', file=sys.stderr)
+         die("Program exit!")
+ 
+ 
+@@ -462,7 +462,7 @@
+         self.current = 0
+         return self
+ 
+-    def next(self):
++    def __next__(self):
+         if self.current >= self.iSize:
+             raise StopIteration
+         else:
+@@ -831,7 +831,7 @@
+                 psm_dict[iCharge].addPepScores(pep)
+     # sorting and then ranking
+     psm_list = []
+-    for k,v in psm_dict.items():
++    for k,v in list(psm_dict.items()):
+         if isSIP:
+             v.ranking_sip()
+             if v.lTopPep[0].lfScores[SIP_WDP_score_idx] <= 0:
+@@ -962,7 +962,7 @@
+                 skip_comment(oFile, iLineHeader=2)
+                 lFileReader.append(oFile)
+             # # peek the first scan number
+-            iSmallestScanNumer = sys.maxint
++            iSmallestScanNumer = sys.maxsize
+             for f in lFileReader:
+                 sLine = peek_line(f)
+                 iScanNumber = get_scan_number(sLine)
+RefactoringTool: Writing converted script/sipros_post_module.py to script3/sipros_post_module.py.
+RefactoringTool: Refactored script/sipros_prepare_protein_database.py
+--- script/sipros_prepare_protein_database.py   (original)
++++ script/sipros_prepare_protein_database.py   (refactored)
+@@ -60,7 +60,7 @@
+     '''
+         
+     print('Command:')
+-    print('sipros_prepare_protein_database.py -i {} -o {} -c {}'.format(input_filename, output_filename, config_filename))
++    print(('sipros_prepare_protein_database.py -i {} -o {} -c {}'.format(input_filename, output_filename, config_filename)))
+         
+     return input_filename, output_filename, config_filename
+ 
+RefactoringTool: Writing converted script/sipros_prepare_protein_database.py to script3/sipros_prepare_protein_database.py.
+RefactoringTool: Refactored script/sipros_psm_tabulating.py
+--- script/sipros_psm_tabulating.py     (original)
++++ script/sipros_psm_tabulating.py     (refactored)
+@@ -81,7 +81,7 @@
+     # FDR_threshold_str = 'FDR_Threshold'
+ 
+     # only save protein_identification config info to config_dict
+-    for key, value in all_config_dict.items():
++    for key, value in list(all_config_dict.items()):
+         if key == (pep_iden_str + search_name_str):
+             config_dict[search_name_str] = value
+         elif key == (pep_iden_str + FASTA_Database_str):
+@@ -114,7 +114,7 @@
+             print(help_message)
+             sys.exit(0)
+         if option in ("-v", "-V"):
+-            print("sipros_psm_tabulating.py V%s" % (get_version()))
++            print(("sipros_psm_tabulating.py V%s" % (get_version())))
+             sys.exit(0)
+         if option in ("-i"):
+             input_folder = value
+@@ -151,8 +151,8 @@
+         sipros_reader = csv.reader(CommentedFile(open(sipros_file, 'rb')),
+                                    delimiter='\t')
+         # skip header
+-        _headline = sipros_reader.next()
+-        _headline = sipros_reader.next()
++        _headline = next(sipros_reader)
++        _headline = next(sipros_reader)
+         for _line_idx, line in enumerate(sipros_reader):
+             if line[0] == '+':
+                 sipros_obj = SpectrumFields._make(line)
+@@ -269,7 +269,7 @@
+     pep_pro_dict = {}
+     psm_list = []
+     with open(file_str, 'r') as fr:
+-        header = fr.next()
++        header = next(fr)
+         for line_str in fr:
+             words = line_str.strip().split()
+             psm_list.append(words)
+@@ -380,7 +380,7 @@
+ 
+ def get_modification_info(peptide_str, modification_label_dict):
+     modification_dict = {}
+-    for key, value in modification_label_dict.iteritems():
++    for key, value in modification_label_dict.items():
+         if key.isalpha():
+             continue
+         beg = -1
+@@ -398,7 +398,7 @@
+     psm_obj = None
+     psm_list = []
+     with open(filename_str, 'r') as f:
+-        f.next()
++        next(f)
+         for s in f:
+             l = s.split('\t')
+             if filename_tab_str != l[0] or scannumber_tab_str != l[1]:
+@@ -491,7 +491,7 @@
+     enzymatic_search_constraint.set('max_num_internal_cleavages', config_dict[Maximum_Missed_Cleavages_str])
+     enzymatic_search_constraint.set('min_number_termini', '2')
+     
+-    for e_key, e_value in element_modification_list_dict.iteritems():
++    for e_key, e_value in element_modification_list_dict.items():
+         for e_2_value in e_value:
+             aminoacid_modification = SubElement(search_summary, 'aminoacid_modification')
+             aminoacid_modification.set('aminoacid', e_key)
+@@ -541,7 +541,7 @@
+             local_modification_dict = get_modification_info(oPepScores.identifiedPep[1:-1], modification_dict)
+             if local_modification_dict:
+                 modification_info = SubElement(search_hit, "modification_info")
+-                for key, value in local_modification_dict.iteritems():
++                for key, value in local_modification_dict.items():
+                     mod_aminoacid_mass = SubElement(modification_info, 'mod_aminoacid_mass')
+                     mod_aminoacid_mass.set('position', key)
+                     mod_aminoacid_mass.set('mass', str(value))
+@@ -659,7 +659,7 @@
+     sys.stderr.write('[%s] Ending Sipros Ensemble Tabulating\n' % curr_time())
+     sys.stderr.write('Run complete [%s elapsed]\n' %  format_time(duration))
+     
+-    print(base_out + '.tab')
++    print((base_out + '.tab'))
+ 
+ if __name__ == '__main__':
+     sys.exit(main())
+RefactoringTool: Writing converted script/sipros_psm_tabulating.py to script3/sipros_psm_tabulating.py.
+RefactoringTool: Refactored script/split_db.py
+--- script/split_db.py  (original)
++++ script/split_db.py  (refactored)
+@@ -1,6 +1,6 @@
+ import getopt, sys
+-from urllib import urlencode
+-import cookielib, urllib2, os, re, copy, string, operator
++from urllib.parse import urlencode
++import http.cookiejar, urllib.request, urllib.error, urllib.parse, os, re, copy, string, operator
+ 
+ OriginalFastaFileName = sys.argv[1]
+ outputpath            = sys.argv[2]
+@@ -37,4 +37,4 @@
+ drive, path_and_file = os.path.splitdrive(OriginalFastaFileName)
+ path, file = os.path.split(path_and_file)
+ (pathRoot, pathExt) = os.path.splitext(file)
+-print os.path.join(outputpath, pathRoot)
++print(os.path.join(outputpath, pathRoot))
+RefactoringTool: Writing converted script/split_db.py to script3/split_db.py.
+RefactoringTool: Files that were modified:
+RefactoringTool: script/ClusterSip.py
+RefactoringTool: script/ConstructDatabase.py
+RefactoringTool: script/HierarchicalClustering.py
+RefactoringTool: script/configure_subdb.py
+RefactoringTool: script/parseconfig.py
+RefactoringTool: script/protein_update.py
+RefactoringTool: script/separate_scan_folder.py
+RefactoringTool: script/separate_scans.py
+RefactoringTool: script/sip.py
+RefactoringTool: script/sipros_ensemble_filtering.py
+RefactoringTool: script/sipros_peptides_assembling.py
+RefactoringTool: script/sipros_post_module.py
+RefactoringTool: script/sipros_prepare_protein_database.py
+RefactoringTool: script/sipros_psm_tabulating.py
+RefactoringTool: script/split_db.py

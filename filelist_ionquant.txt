@@ -1,2 +1,0 @@
-flag	value
---specdir	file_path/raw/
