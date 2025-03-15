@@ -1,0 +1,18 @@
+### Added
+- Supported IBT-16 isobaric tag
+- Extended support for up to 32 isobaric labels.
+- Added the 'minPepLen' control option for protein probability assignment
+- Added the dbbin option to resue the prebuilt db.bin file
+
+### Changed
+- Used unique+razor peptides only for PSM-protein level roll up
+- For plex with 0 PSMs, let philosopher print a waring and exit normally
+- Excluded decoys from protein quantification (protein.tsv)
+- Removed the warning message for running 'workspace --clean' in a clean direcotry
+
+### Fixed
+- Fixed a problem occurring when parsing custom database with headers starting with '>AT'
+- Fixed a bug related to summed intensites in protein.tsv
+- Fixed a bug causing empty intensities in msstats.tsv related with multiplex TMT11 data.
+- Fixed a creash when there are non-zero TMT intensities and removelow > 0
+- Updated the purity calculation
