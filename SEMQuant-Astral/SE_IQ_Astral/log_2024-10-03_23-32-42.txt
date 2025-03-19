@@ -1,0 +1,435 @@
+System OS: Linux, Architecture: amd64
+Java Info: 11.0.23, OpenJDK 64-Bit Server VM, Ubuntu
+.NET Core Info: N/A
+
+
+Version info:
+FragPipe version 21.1
+MSFragger version 4.0
+IonQuant version 1.10.12
+Philosopher version 5.1.0
+
+
+LCMS files:
+  Experiment/Group: 
+  (if "spectral library generation" is enabled, all files will be analyzed together)
+  - /home/UNT/bz0053/Documents/MBR/raw/200ng/E30/20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML	DIA
+  - /home/UNT/bz0053/Documents/MBR/raw/200ng/E30/20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_uncalibrated.mzML	DIA
+  - /home/UNT/bz0053/Documents/MBR/raw/200ng/E30/20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_uncalibrated.mzML	DIA
+
+
+4 commands to execute:
+CheckCentroid
+java -Xmx53G -cp /home/UNT/bz0053/Documents/fragpipe/lib/fragpipe-21.1.jar:/home/UNT/bz0053/Documents/fragpipe/tools/batmass-io-1.30.0.jar com.dmtavt.fragpipe.util.CheckCentroid /home/UNT/bz0053/Documents/MBR/raw/200ng/E30/20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML 15
+DIA-NN [Work dir: /home/UNT/bz0053/Documents/MBR/DIANN/E30]
+/home/UNT/bz0053/Documents/fragpipe/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8 --lib library.tsv --threads 15 --verbose 1 --out diann-output/report.tsv --qvalue 0.01 --matrix-qvalue 0.01 --matrices --no-prot-inf --smart-profiling --no-quant-files --peak-center --no-ifs-removal --report-lib-info --cfg /home/UNT/bz0053/Documents/MBR/DIANN/E30/filelist_diann.txt--
+DIA-NN: Propagate localization [Work dir: /home/UNT/bz0053/Documents/MBR/DIANN/E30/diann-output]
+java -cp /home/UNT/bz0053/Documents/fragpipe/tools/batmass-io-1.30.0.jar:/home/UNT/bz0053/Documents/fragpipe/lib/fragpipe-21.1.jar:/home/UNT/bz0053/Documents/fragpipe/lib/fragpipe-21.1.jar com.dmtavt.fragpipe.tools.diann.Localization /home/UNT/bz0053/Documents/MBR/DIANN/E30
+DIA-NN: Convert DIA-NN output to MSstats.csv [Work dir: /home/UNT/bz0053/Documents/MBR/DIANN/E30/diann-output]
+java -cp /home/UNT/bz0053/Documents/fragpipe/lib/fragpipe-21.1.jar:/home/UNT/bz0053/Documents/fragpipe/lib/commons-io-2.15.1.jar:/home/UNT/bz0053/Documents/fragpipe/lib/fragpipe-21.1.jar com.dmtavt.fragpipe.tools.diann.DiannToMsstats report.tsv msstats.csv 0.01 1 0.01 0.01 /home/UNT/bz0053/Documents/MBR/DIANN/E30/fragpipe-files.fp-manifest
+~~~~~~~~~~~~~~~~~~~~~~
+
+Execution order:
+
+    Cmd: [START], Work dir: [/home/UNT/bz0053/Documents/MBR/DIANN/E30]
+    Cmd: [CheckCentroid], Work dir: [/home/UNT/bz0053/Documents/MBR/DIANN/E30]
+    Cmd: [DIA-NN], Work dir: [/home/UNT/bz0053/Documents/MBR/DIANN/E30]
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~Sample of /home/UNT/bz0053/Documents/MBR/fragpipe_MBR/2024-09-22-decoys-mix_HYE.fasta.fas~~~~~~~
+>rev_sp|A0A023PXA5|YA19A_YEAST Putative uncharacterized protein YAL019W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YAL019W-A PE=5 SV=1
+>rev_sp|Q53F19|NCBP3_HUMAN Nuclear cap-binding protein subunit 3 OS=Homo sapiens OX=9606 GN=NCBP3 PE=1 SV=2
+>rev_tr|A0A0G2JLT7|A0A0G2JLT7_HUMAN Leukocyte immunoglobulin like receptor B3 OS=Homo sapiens OX=9606 GN=LILRB3 PE=1 SV=1
+>rev_tr|A0A344AK65|A0A344AK65_HUMAN ATP synthase subunit a OS=Homo sapiens OX=9606 GN=ATP6 PE=3 SV=1
+>rev_tr|A0A5Q0TWI6|A0A5Q0TWI6_HUMAN MHC class II antigen (Fragment) OS=Homo sapiens OX=9606 GN=HLA-DRB5 PE=4 SV=1
+>rev_tr|A0A9L9PXQ2|A0A9L9PXQ2_HUMAN Rho GTPase activating protein 23 OS=Homo sapiens OX=9606 GN=ARHGAP23 PE=1 SV=1
+>rev_tr|B9TX70|B9TX70_HUMAN Mediator complex subunit MED24 variant MED24_i10 (Fragment) OS=Homo sapiens OX=9606 GN=MED24 PE=2 SV=1
+>rev_tr|F4MHP9|F4MHP9_HUMAN [histone H3]-trimethyl-L-lysine(27) demethylase OS=Homo sapiens OX=9606 GN=UTY PE=2 SV=1
+>rev_tr|I3L176|I3L176_HUMAN SMG6 nonsense mediated mRNA decay factor (Fragment) OS=Homo sapiens OX=9606 GN=SMG6 PE=1 SV=1
+>rev_tr|Q5JS19|Q5JS19_HUMAN GTPase activating Rap/RanGAP domain like 3 (Fragment) OS=Homo sapiens OX=9606 GN=GARNL3 PE=1 SV=8
+>rev_tr|X6RLX0|X6RLX0_HUMAN ELKS/RAB6-interacting/CAST family member 1 OS=Homo sapiens OX=9606 GN=ERC1 PE=1 SV=1
+>sp|Q53EQ6|TIGD5_HUMAN Tigger transposable element-derived protein 5 OS=Homo sapiens OX=9606 GN=TIGD5 PE=1 SV=3
+>tr|A0A0G2JLR5|A0A0G2JLR5_HUMAN Ras association domain family member 7 OS=Homo sapiens OX=9606 GN=RASSF7 PE=1 SV=1
+>tr|A0A344AK39|A0A344AK39_HUMAN ATP synthase subunit a OS=Homo sapiens OX=9606 GN=ATP6 PE=3 SV=1
+>tr|A0A5Q0QF63|A0A5Q0QF63_HUMAN MHC class I antigen (Fragment) OS=Homo sapiens OX=9606 GN=HLA-C PE=3 SV=1
+>tr|A0A9L9PXP3|A0A9L9PXP3_HUMAN Uncharacterized protein OS=Homo sapiens OX=9606 PE=4 SV=1
+>tr|B9TX65|B9TX65_HUMAN Mediator of RNA polymerase II transcription subunit 24 (Fragment) OS=Homo sapiens OX=9606 GN=MED24 PE=2 SV=1
+>tr|F4MHP3|F4MHP3_HUMAN [histone H3]-trimethyl-L-lysine(27) demethylase OS=Homo sapiens OX=9606 GN=UTY PE=2 SV=2
+>tr|I3L167|I3L167_HUMAN Coronin OS=Homo sapiens OX=9606 GN=CORO7-PAM16 PE=3 SV=1
+>tr|Q5JRU2|Q5JRU2_HUMAN Caspase 9 (Fragment) OS=Homo sapiens OX=9606 GN=CASP9 PE=1 SV=1
+>tr|X6RLP6|X6RLP6_HUMAN RNA-binding region-containing protein 3 (Fragment) OS=Homo sapiens OX=9606 GN=RNPC3 PE=1 SV=1
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~ fragpipe.config ~~~~~~~~~
+# FragPipe v21.1ui state cache
+
+
+# Please edit the following path to point to the correct location.
+# In Windows, please replace single '\' with '\\'
+database.db-path=/home/UNT/bz0053/Documents/MBR/fragpipe_MBR/2024-09-22-decoys-mix_HYE.fasta.fas
+
+crystalc.run-crystalc=false
+database.decoy-tag=rev_
+diann.fragpipe.cmd-opts=
+diann.generate-msstats=true
+diann.heavy=
+diann.library=
+diann.light=
+diann.medium=
+diann.q-value=0.01
+diann.quantification-strategy=3
+diann.quantification-strategy-2=QuantUMS (high accuracy)
+diann.run-dia-nn=true
+diann.run-dia-plex=false
+diann.run-specific-protein-q-value=false
+diann.unrelated-runs=false
+diann.use-predicted-spectra=false
+diaumpire.AdjustFragIntensity=true
+diaumpire.BoostComplementaryIon=false
+diaumpire.CorrThreshold=0
+diaumpire.DeltaApex=0.2
+diaumpire.ExportPrecursorPeak=false
+diaumpire.Q1=true
+diaumpire.Q2=true
+diaumpire.Q3=true
+diaumpire.RFmax=500
+diaumpire.RPmax=25
+diaumpire.RTOverlap=0.3
+diaumpire.SE.EstimateBG=false
+diaumpire.SE.IsoPattern=0.3
+diaumpire.SE.MS1PPM=10
+diaumpire.SE.MS2PPM=20
+diaumpire.SE.MS2SN=1.1
+diaumpire.SE.MassDefectFilter=true
+diaumpire.SE.MassDefectOffset=0.1
+diaumpire.SE.NoMissedScan=1
+diaumpire.SE.SN=1.1
+diaumpire.run-diaumpire=false
+fpop.fpop-tmt=false
+fpop.label_control=
+fpop.label_fpop=
+fpop.region_size=1
+fpop.run-fpop=false
+fpop.subtract-control=false
+fragpipe-config.bin-diann=/home/UNT/bz0053/Documents/fragpipe/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8
+fragpipe-config.bin-ionquant=/home/UNT/bz0053/Documents/fragpipe/tools/IonQuant-1.10.12.jar
+fragpipe-config.bin-msfragger=/home/UNT/bz0053/Documents/fragpipe/tools/MSFragger-4.0/MSFragger-4.0.jar
+fragpipe-config.bin-philosopher=/home/UNT/bz0053/Documents/fragpipe/tools/philosopher_v5.1.0_linux_amd64/philosopher
+fragpipe-config.bin-python=/home/UNT/bz0053/Documents/miniconda3/bin/python3
+freequant.mz-tol=10
+freequant.rt-tol=0.4
+freequant.run-freequant=false
+ionquant.excludemods=
+ionquant.heavy=
+ionquant.imtol=0.05
+ionquant.ionfdr=0.01
+ionquant.light=
+ionquant.locprob=0.75
+ionquant.maxlfq=1
+ionquant.mbr=1
+ionquant.mbrimtol=0.05
+ionquant.mbrmincorr=0
+ionquant.mbrrttol=1
+ionquant.mbrtoprun=10
+ionquant.medium=
+ionquant.minfreq=0
+ionquant.minions=2
+ionquant.minisotopes=2
+ionquant.minscans=3
+ionquant.mztol=10
+ionquant.normalization=1
+ionquant.peptidefdr=1
+ionquant.proteinfdr=1
+ionquant.requantify=1
+ionquant.rttol=0.4
+ionquant.run-ionquant=true
+ionquant.tp=0
+ionquant.uniqueness=0
+ionquant.use-labeling=false
+ionquant.use-lfq=true
+ionquant.writeindex=0
+msbooster.predict-rt=true
+msbooster.predict-spectra=true
+msbooster.run-msbooster=false
+msbooster.use-correlated-features=false
+msfragger.Y_type_masses=
+msfragger.activation_types=all
+msfragger.allowed_missed_cleavage_1=1
+msfragger.allowed_missed_cleavage_2=2
+msfragger.calibrate_mass=0
+msfragger.check_spectral_files=true
+msfragger.clip_nTerm_M=true
+msfragger.deisotope=1
+msfragger.delta_mass_exclude_ranges=(-1.5,3.5)
+msfragger.deneutralloss=1
+msfragger.diagnostic_fragments=
+msfragger.diagnostic_intensity_filter=0
+msfragger.digest_max_length=60
+msfragger.digest_min_length=7
+msfragger.fragment_ion_series=b,y
+msfragger.fragment_mass_tolerance=5
+msfragger.fragment_mass_units=1
+msfragger.group_variable=0
+msfragger.intensity_transform=0
+msfragger.ion_series_definitions=
+msfragger.isotope_error=0/1/2
+msfragger.labile_search_mode=off
+msfragger.localize_delta_mass=false
+msfragger.mass_diff_to_variable_mod=0
+msfragger.mass_offsets=0.0
+msfragger.mass_offsets_detailed=
+msfragger.max_fragment_charge=2
+msfragger.max_variable_mods_combinations=5000
+msfragger.max_variable_mods_per_peptide=3
+msfragger.min_fragments_modelling=2
+msfragger.min_matched_fragments=4
+msfragger.min_sequence_matches=2
+msfragger.minimum_peaks=15
+msfragger.minimum_ratio=0.01
+msfragger.misc.fragger.clear-mz-hi=0
+msfragger.misc.fragger.clear-mz-lo=0
+msfragger.misc.fragger.digest-mass-hi=5000
+msfragger.misc.fragger.digest-mass-lo=500
+msfragger.misc.fragger.enzyme-dropdown-1=stricttrypsin
+msfragger.misc.fragger.enzyme-dropdown-2=null
+msfragger.misc.fragger.precursor-charge-hi=4
+msfragger.misc.fragger.precursor-charge-lo=1
+msfragger.misc.fragger.remove-precursor-range-hi=1.5
+msfragger.misc.fragger.remove-precursor-range-lo=-1.5
+msfragger.misc.slice-db=1
+msfragger.num_enzyme_termini=2
+msfragger.output_format=pepXML_pin
+msfragger.output_max_expect=49
+msfragger.output_report_topN=1
+msfragger.output_report_topN_dda_plus=5
+msfragger.output_report_topN_dia1=5
+msfragger.override_charge=false
+msfragger.precursor_mass_lower=-2
+msfragger.precursor_mass_mode=selected
+msfragger.precursor_mass_units=0
+msfragger.precursor_mass_upper=2
+msfragger.precursor_true_tolerance=0.1
+msfragger.precursor_true_units=0
+msfragger.remainder_fragment_masses=
+msfragger.remove_precursor_peak=1
+msfragger.report_alternative_proteins=true
+msfragger.require_precursor=true
+msfragger.restrict_deltamass_to=all
+msfragger.reuse_dia_fragment_peaks=false
+msfragger.run-msfragger=false
+msfragger.search_enzyme_cut_1=KR
+msfragger.search_enzyme_cut_2=
+msfragger.search_enzyme_name_1=stricttrypsin
+msfragger.search_enzyme_name_2=null
+msfragger.search_enzyme_nocut_1=
+msfragger.search_enzyme_nocut_2=
+msfragger.search_enzyme_sense_1=C
+msfragger.search_enzyme_sense_2=C
+msfragger.table.fix-mods=0.0,C-Term Peptide,false,-1; 0.0,N-Term Peptide,false,-1; 0.0,C-Term Protein,false,-1; 0.0,N-Term Protein,false,-1; 0.0,G (glycine),false,-1; 0.0,A (alanine),false,-1; 0.0,S (serine),false,-1; 0.0,P (proline),false,-1; 0.0,V (valine),false,-1; 0.0,T (threonine),false,-1; 57.02146,C (cysteine),true,-1; 0.0,L (leucine),false,-1; 0.0,I (isoleucine),false,-1; 0.0,N (asparagine),false,-1; 0.0,D (aspartic acid),false,-1; 0.0,Q (glutamine),false,-1; 0.0,K (lysine),false,-1; 0.0,E (glutamic acid),false,-1; 0.0,M (methionine),false,-1; 0.0,H (histidine),false,-1; 0.0,F (phenylalanine),false,-1; 0.0,R (arginine),false,-1; 0.0,Y (tyrosine),false,-1; 0.0,W (tryptophan),false,-1; 0.0,B ,false,-1; 0.0,J,false,-1; 0.0,O,false,-1; 0.0,U,false,-1; 0.0,X,false,-1; 0.0,Z,false,-1
+msfragger.table.var-mods=15.9949,M,true,3; 42.0106,[^,false,1; 79.96633,STY,false,3; -17.0265,nQnC,false,1; -18.0106,nE,false,1; 4.025107,K,false,2; 6.020129,R,false,2; 8.014199,K,false,2; 10.008269,R,false,2; 0.0,site_10,false,1; 0.0,site_11,false,1; 0.0,site_12,false,1; 0.0,site_13,false,1; 0.0,site_14,false,1; 0.0,site_15,false,1; 0.0,site_16,false,1
+msfragger.track_zero_topN=0
+msfragger.use_all_mods_in_first_search=false
+msfragger.use_detailed_offsets=false
+msfragger.use_topN_peaks=150
+msfragger.write_calibrated_mzml=false
+msfragger.write_uncalibrated_mgf=false
+msfragger.zero_bin_accept_expect=0
+msfragger.zero_bin_mult_expect=1
+opair.activation1=HCD
+opair.activation2=ETD
+opair.filterOxonium=true
+opair.glyco_db=
+opair.max_glycans=4
+opair.max_isotope_error=2
+opair.min_isotope_error=0
+opair.ms1_tol=20
+opair.ms2_tol=20
+opair.oxonium_filtering_file=
+opair.oxonium_minimum_intensity=0.05
+opair.reverse_scan_order=false
+opair.run-opair=false
+opair.single_scan_type=false
+peptide-prophet.cmd-opts=--decoyprobs --ppm --accmass --nonparam --expectscore
+peptide-prophet.combine-pepxml=false
+peptide-prophet.run-peptide-prophet=false
+percolator.cmd-opts=--only-psms --no-terminate --post-processing-tdc
+percolator.keep-tsv-files=false
+percolator.min-prob=0.5
+percolator.run-percolator=true
+phi-report.dont-use-prot-proph-file=false
+phi-report.filter=--sequential --prot 0.01
+phi-report.pep-level-summary=false
+phi-report.philosoher-msstats=false
+phi-report.print-decoys=false
+phi-report.prot-level-summary=false
+phi-report.remove-contaminants=false
+phi-report.run-report=true
+protein-prophet.cmd-opts=--maxppmdiff 2000000
+protein-prophet.run-protein-prophet=true
+ptmprophet.cmdline=KEEPOLD STATIC EM\=1 NIONS\=b M\:15.9949,n\:42.0106 MINPROB\=0.5
+ptmprophet.run-ptmprophet=false
+ptmshepherd.adv_params=false
+ptmshepherd.annotation-common=false
+ptmshepherd.annotation-custom=false
+ptmshepherd.annotation-glyco=false
+ptmshepherd.annotation-unimod=true
+ptmshepherd.annotation_file=
+ptmshepherd.annotation_tol=0.01
+ptmshepherd.cap_y_ions=
+ptmshepherd.decoy_type=1
+ptmshepherd.diag_ions=
+ptmshepherd.diagmine_diagMinFoldChange=3.0
+ptmshepherd.diagmine_diagMinSpecDiff=00.2
+ptmshepherd.diagmine_fragMinFoldChange=3.0
+ptmshepherd.diagmine_fragMinPropensity=00.1
+ptmshepherd.diagmine_fragMinSpecDiff=00.1
+ptmshepherd.diagmine_minIonsPerSpec=2
+ptmshepherd.diagmine_minPeps=25
+ptmshepherd.diagmine_pepMinFoldChange=3.0
+ptmshepherd.diagmine_pepMinSpecDiff=00.2
+ptmshepherd.glyco_adducts=
+ptmshepherd.glyco_fdr=1.00
+ptmshepherd.glyco_isotope_max=3
+ptmshepherd.glyco_isotope_min=-1
+ptmshepherd.glyco_ppm_tol=50
+ptmshepherd.glycodatabase=
+ptmshepherd.histo_smoothbins=2
+ptmshepherd.iontype_a=false
+ptmshepherd.iontype_b=true
+ptmshepherd.iontype_c=false
+ptmshepherd.iontype_x=false
+ptmshepherd.iontype_y=true
+ptmshepherd.iontype_z=false
+ptmshepherd.localization_allowed_res=
+ptmshepherd.localization_background=4
+ptmshepherd.max_adducts=0
+ptmshepherd.n_glyco=true
+ptmshepherd.normalization-psms=true
+ptmshepherd.normalization-scans=false
+ptmshepherd.output_extended=false
+ptmshepherd.peakpicking_mass_units=0
+ptmshepherd.peakpicking_minPsm=10
+ptmshepherd.peakpicking_promRatio=0.3
+ptmshepherd.peakpicking_width=0.002
+ptmshepherd.precursor_mass_units=0
+ptmshepherd.precursor_tol=0.01
+ptmshepherd.print_decoys=false
+ptmshepherd.prob_dhexOx=2,0.5,0.1
+ptmshepherd.prob_dhexY=2,0.5
+ptmshepherd.prob_neuacOx=2,0.05,0.2
+ptmshepherd.prob_neugcOx=2,0.05,0.2
+ptmshepherd.prob_phosphoOx=2,0.05,0.2
+ptmshepherd.prob_regY=5,0.5
+ptmshepherd.prob_sulfoOx=2,0.05,0.2
+ptmshepherd.remainder_masses=
+ptmshepherd.remove_glycan_delta_mass=true
+ptmshepherd.run-shepherd=false
+ptmshepherd.run_diagextract_mode=false
+ptmshepherd.run_diagmine_mode=false
+ptmshepherd.run_glyco_mode=false
+ptmshepherd.spectra_maxfragcharge=2
+ptmshepherd.spectra_ppmtol=20
+ptmshepherd.varmod_masses=
+quantitation.run-label-free-quant=false
+run-psm-validation=true
+run-validation-tab=false
+saintexpress.fragpipe.cmd-opts=
+saintexpress.max-replicates=10
+saintexpress.run-saint-express=false
+saintexpress.virtual-controls=100
+speclibgen.easypqp.extras.max_delta_ppm=15
+speclibgen.easypqp.extras.max_delta_unimod=0.02
+speclibgen.easypqp.extras.rt_lowess_fraction=0
+speclibgen.easypqp.fragment.a=false
+speclibgen.easypqp.fragment.b=true
+speclibgen.easypqp.fragment.c=false
+speclibgen.easypqp.fragment.x=false
+speclibgen.easypqp.fragment.y=true
+speclibgen.easypqp.fragment.z=false
+speclibgen.easypqp.im-cal=Automatic selection of a run as reference IM
+speclibgen.easypqp.neutral_loss=false
+speclibgen.easypqp.rt-cal=noiRT
+speclibgen.easypqp.select-file.text=
+speclibgen.easypqp.select-im-file.text=
+speclibgen.keep-intermediate-files=false
+speclibgen.run-speclibgen=false
+tab-run.delete_calibrated_mzml=false
+tab-run.delete_temp_files=false
+tab-run.sub_mzml_prob_threshold=0.5
+tab-run.write_sub_mzml=false
+tmtintegrator.add_Ref=-1
+tmtintegrator.aggregation_method=0
+tmtintegrator.allow_overlabel=true
+tmtintegrator.allow_unlabeled=true
+tmtintegrator.best_psm=true
+tmtintegrator.channel_num=TMT-6
+tmtintegrator.extraction_tool=IonQuant
+tmtintegrator.glyco_qval=-1
+tmtintegrator.groupby=0
+tmtintegrator.log2transformed=true
+tmtintegrator.max_pep_prob_thres=0
+tmtintegrator.min_ntt=0
+tmtintegrator.min_pep_prob=0.9
+tmtintegrator.min_percent=0.05
+tmtintegrator.min_purity=0.5
+tmtintegrator.min_site_prob=-1
+tmtintegrator.mod_tag=none
+tmtintegrator.ms1_int=true
+tmtintegrator.outlier_removal=true
+tmtintegrator.print_RefInt=false
+tmtintegrator.prot_exclude=none
+tmtintegrator.prot_norm=0
+tmtintegrator.psm_norm=false
+tmtintegrator.quant_level=2
+tmtintegrator.ref_tag=Bridge
+tmtintegrator.run-tmtintegrator=false
+tmtintegrator.tolerance=20
+tmtintegrator.top3_pep=true
+tmtintegrator.unique_gene=0
+tmtintegrator.unique_pep=false
+tmtintegrator.use_glycan_composition=false
+workdir=/home/UNT/bz0053/Documents/MBR/DIANN/E30
+workflow.input.data-type.im-ms=false
+workflow.input.data-type.regular-ms=true
+workflow.misc.save-sdrf=true
+workflow.ram=0
+workflow.threads=15
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CheckCentroid
+java -Xmx53G -cp /home/UNT/bz0053/Documents/fragpipe/lib/fragpipe-21.1.jar:/home/UNT/bz0053/Documents/fragpipe/tools/batmass-io-1.30.0.jar com.dmtavt.fragpipe.util.CheckCentroid /home/UNT/bz0053/Documents/MBR/raw/200ng/E30/20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML 15
+Done in 6.5 s.
+Process 'CheckCentroid' finished, exit code: 0
+DIA-NN [Work dir: /home/UNT/bz0053/Documents/MBR/DIANN/E30]
+/home/UNT/bz0053/Documents/fragpipe/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8 --lib library.tsv --threads 15 --verbose 1 --out diann-output/report.tsv --qvalue 0.01 --matrix-qvalue 0.01 --matrices --no-prot-inf --smart-profiling --no-quant-files --peak-center --no-ifs-removal --report-lib-info --cfg /home/UNT/bz0053/Documents/MBR/DIANN/E30/filelist_diann.txt--
+DIA-NN 1.8.2 beta 8 (Data-Independent Acquisition by Neural Networks)
+Compiled on Dec  1 2022 14:47:06
+Current date and time: Thu Oct  3 23:32:35 2024
+Logical CPU cores: 16
+Thread number set to 15
+Output will be filtered at 0.01 FDR
+Precursor/protein x sample matrices will be filtered at 0.01 precursor & protein-level FDR
+Precursor/protein x samples expression level matrices will be saved along with the main report
+Protein inference will not be performed
+When generating a spectral library, in silico predicted spectra will be retained if deemed more reliable than experimental ones
+.quant files will not be saved to the disk
+Fixed-width center of each elution peak will be used for quantification
+Interference removal from fragment elution curves disabled
+WARNING: unrecognised option [--]
+DIA-NN will optimise the mass accuracy automatically using the first run in the experiment. This is useful primarily for quick initial analyses, when it is not yet known which mass accuracy setting works best for a particular acquisition scheme.
+
+3 files will be processed
+[0:00] Loading spectral library library.tsv
+[0:01] Finding proteotypic peptides (assuming that the list of UniProt ids provided for each peptide is complete)
+[0:01] Spectral library loaded: 10271 protein isoforms, 10271 protein groups and 109082 precursors in 95327 elution groups.
+[0:01] Initialising library
+[0:01] Saving the library to library.tsv.speclib
+
+[0:02] File #1/3
+[0:02] Loading run /home/UNT/bz0053/Documents/MBR/raw/200ng/E30/20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML
+Process 'DIA-NN' finished, exit code: 139
+Process returned non-zero exit code, stopping
+
+~~~~~~~~~~~~~~~~~~~~
+Cancelling 3 remaining tasks

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="pepXML_std.xsl"?>
+<msms_pipeline_analysis date="2024-03-14T20:30:14" xmlns="http://regis-web.systemsbiology.net/pepXML" summary_xml="/home/UNT/fs0199/Documents/FragPipe-21.1/FourBacteria/Guo_052522_G1_DDA.pepXML" xsi:schemaLocation="http://sashimi.sourceforge.net/schema_revision/pepXML/pepXML_v122.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<analysis_summary analysis="Percolator" time="2024-03-14T20:36:12">
+<peptideprophet_summary min_prob="0.00">
+<inputfile name="/home/UNT/fs0199/Documents/FragPipe-21.1/FourBacteria/result/exp_1/Guo_052522_G1_DDA.pepXML"/>
+</peptideprophet_summary>
+</analysis_summary>
+<analysis_summary analysis="database_refresh" time="2024-03-14T20:36:12"/>
+<analysis_summary analysis="interact" time="2024-03-14T20:36:12">
+<interact_summary filename="/home/UNT/fs0199/Documents/FragPipe-21.1/FourBacteria/result/exp_1/interact-Guo_052522_G1_DDA.pep.xml" directory="">
+<inputfile name="/home/UNT/fs0199/Documents/FragPipe-21.1/FourBacteria/result/exp_1/Guo_052522_G1_DDA.pepXML"/>
+</interact_summary>
+</analysis_summary>
+<dataset_derivation generation_no="0"/>
+<msms_run_summary base_name="/home/UNT/fs0199/Documents/FragPipe-21.1/FourBacteria/Guo_052522_G1_DDA_uncalibrated" raw_data_type="mzML" raw_data="mzML">
+<sample_enzyme name="stricttrypsin">
+<specificity cut="KR" no_cut="" sense="C"/>
+</sample_enzyme>
+<search_summary base_name="/home/UNT/fs0199/Documents/FragPipe-21.1/FourBacteria/Guo_052522_G1_DDA" precursor_mass_type="monoisotopic" search_engine="X! Tandem" search_engine_version="MSFragger-4.0" fragment_mass_type="monoisotopic" search_id="1">
+	<search_database local_path="/home/UNT/fs0199/three-species/result_sipros5/mix_HYE_decoy.fasta" type="AA"/>
+<enzymatic_search_constraint enzyme="default" min_number_termini="2" max_num_internal_cleavages="2"/>
+<aminoacid_modification aminoacid="C" massdiff="57.02146" mass="160.03065" variable="N"/>
+<aminoacid_modification aminoacid="M" massdiff="15.9949" mass="147.0354" variable="Y"/>
+<parameter name="# MSFragger.build" value="MSFragger-4.0"/>
+<parameter name="database_name" value="/home/UNT/fs0199/Documents/FragPipe-21.1/FourBacteria/FourBacteriaProtein_Rev.fasta"/>
+<parameter name="decoy_prefix" value="Rev_"/>
+<parameter name="num_threads" value="6"/>
+<parameter name="precursor_mass_lower" value="-0.1"/>
+<parameter name="precursor_mass_upper" value="0.1"/>
+<parameter name="precursor_mass_units" value="0"/>
+<parameter name="precursor_true_tolerance" value="0.1"/>
+<parameter name="data_type" value="0"/>
+<parameter name="precursor_true_units" value="0"/>
+<parameter name="fragment_mass_tolerance" value="0.01"/>
+<parameter name="fragment_mass_units" value="0"/>
+<parameter name="calibrate_mass" value="0"/>
+<parameter name="use_all_mods_in_first_search" value="0"/>
+<parameter name="write_calibrated_mzml" value="1"/>
+<parameter name="write_uncalibrated_mgf" value="0"/>
+<parameter name="write_mzbin_all" value="0"/>
+<parameter name="isotope_error" value="0/1/2"/>
+<parameter name="mass_offsets" value="0.0"/>
+<parameter name="labile_search_mode" value="OFF"/>
+<parameter name="restrict_deltamass_to" value="all"/>
+<parameter name="precursor_mass_mode" value="SELECTED"/>
+<parameter name="intensity_transform" value="0"/>
+<parameter name="activation_types" value="all"/>
+<parameter name="group_variable" value="0"/>
+<parameter name="require_precursor" value="1"/>
+<parameter name="reuse_dia_fragment_peaks" value="0"/>
+<parameter name="remove_precursor_peak" value="1"/>
+<parameter name="remove_precursor_range" value="-1.500000,1.500000"/>
+<parameter name="localize_delta_mass" value="0"/>
+<parameter name="delta_mass_exclude_ranges" value="(-1.5,3.5)"/>
+<parameter name="fragment_ion_series" value="b,y"/>
+<parameter name="ion_series_definitions" value=""/>
+<parameter name="search_enzyme_name" value="stricttrypsin"/>
+<parameter name="min_sequence_matches" value="2"/>
+<parameter name="check_spectral_files" value="1"/>
+<parameter name="search_enzyme_cut_1" value="KR"/>
+<parameter name="search_enzyme_nocut_1" value=""/>
+<parameter name="num_enzyme_termini" value="2"/>
+<parameter name="allowed_missed_cleavage_1" value="2"/>
+<parameter name="search_enzyme_sense_1" value="C"/>
+<parameter name="clip_nTerm_M" value="1"/>
+<parameter name="allow_multiple_variable_mods_on_residue" value="0"/>
+<parameter name="max_variable_mods_per_peptide" value="1"/>
+<parameter name="max_variable_mods_combinations" value="5000"/>
+<parameter name="mass_diff_to_variable_mod" value="0"/>
+<parameter name="output_format" value="pepxml_pin"/>
+<parameter name="output_report_topN" value="1"/>
+<parameter name="output_max_expect" value="50.0"/>
+<parameter name="report_alternative_proteins" value="1"/>
+<parameter name="override_charge" value="0"/>
+<parameter name="precursor_charge" value="1 4"/>
+<parameter name="digest_min_length" value="7"/>
+<parameter name="digest_max_length" value="60"/>
+<parameter name="digest_mass_range" value="700.0 7000.0"/>
+<parameter name="max_fragment_charge" value="1"/>
+<parameter name="deisotope" value="1"/>
+<parameter name="deneutralloss" value="1"/>
+<parameter name="track_zero_topN" value="0"/>
+<parameter name="zero_bin_accept_expect" value="0.0"/>
+<parameter name="zero_bin_mult_expect" value="1.0"/>
+<parameter name="minimum_peaks" value="15"/>
+<parameter name="use_topN_peaks" value="150"/>
+<parameter name="min_fragments_modelling" value="2"/>
+<parameter name="min_matched_fragments" value="4"/>
+<parameter name="minimum_ratio" value="0.01"/>
+<parameter name="clear_mz_range" value="0.0 0.0"/>
+<parameter name="excluded_scan_list_file" value=""/>
+<parameter name="variable_mod_01" value="15.9949 M 3"/>
+<parameter name="add_C_cysteine" value="57.02146"/>
+<parameter name="add_Cterm_peptide" value="0.0"/>
+<parameter name="add_Cterm_protein" value="0.0"/>
+<parameter name="add_Nterm_peptide" value="0.0"/>
+<parameter name="add_Nterm_protein" value="0.0"/>
+</search_summary>

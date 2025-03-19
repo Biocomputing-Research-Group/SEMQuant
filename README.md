@@ -12,10 +12,6 @@ This repository contains tools for SEMQuant developed by Biocomputing-Research-G
 ## SEMQuant-DDA
 SEMQuant-DDA 
 
-### Citation
-
-under review
-
 ### Install environment
 
 #### Raxport relies on .net. Some scripts rely on python2, python3, and R.
@@ -30,13 +26,14 @@ Raxport relies on .net. Some other scripts rely on python2, python3, and R.
 ### Make folder for the workflow
 
 ```bash
-mkdir raw samples result
+# generate the following folder under your work_dir 
+mkdir raw samples result 
 
 ### Download raw file
 
 ``` bash
 cd raw 
-# Download raw file with 2fmol yeast-ups1
+# Download raw file with 2fmol yeast-ups1 in your work_dir
 wget ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/01/PXD002099/*_2fmol*.raw
 ```
 The raw folder should contain 3 samples.
@@ -107,10 +104,73 @@ for folder in /home/UNT/fs0199/three-species/samples_E10/*_01/; do python /home/
 
 ```bash
 conda activate mono
+
 java -Xmx21G -Dlibs.bruker.dir=/home/UNT/bz0053/Documents/fragpipe/tools/MSFragger-4.0/ext/bruker -Dlibs.thermo.dir=/home/UNT/bz0053/Documents/fragpipe/tools/MSFragger-4.0/ext/thermo -cp /home/UNT/bz0053/Documents/fragpipe/tools/jfreechart-1.5.3.jar:/home/UNT/bz0053/Documents/fragpipe/tools/batmass-io-1.30.0.jar:/home/UNT/bz0053/Documents/fragpipe/tools/IonQuant-1.10.12.jar ionquant.IonQuant --threads 23 --perform-ms1quant 1 --perform-isoquant 0 --isotol 20.0 --isolevel 2 --isotype tmt10 --ionmobility 0 --site-reports 1 --minexps 1 --mbr 1 --maxlfq 1 --requantify 1 --mztol 10 --imtol 0.05 --rttol 0.4 --mbrmincorr 0 --mbrrttol 1 --mbrimtol 0.05 --mbrtoprun 40 --ionfdr 0.01 --proteinfdr 0.01 --peptidefdr 0.01 --normalization 1 --minisotopes 2 --minscans 3 --writeindex 0 --tp 0 --minfreq 0 --minions 2 --locprob 0.75 --uniqueness 0 --multidir . --filelist /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/filelist_ionquant.txt --modlist /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/modmasses_ionquant.txt
 
 ```
+## SEMQuant-Astral
+SEMQuant-Astral
 
+### Convert raw to FT2 use Raxport
+
+```bash
+conda activate mono
+# -j is the threads that you plan to use
+# -f set the spectra output format to indexed mzML
+# -L select MS level to be MS2
+mono ThermoRawFileParser.exe -d=./raw -o=./raw -f=2 -L=2 
+```
+
+### Running The Database-searching
+
+There are two two to run Sipros_OpemMP for database searching: one for running on a single MS2 file via `-f` and another another processing multiple MS2 files via `-w workingdirectory`.
+
+Need in-house sipros 5, provided upon request for now
+
+### Use Rscript to generate PSM features for Percolator required input
+
+### Percolator
+```bash
+Percolator [Work dir: /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/2]
+/home/UNT/bz0053/Documents/fragpipe/tools/percolator_3_6_4/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 23 --results-psms 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02_percolator_target_psms.tsv --decoy-results-psms 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02.pin
+
+```
+
+### convert percolator output for protein inference input
+```bash
+python Percolator2PeptideProphet.py ~/three-species/result_V2/SE_percolator_DIANN/E20/01/20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01.target.Spe2Pep.txt ~/three-species/result_V2/SE_percolator_DIANN/E20/01/20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01.pin ~/three-species/result_V2/SE_percolator_DIANN/E20/01/ 20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01
+```
+
+### Protein inference
+```bash
+ProteinProphet [Work dir: /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45]
+/home/UNT/bz0053/Documents/fragpipe/tools/philosopher_v5.1.0_linux_amd64/philosopher proteinprophet --maxppmdiff 2000000 --output combined /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/filelist_proteinprophet.txt
+```
+### FDR control
+```bash
+#Process 'ProteinProphet' finished, exit code: 0
+PhilosopherDbAnnotate [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe database --annotate F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas --prefix rev_
+Process 'PhilosopherDbAnnotate' finished, exit code: 0
+
+#PhilosopherFilter [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe filter --picked --prot 0.01 --minPepLen 8 --tag rev_ --pepxml F:\Astral\DIANN\E30 --protxml F:\Astral\DIANN\E30\combined.prot.xml --razor
+
+```
+
+### generate spec lib
+```bash
+SpecLibGen [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\AppData\Local\Programs\Python\Python39\python -u C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\speclib\gen_con_spec_lib.py F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas F:\Astral\DIANN\E30 unused F:\Astral\DIANN\E30 True unused use_easypqp noiRT;noIM 16 "--unimod C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types [\'b\',\'y\',]" "--rt_lowess_fraction 0.0" delete_intermediate_files F:\Astral\DIANN\E30\filelist_speclibgen.txt
+
+```
+
+### DIANN for quantification
+```bash
+DIA-NN [Work dir: /home/UNT/bz0053/Documents/MBR/DIANN/E30]
+/home/UNT/bz0053/Documents/fragpipe/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8 --lib library.tsv --threads 15 --verbose 1 --out diann-output/report.tsv --qvalue 0.01 --matrix-qvalue 0.01 --matrices --no-prot-inf --smart-profiling --no-quant-files --peak-center --no-ifs-removal --report-lib-info --cfg /home/UNT/bz0053/Documents/MBR/DIANN/E30/filelist_diann.txt--
+DIA-NN 1.8.2 beta 8 (Data-Independent Acquisition by Neural Networks)
+```
 
 ### Citation
 

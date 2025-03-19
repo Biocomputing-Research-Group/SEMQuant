@@ -1,0 +1,3 @@
+/home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/1/interact-20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_01.pep.xml
+/home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/2/interact-20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02.pep.xml
+/home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/3/interact-20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_03.pep.xml

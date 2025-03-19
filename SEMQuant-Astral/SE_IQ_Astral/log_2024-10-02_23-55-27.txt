@@ -1,0 +1,1771 @@
+System OS: Windows 11, Architecture: AMD64
+Java Info: 19.0.2, Java HotSpot(TM) 64-Bit Server VM, Oracle Corporation
+.NET Core Info: 6.0.20
+
+
+Version info:
+FragPipe version 21.0
+MSFragger version 4.1
+IonQuant version 1.10.27
+Philosopher version 5.1.0
+
+
+LCMS files:
+  Experiment/Group: 
+  (if "spectral library generation" is enabled, all files will be analyzed together)
+  - F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw	DIA
+  - F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.raw	DIA
+  - F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.raw	DIA
+
+
+44 commands to execute:
+CheckCentroid
+java -Xmx50G -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\batmass-io-1.30.0.jar com.dmtavt.fragpipe.util.CheckCentroid F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw 16
+WorkspaceCleanInit [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe workspace --clean --nocheck
+WorkspaceCleanInit [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe workspace --init --nocheck --temp C:\Users\Cecel\AppData\Local\Temp\661e2eb5-5054-49a6-821f-571449da5647
+MSFragger [Work dir: F:\Astral\DIANN\E30]
+java -jar -Dfile.encoding=UTF-8 -Xmx50G C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\MSFragger-4.1\MSFragger-4.1.jar F:\Astral\DIANN\E30\fragger_dia.params F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.raw F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.raw
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pepXML
+MSFragger move pin
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pepXML
+MSFragger move pin
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pepXML
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pepXML
+MSFragger move pin
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin
+Percolator [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin
+Percolator [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin
+Percolator [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin
+Percolator: Convert to pepxml [Work dir: F:\Astral\DIANN\E30]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib/* com.dmtavt.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_target_psms.tsv 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_decoy_psms.tsv interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03 DIA 0.7 F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_uncalibrated.mzML
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_target_psms.tsv
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_decoy_psms.tsv
+Percolator: Convert to pepxml [Work dir: F:\Astral\DIANN\E30]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib/* com.dmtavt.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_target_psms.tsv 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_decoy_psms.tsv interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01 DIA 0.7 F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_target_psms.tsv
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_decoy_psms.tsv
+Percolator: Convert to pepxml [Work dir: F:\Astral\DIANN\E30]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib/* com.dmtavt.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_target_psms.tsv 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_decoy_psms.tsv interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02 DIA 0.7 F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_uncalibrated.mzML
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_target_psms.tsv
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_decoy_psms.tsv
+ProteinProphet [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe proteinprophet --maxppmdiff 2000000 --minprob 0.5 --output combined F:\Astral\DIANN\E30\filelist_proteinprophet.txt
+PhilosopherDbAnnotate [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe database --annotate F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas --prefix rev_
+PhilosopherFilter [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe filter --picked --prot 0.01 --minPepLen 8 --tag rev_ --pepxml F:\Astral\DIANN\E30 --protxml F:\Astral\DIANN\E30\combined.prot.xml --razor
+PhilosopherReport [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe report
+SpecLibGen [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\AppData\Local\Programs\Python\Python39\python -u C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\speclib\gen_con_spec_lib.py F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas F:\Astral\DIANN\E30 unused F:\Astral\DIANN\E30 True unused use_easypqp noiRT;noIM 16 "--unimod C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types [\'b\',\'y\',]" "--rt_lowess_fraction 0.0" delete_intermediate_files F:\Astral\DIANN\E30\filelist_speclibgen.txt
+DIA-NN [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\diann\1.8.2_beta_8\win\DiaNN.exe --lib library.tsv --threads 16 --verbose 1 --out diann-output\report.tsv --qvalue 0.01 --matrix-qvalue 0.01 --matrices --no-prot-inf --smart-profiling --no-quant-files --peak-center --no-ifs-removal --report-lib-info --cfg F:\Astral\DIANN\E30\filelist_diann.txt
+DIA-NN [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\diann\1.8.2_beta_8\win\dia-nn-plotter.exe diann-output\report.stats.tsv diann-output\report.tsv diann-output\report.pdf
+DIA-NN: Propagate localization [Work dir: F:\Astral\DIANN\E30\diann-output]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\batmass-io-1.30.0.jar;C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.dmtavt.fragpipe.tools.diann.Localization F:\Astral\DIANN\E30
+DIA-NN: Convert DIA-NN output to MSstats.csv [Work dir: F:\Astral\DIANN\E30\diann-output]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\commons-io-2.15.1.jar;C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.dmtavt.fragpipe.tools.diann.DiannToMsstats report.tsv msstats.csv 0.01 1 0.01 0.01 F:\Astral\DIANN\E30\fragpipe-files.fp-manifest
+WorkspaceClean [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe workspace --clean --nocheck
+~~~~~~~~~~~~~~~~~~~~~~
+
+Execution order:
+
+    Cmd: [START], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [CheckCentroid], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [WorkspaceCleanInit], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [MSFragger], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [Percolator], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [ProteinProphet], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [PhilosopherDbAnnotate], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [PhilosopherFilter], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [PhilosopherReport], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [SpecLibGen], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [DIA-NN], Work dir: [F:\Astral\DIANN\E30]
+    Cmd: [WorkspaceClean], Work dir: [F:\Astral\DIANN\E30]
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~Sample of F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas~~~~~~~
+>rev_sp|A0A023PXA5|YA19A_YEAST Putative uncharacterized protein YAL019W-A OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=YAL019W-A PE=5 SV=1
+>rev_sp|Q53F19|NCBP3_HUMAN Nuclear cap-binding protein subunit 3 OS=Homo sapiens OX=9606 GN=NCBP3 PE=1 SV=2
+>rev_tr|A0A0G2JLT7|A0A0G2JLT7_HUMAN Leukocyte immunoglobulin like receptor B3 OS=Homo sapiens OX=9606 GN=LILRB3 PE=1 SV=1
+>rev_tr|A0A344AK65|A0A344AK65_HUMAN ATP synthase subunit a OS=Homo sapiens OX=9606 GN=ATP6 PE=3 SV=1
+>rev_tr|A0A5Q0TWI6|A0A5Q0TWI6_HUMAN MHC class II antigen (Fragment) OS=Homo sapiens OX=9606 GN=HLA-DRB5 PE=4 SV=1
+>rev_tr|A0A9L9PXQ2|A0A9L9PXQ2_HUMAN Rho GTPase activating protein 23 OS=Homo sapiens OX=9606 GN=ARHGAP23 PE=1 SV=1
+>rev_tr|B9TX70|B9TX70_HUMAN Mediator complex subunit MED24 variant MED24_i10 (Fragment) OS=Homo sapiens OX=9606 GN=MED24 PE=2 SV=1
+>rev_tr|F4MHP9|F4MHP9_HUMAN [histone H3]-trimethyl-L-lysine(27) demethylase OS=Homo sapiens OX=9606 GN=UTY PE=2 SV=1
+>rev_tr|I3L176|I3L176_HUMAN SMG6 nonsense mediated mRNA decay factor (Fragment) OS=Homo sapiens OX=9606 GN=SMG6 PE=1 SV=1
+>rev_tr|Q5JS19|Q5JS19_HUMAN GTPase activating Rap/RanGAP domain like 3 (Fragment) OS=Homo sapiens OX=9606 GN=GARNL3 PE=1 SV=8
+>rev_tr|X6RLX0|X6RLX0_HUMAN ELKS/RAB6-interacting/CAST family member 1 OS=Homo sapiens OX=9606 GN=ERC1 PE=1 SV=1
+>sp|Q53EQ6|TIGD5_HUMAN Tigger transposable element-derived protein 5 OS=Homo sapiens OX=9606 GN=TIGD5 PE=1 SV=3
+>tr|A0A0G2JLR5|A0A0G2JLR5_HUMAN Ras association domain family member 7 OS=Homo sapiens OX=9606 GN=RASSF7 PE=1 SV=1
+>tr|A0A344AK39|A0A344AK39_HUMAN ATP synthase subunit a OS=Homo sapiens OX=9606 GN=ATP6 PE=3 SV=1
+>tr|A0A5Q0QF63|A0A5Q0QF63_HUMAN MHC class I antigen (Fragment) OS=Homo sapiens OX=9606 GN=HLA-C PE=3 SV=1
+>tr|A0A9L9PXP3|A0A9L9PXP3_HUMAN Uncharacterized protein OS=Homo sapiens OX=9606 PE=4 SV=1
+>tr|B9TX65|B9TX65_HUMAN Mediator of RNA polymerase II transcription subunit 24 (Fragment) OS=Homo sapiens OX=9606 GN=MED24 PE=2 SV=1
+>tr|F4MHP3|F4MHP3_HUMAN [histone H3]-trimethyl-L-lysine(27) demethylase OS=Homo sapiens OX=9606 GN=UTY PE=2 SV=2
+>tr|I3L167|I3L167_HUMAN Coronin OS=Homo sapiens OX=9606 GN=CORO7-PAM16 PE=3 SV=1
+>tr|Q5JRU2|Q5JRU2_HUMAN Caspase 9 (Fragment) OS=Homo sapiens OX=9606 GN=CASP9 PE=1 SV=1
+>tr|X6RLP6|X6RLP6_HUMAN RNA-binding region-containing protein 3 (Fragment) OS=Homo sapiens OX=9606 GN=RNPC3 PE=1 SV=1
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~ fragpipe.config ~~~~~~~~~
+# FragPipe v21.0ui state cache
+
+
+# Please edit the following path to point to the correct location.
+# In Windows, please replace single '\' with '\\'
+database.db-path=F\:\\Astral\\2024-09-22-decoys-mix_HYE.fasta.fas
+
+crystalc.run-crystalc=false
+database.decoy-tag=rev_
+diann.fragpipe.cmd-opts=
+diann.generate-msstats=true
+diann.heavy=
+diann.library=
+diann.light=
+diann.medium=
+diann.q-value=0.01
+diann.quantification-strategy=3
+diann.quantification-strategy-2=QuantUMS (high accuracy)
+diann.run-dia-nn=true
+diann.run-dia-plex=false
+diann.run-specific-protein-q-value=false
+diann.unrelated-runs=false
+diann.use-predicted-spectra=false
+diatracer.corr-threshold=0.3
+diatracer.delta-apex-im=0.01
+diatracer.delta-apex-rt=3
+diatracer.mass-defect-filter=true
+diatracer.mass-defect-offset=0.1
+diatracer.rf-max=500
+diatracer.run-diatracer=false
+diatracer.write-intermediate-files=false
+diaumpire.AdjustFragIntensity=true
+diaumpire.BoostComplementaryIon=false
+diaumpire.CorrThreshold=0
+diaumpire.DeltaApex=0.2
+diaumpire.ExportPrecursorPeak=false
+diaumpire.Q1=true
+diaumpire.Q2=true
+diaumpire.Q3=true
+diaumpire.RFmax=500
+diaumpire.RPmax=25
+diaumpire.RTOverlap=0.3
+diaumpire.SE.EstimateBG=false
+diaumpire.SE.IsoPattern=0.3
+diaumpire.SE.MS1PPM=10
+diaumpire.SE.MS2PPM=20
+diaumpire.SE.MS2SN=1.1
+diaumpire.SE.MassDefectFilter=true
+diaumpire.SE.MassDefectOffset=0.1
+diaumpire.SE.NoMissedScan=1
+diaumpire.SE.SN=1.1
+diaumpire.run-diaumpire=false
+fpop.fpop-tmt=false
+fpop.label_control=
+fpop.label_fpop=
+fpop.region_size=1
+fpop.run-fpop=false
+fpop.subtract-control=false
+fragpipe-config.bin-diann=C\:\\Users\\Cecel\\Documents\\FragPipe-21.0\\fragpipe\\tools\\diann\\1.8.2_beta_8\\win\\DiaNN.exe
+fragpipe-config.bin-ionquant=C\:\\Users\\Cecel\\Documents\\FragPipe-21.0\\fragpipe\\tools\\IonQuant-1.10.27.jar
+fragpipe-config.bin-msfragger=C\:\\Users\\Cecel\\Documents\\FragPipe-21.0\\fragpipe\\tools\\MSFragger-4.1\\MSFragger-4.1.jar
+fragpipe-config.bin-philosopher=C\:\\Users\\Cecel\\Documents\\FragPipe-21.0\\fragpipe\\tools\\philosopher_v5.1.0_windows_amd64\\philosopher.exe
+fragpipe-config.bin-python=C\:\\Users\\Cecel\\AppData\\Local\\Programs\\Python\\Python39\\python
+fragpipe-config.tools-folder=C\:\\Users\\Cecel\\Documents\\FragPipe-22.0\\fragpipe\\lib\\..\\tools
+freequant.mz-tol=10
+freequant.rt-tol=0.4
+freequant.run-freequant=false
+ionquant.excludemods=
+ionquant.heavy=
+ionquant.imtol=0.05
+ionquant.ionfdr=0.01
+ionquant.light=
+ionquant.locprob=0.75
+ionquant.maxlfq=1
+ionquant.mbr=0
+ionquant.mbrimtol=0.05
+ionquant.mbrmincorr=0
+ionquant.mbrrttol=1
+ionquant.mbrtoprun=10
+ionquant.medium=
+ionquant.minfreq=0
+ionquant.minions=1
+ionquant.minisotopes=1
+ionquant.minscans=3
+ionquant.mztol=10
+ionquant.normalization=1
+ionquant.peptidefdr=1
+ionquant.proteinfdr=1
+ionquant.requantify=1
+ionquant.rttol=0.4
+ionquant.run-ionquant=true
+ionquant.tp=0
+ionquant.uniqueness=0
+ionquant.use-labeling=false
+ionquant.use-lfq=true
+ionquant.writeindex=0
+msbooster.find-best-rt-model=false
+msbooster.find-best-spectra-model=false
+msbooster.koina-url=
+msbooster.predict-rt=false
+msbooster.predict-spectra=false
+msbooster.rt-model=DIA-NN
+msbooster.run-msbooster=false
+msbooster.spectra-model=DIA-NN
+msbooster.use-correlated-features=false
+msfragger.Y_type_masses=
+msfragger.activation_types=all
+msfragger.add_topN_complementary=0
+msfragger.allowed_missed_cleavage_1=1
+msfragger.allowed_missed_cleavage_2=1
+msfragger.analyzer_types=all
+msfragger.calibrate_mass=0
+msfragger.check_spectral_files=true
+msfragger.clip_nTerm_M=true
+msfragger.deisotope=1
+msfragger.delta_mass_exclude_ranges=(-1.5,3.5)
+msfragger.deneutralloss=1
+msfragger.diagnostic_fragments=
+msfragger.diagnostic_intensity_filter=0
+msfragger.digest_max_length=50
+msfragger.digest_min_length=7
+msfragger.fragment_ion_series=b,y
+msfragger.fragment_mass_tolerance=20
+msfragger.fragment_mass_units=1
+msfragger.group_variable=0
+msfragger.intensity_transform=0
+msfragger.ion_series_definitions=
+msfragger.isotope_error=0/1/2
+msfragger.labile_search_mode=off
+msfragger.localize_delta_mass=false
+msfragger.mass_diff_to_variable_mod=0
+msfragger.mass_offsets=0
+msfragger.mass_offsets_detailed=
+msfragger.max_fragment_charge=2
+msfragger.max_variable_mods_combinations=5000
+msfragger.max_variable_mods_per_peptide=3
+msfragger.min_fragments_modelling=2
+msfragger.min_matched_fragments=4
+msfragger.min_sequence_matches=2
+msfragger.minimum_peaks=15
+msfragger.minimum_ratio=0.00
+msfragger.misc.fragger.clear-mz-hi=0
+msfragger.misc.fragger.clear-mz-lo=0
+msfragger.misc.fragger.digest-mass-hi=5000
+msfragger.misc.fragger.digest-mass-lo=500
+msfragger.misc.fragger.enzyme-dropdown-1=stricttrypsin
+msfragger.misc.fragger.enzyme-dropdown-2=null
+msfragger.misc.fragger.precursor-charge-hi=3
+msfragger.misc.fragger.precursor-charge-lo=1
+msfragger.misc.fragger.remove-precursor-range-hi=1.5
+msfragger.misc.fragger.remove-precursor-range-lo=-1.5
+msfragger.misc.slice-db=1
+msfragger.num_enzyme_termini=2
+msfragger.output_format=pepXML_pin
+msfragger.output_max_expect=50
+msfragger.output_report_topN=1
+msfragger.output_report_topN_dda_plus=5
+msfragger.output_report_topN_dia1=5
+msfragger.output_report_topN_dia2=3
+msfragger.override_charge=false
+msfragger.precursor_mass_lower=-20
+msfragger.precursor_mass_mode=selected
+msfragger.precursor_mass_units=1
+msfragger.precursor_mass_upper=20
+msfragger.precursor_true_tolerance=20
+msfragger.precursor_true_units=1
+msfragger.remainder_fragment_masses=
+msfragger.remove_precursor_peak=1
+msfragger.report_alternative_proteins=true
+msfragger.require_precursor=true
+msfragger.restrict_deltamass_to=all
+msfragger.reuse_dia_fragment_peaks=false
+msfragger.run-msfragger=true
+msfragger.search_enzyme_cut_1=KR
+msfragger.search_enzyme_cut_2=
+msfragger.search_enzyme_name_1=stricttrypsin
+msfragger.search_enzyme_name_2=null
+msfragger.search_enzyme_nocut_1=
+msfragger.search_enzyme_nocut_2=
+msfragger.search_enzyme_sense_1=C
+msfragger.search_enzyme_sense_2=C
+msfragger.table.fix-mods=0.0,C-Term Peptide,false,-1; 0.0,N-Term Peptide,false,-1; 0.0,C-Term Protein,false,-1; 0.0,N-Term Protein,false,-1; 0.0,G (glycine),false,-1; 0.0,A (alanine),false,-1; 0.0,S (serine),false,-1; 0.0,P (proline),false,-1; 0.0,V (valine),false,-1; 0.0,T (threonine),false,-1; 57.02146,C (cysteine),true,-1; 0.0,L (leucine),false,-1; 0.0,I (isoleucine),false,-1; 0.0,N (asparagine),false,-1; 0.0,D (aspartic acid),false,-1; 0.0,Q (glutamine),false,-1; 0.0,K (lysine),false,-1; 0.0,E (glutamic acid),false,-1; 0.0,M (methionine),false,-1; 0.0,H (histidine),false,-1; 0.0,F (phenylalanine),false,-1; 0.0,R (arginine),false,-1; 0.0,Y (tyrosine),false,-1; 0.0,W (tryptophan),false,-1; 0.0,B ,false,-1; 0.0,J,false,-1; 0.0,O,false,-1; 0.0,U,false,-1; 0.0,X,false,-1; 0.0,Z,false,-1
+msfragger.table.var-mods=15.9949,M,true,1; 42.0106,[^,false,1; 79.96633,STY,false,3; -17.0265,nQnC,false,1; -18.0106,nE,false,1; 0.0,site_06,false,1; 0.0,site_07,false,1; 0.0,site_08,false,1; 0.0,site_09,false,1; 0.0,site_10,false,1; 0.0,site_11,false,1; 0.0,site_12,false,1; 0.0,site_13,false,1; 0.0,site_14,false,1; 0.0,site_15,false,1; 0.0,site_16,false,1
+msfragger.track_zero_topN=0
+msfragger.use_all_mods_in_first_search=false
+msfragger.use_detailed_offsets=false
+msfragger.use_topN_peaks=500
+msfragger.write_calibrated_mzml=false
+msfragger.write_uncalibrated_mgf=false
+msfragger.zero_bin_accept_expect=0
+msfragger.zero_bin_mult_expect=1
+opair.activation1=HCD
+opair.activation2=ETD
+opair.filterOxonium=true
+opair.glyco_db=
+opair.max_glycans=4
+opair.max_isotope_error=2
+opair.min_isotope_error=0
+opair.ms1_tol=20
+opair.ms2_tol=20
+opair.oxonium_filtering_file=
+opair.oxonium_minimum_intensity=0.05
+opair.reverse_scan_order=false
+opair.run-opair=false
+opair.single_scan_type=false
+peptide-prophet.cmd-opts=--decoyprobs --ppm --accmass --nonparam --expectscore
+peptide-prophet.combine-pepxml=false
+peptide-prophet.run-peptide-prophet=false
+percolator.cmd-opts=--no-terminate --post-processing-tdc --subset-max-train 500000
+percolator.keep-tsv-files=false
+percolator.min-prob=0.7
+percolator.run-percolator=true
+phi-report.dont-use-prot-proph-file=false
+phi-report.filter=--picked --prot 0.01 --minPepLen 8
+phi-report.pep-level-summary=false
+phi-report.philosoher-msstats=false
+phi-report.print-decoys=false
+phi-report.prot-level-summary=true
+phi-report.remove-contaminants=false
+phi-report.run-report=true
+protein-prophet.cmd-opts=--maxppmdiff 2000000 --minprob 0.5
+protein-prophet.run-protein-prophet=true
+ptmprophet.cmdline=
+ptmprophet.run-ptmprophet=false
+ptmshepherd.adv_params=false
+ptmshepherd.annotation-common=false
+ptmshepherd.annotation-custom=false
+ptmshepherd.annotation-glyco=false
+ptmshepherd.annotation-unimod=true
+ptmshepherd.annotation_file=
+ptmshepherd.annotation_tol=0.01
+ptmshepherd.cap_y_ions=
+ptmshepherd.decoy_type=1
+ptmshepherd.diag_ions=
+ptmshepherd.diagextract_mode=false
+ptmshepherd.diagmine_diagMinFoldChange=3.0
+ptmshepherd.diagmine_diagMinSpecDiff=25
+ptmshepherd.diagmine_fragMinFoldChange=3.0
+ptmshepherd.diagmine_fragMinPropensity=12.5
+ptmshepherd.diagmine_fragMinSpecDiff=25
+ptmshepherd.diagmine_minIonsPerSpec=2
+ptmshepherd.diagmine_minPeps=25
+ptmshepherd.diagmine_mode=false
+ptmshepherd.diagmine_pepMinFoldChange=3.0
+ptmshepherd.diagmine_pepMinSpecDiff=25
+ptmshepherd.glyco_adducts=
+ptmshepherd.glyco_fdr=1.00
+ptmshepherd.glyco_isotope_max=3
+ptmshepherd.glyco_isotope_min=-1
+ptmshepherd.glyco_mode=false
+ptmshepherd.glyco_ppm_tol=50
+ptmshepherd.glycodatabase=
+ptmshepherd.histo_smoothbins=2
+ptmshepherd.iontype_a=false
+ptmshepherd.iontype_b=true
+ptmshepherd.iontype_c=true
+ptmshepherd.iontype_x=false
+ptmshepherd.iontype_y=true
+ptmshepherd.iontype_z=true
+ptmshepherd.iterloc_maxEpoch=100
+ptmshepherd.iterloc_mode=false
+ptmshepherd.localization_allowed_res=
+ptmshepherd.localization_background=4
+ptmshepherd.max_adducts=0
+ptmshepherd.n_glyco=true
+ptmshepherd.normalization-psms=true
+ptmshepherd.normalization-scans=false
+ptmshepherd.output_extended=false
+ptmshepherd.peakpicking_mass_units=0
+ptmshepherd.peakpicking_minPsm=10
+ptmshepherd.peakpicking_promRatio=0.3
+ptmshepherd.peakpicking_width=0.002
+ptmshepherd.precursor_mass_units=0
+ptmshepherd.precursor_tol=0.01
+ptmshepherd.print_decoys=false
+ptmshepherd.print_full_glyco_params=false
+ptmshepherd.prob_dhexOx=2,0.5,0.1
+ptmshepherd.prob_dhexY=2,0.5
+ptmshepherd.prob_mass=0.5
+ptmshepherd.prob_neuacOx=2,0.05,0.2
+ptmshepherd.prob_neugcOx=2,0.05,0.2
+ptmshepherd.prob_phosphoOx=2,0.05,0.2
+ptmshepherd.prob_regY=5,0.5
+ptmshepherd.prob_sulfoOx=2,0.05,0.2
+ptmshepherd.remainder_masses=
+ptmshepherd.remove_glycan_delta_mass=true
+ptmshepherd.run-shepherd=false
+ptmshepherd.run_diagextract_mode=false
+ptmshepherd.run_diagmine_mode=false
+ptmshepherd.run_glyco_mode=false
+ptmshepherd.spectra_maxfragcharge=2
+ptmshepherd.spectra_ppmtol=20
+ptmshepherd.varmod_masses=
+quantitation.run-label-free-quant=false
+run-psm-validation=true
+run-validation-tab=true
+saintexpress.fragpipe.cmd-opts=
+saintexpress.max-replicates=10
+saintexpress.run-saint-express=false
+saintexpress.virtual-controls=100
+skyline.run-skyline=false
+skyline.skyline=true
+skyline.skyline-custom=false
+skyline.skyline-custom-path=
+skyline.skyline-daily=false
+skyline.skyline-mode=0
+skyline.skyline-mods-mode=Default
+speclibgen.convert-pepxml=true
+speclibgen.convert-psm=false
+speclibgen.easypqp.extras.max_delta_ppm=15
+speclibgen.easypqp.extras.max_delta_unimod=0.02
+speclibgen.easypqp.extras.max_glycan_qval=1
+speclibgen.easypqp.extras.rt_lowess_fraction=0
+speclibgen.easypqp.fragment.a=false
+speclibgen.easypqp.fragment.b=true
+speclibgen.easypqp.fragment.c=false
+speclibgen.easypqp.fragment.x=false
+speclibgen.easypqp.fragment.y=true
+speclibgen.easypqp.fragment.z=false
+speclibgen.easypqp.ignore_unannotated=false
+speclibgen.easypqp.im-cal=Automatic selection of a run as reference IM
+speclibgen.easypqp.labile_mode=Regular (not glyco)
+speclibgen.easypqp.neutral_loss=false
+speclibgen.easypqp.rt-cal=noiRT
+speclibgen.easypqp.select-file.text=
+speclibgen.easypqp.select-im-file.text=
+speclibgen.keep-intermediate-files=false
+speclibgen.run-speclibgen=true
+tab-run.delete_calibrated_mzml=false
+tab-run.delete_temp_files=false
+tab-run.sub_mzml_prob_threshold=0.5
+tab-run.write_sub_mzml=false
+tmtintegrator.add_Ref=-1
+tmtintegrator.aggregation_method=0
+tmtintegrator.allow_overlabel=true
+tmtintegrator.allow_unlabeled=true
+tmtintegrator.best_psm=true
+tmtintegrator.channel_num=TMT-6
+tmtintegrator.dont-run-fq-lq=false
+tmtintegrator.extraction_tool=IonQuant
+tmtintegrator.glyco_qval=-1
+tmtintegrator.groupby=0
+tmtintegrator.log2transformed=true
+tmtintegrator.max_pep_prob_thres=0
+tmtintegrator.min_ntt=0
+tmtintegrator.min_pep_prob=0.9
+tmtintegrator.min_percent=0.05
+tmtintegrator.min_purity=0.5
+tmtintegrator.min_site_prob=-1
+tmtintegrator.mod_tag=none
+tmtintegrator.ms1_int=true
+tmtintegrator.outlier_removal=true
+tmtintegrator.philosopher-msstats=false
+tmtintegrator.print_RefInt=false
+tmtintegrator.prot_exclude=none
+tmtintegrator.prot_norm=0
+tmtintegrator.psm_norm=false
+tmtintegrator.quant_level=2
+tmtintegrator.ref_tag=Bridge
+tmtintegrator.run-tmtintegrator=false
+tmtintegrator.tolerance=20
+tmtintegrator.top3_pep=true
+tmtintegrator.unique_gene=0
+tmtintegrator.unique_pep=false
+tmtintegrator.use_glycan_composition=false
+workdir=F\:\\Astral\\DIANN\\E30
+workflow.input.data-type.im-ms=false
+workflow.input.data-type.regular-ms=true
+workflow.misc.save-sdrf=true
+workflow.ram=50
+workflow.threads=16
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CheckCentroid
+java -Xmx50G -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\batmass-io-1.30.0.jar com.dmtavt.fragpipe.util.CheckCentroid F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw 16
+Done in 0.0 s.
+Process 'CheckCentroid' finished, exit code: 0
+WorkspaceCleanInit [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe workspace --clean --nocheck
+INFO[22:15:18] Executing Workspace  v5.1.0                  
+INFO[22:15:18] Removing workspace                           
+INFO[22:15:18] Done                                         
+Process 'WorkspaceCleanInit' finished, exit code: 0
+WorkspaceCleanInit [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe workspace --init --nocheck --temp C:\Users\Cecel\AppData\Local\Temp\661e2eb5-5054-49a6-821f-571449da5647
+INFO[22:15:18] Executing Workspace  v5.1.0                  
+INFO[22:15:18] Creating workspace                           
+INFO[22:15:18] Done                                         
+Process 'WorkspaceCleanInit' finished, exit code: 0
+MSFragger [Work dir: F:\Astral\DIANN\E30]
+java -jar -Dfile.encoding=UTF-8 -Xmx50G C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\MSFragger-4.1\MSFragger-4.1.jar F:\Astral\DIANN\E30\fragger_dia.params F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.raw F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.raw
+MSFragger version MSFragger-4.1
+Batmass-IO version 1.33.4
+timsdata library version timsdata-2-21-0-4
+(c) University of Michigan
+RawFileReader reading tool. Copyright (c) 2016 by Thermo Fisher Scientific, Inc. All rights reserved.
+timdTOF .d reading tool. Copyright (c) 2022 by Bruker Daltonics GmbH & Co. KG. All rights reserved.
+System OS: Windows 11, Architecture: AMD64
+Java Info: 19.0.2, Java HotSpot(TM) 64-Bit Server VM, Oracle Corporation
+JVM started with 50 GB memory
+Checking database...
+Parameter 'analyzer_types' was not supplied. Using default value: all
+Checking spectral files...
+F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw: Scans = 403785; ITMS: false; FTMS: false; Isolation sizes = [2.0]
+F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.raw: Scans = 403754; ITMS: false; FTMS: false; Isolation sizes = [2.0]
+F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.raw: Scans = 403778; ITMS: false; FTMS: false; Isolation sizes = [2.0]
+
+************************************MAIN SEARCH************************************
+Checking database...
+data_type > 0. Will use the isolation window from the spectral file as precursor tolerance.
+Parameter 'analyzer_types' was not supplied. Using default value: all
+Parameters:
+num_threads = 16
+database_name = F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas
+decoy_prefix = rev_
+precursor_mass_lower = isolation window lower
+precursor_mass_upper = isolation window upper
+precursor_mass_units = isolation window
+data_type = 1
+precursor_true_tolerance = 10.0
+precursor_true_units = 1
+fragment_mass_tolerance = 20.0
+fragment_mass_units = 1
+calibrate_mass = 0
+use_all_mods_in_first_search = 0
+write_calibrated_mzml = 0
+write_uncalibrated_mgf = 0
+write_mzbin_all = 0
+isotope_error = 0
+mass_offsets = 0
+labile_search_mode = OFF
+restrict_deltamass_to = all
+precursor_mass_mode = SELECTED
+localize_delta_mass = 0
+delta_mass_exclude_ranges = (-1.5,3.5)
+fragment_ion_series = b,y
+ion_series_definitions = 
+search_enzyme_name = stricttrypsin
+search_enzyme_sense_1 = C
+search_enzyme_cut_1 = KR
+search_enzyme_nocut_1 = 
+allowed_missed_cleavage_1 = 1
+num_enzyme_termini = 2
+clip_nTerm_M = 1
+allow_multiple_variable_mods_on_residue = 0
+max_variable_mods_per_peptide = 3
+max_variable_mods_combinations = 5000
+output_format = pepxml_pin
+output_report_topN = 5
+output_max_expect = 1.7976931348623157E308
+report_alternative_proteins = 1
+override_charge = 1
+precursor_charge_low = 1
+precursor_charge_high = 3
+digest_min_length = 7
+digest_max_length = 50
+digest_mass_range_low = 500.0
+digest_mass_range_high = 5000.0
+max_fragment_charge = 1
+deisotope = 1
+deneutralloss = 1
+track_zero_topN = 0
+zero_bin_accept_expect = 0.0
+zero_bin_mult_expect = 1.0
+minimum_peaks = 15
+use_topN_peaks = 500
+minIonsScoring = 2
+min_matched_fragments = 4
+minimum_ratio = 0.0
+intensity_transform = 1
+activation_types = all
+analyzer_types = all
+group_variable = 0
+require_precursor = 1
+reuse_dia_fragment_peaks = 0
+remove_precursor_peak = 1
+remove_precursor_range = isolation window
+clear_mz_range_low = 0.0
+clear_mz_range_high = 0.0
+excluded_scan_list_file = 
+mass_diff_to_variable_mod = 0
+min_sequence_matches = 2
+check_spectral_files = 1
+variable_mod_01 = 15.9949 M 1
+add_C_cysteine = 57.02146
+add_Cterm_peptide = 0.0
+add_Cterm_protein = 0.0
+add_Nterm_peptide = 0.0
+add_Nterm_protein = 0.0
+Selected fragment index width 0.10 Da.
+277569854 fragments to be searched in 1 slices (4.14 GB total)
+Operating on slice 1 of 1: 
+	Fragment index slice generated in 2.56 s
+	001. 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw 272.0 s | deisotoping 10.1 s
+		[progress: 403785/403785 (100%) - 3064 spectra/s] 131.8s
+		Building spectral index for the raw file 113.0 s
+		Rescoring with peak tracing 568.3 s
+		Picking top PSMs for each precursor 30.0 s
+		Rescoring 34.9 s
+		Writing results 103.5 s
+	002. 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.raw 229.5 s | deisotoping 7.7 s
+		[progress: 403778/403778 (100%) - 2714 spectra/s] 148.8s
+		Building spectral index for the raw file 115.2 s
+		Rescoring with peak tracing 568.4 s
+		Picking top PSMs for each precursor 29.3 s
+		Rescoring 33.2 s
+		Writing results 60.2 s
+	003. 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.raw 223.0 s | deisotoping 7.4 s
+		[progress: 403754/403754 (100%) - 2758 spectra/s] 146.4s
+		Building spectral index for the raw file 111.8 s
+		Rescoring with peak tracing 555.6 s
+		Picking top PSMs for each precursor 28.3 s
+		Rescoring 33.5 s
+		Writing results 54.7 s
+***************************MAIN SEARCH DONE IN 66.451 MIN***************************
+
+*******************************TOTAL TIME 67.126 MIN********************************
+Process 'MSFragger' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pin
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin
+Process 'MSFragger move pin' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pin
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin
+Process 'MSFragger move pin' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pepxml
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pepXML F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pepXML
+Process 'MSFragger move pepxml' finished, exit code: 0
+MSFragger move pin
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar;/C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/lib/commons-io-2.15.1.jar com.github.chhh.utils.FileMove --no-err F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin
+Process 'MSFragger move pin' finished, exit code: 0
+Percolator [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin
+Protein decoy-prefix used is rev_
+All files have been read
+Percolator version 3.06.4, Build Date Dec  4 2023 13:59:29
+Copyright (c) 2006-9 University of Washington. All rights reserved.
+Written by Lukas Käll (lukall@u.washington.edu) in the
+Department of Genome Sciences at the University of Washington.
+Issued command:
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin
+Started Wed Oct  2 23:23:12 2024
+Hyperparameters: selectionFdr=0.01, Cpos=0, Cneg=0, maxNiter=10
+Reading tab-delimited input from datafile 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin
+Features:
+rank precursor_detected abs_ppm abs_rt_diff complementary_ions ion_series weighted_average_abs_fragment_ppm weighted_average_fragment_rt_deviation precursor_rt_deviation isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more isotopes log10_kl hyperscore matched_ion_num length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M 
+Processing line 1000000
+Found 1205047 PSMs
+Concatenated search input detected and --post-processing-tdc flag set. Applying target-decoy competition on Percolator scores.
+Train/test set contains 282239 positives and 217761 negatives, size ratio=1.2961 and pi0=1
+Selecting Cpos by cross-validation.
+Selecting Cneg by cross-validation.
+Split 1:	Selected feature 17 as initial direction. Could separate 19544 training set positives with q<0.01 in that direction.
+Split 2:	Selected feature 17 as initial direction. Could separate 19417 training set positives with q<0.01 in that direction.
+Split 3:	Selected feature 17 as initial direction. Could separate 19817 training set positives with q<0.01 in that direction.
+Found 29382 test set positives with q<0.01 in initial direction
+Reading in data and feature calculation took 13.9740 cpu seconds or 14 seconds wall clock time.
+---Training with Cpos selected by cross validation, Cneg selected by cross validation, initial_fdr=0.01, fdr=0.01
+Iteration 1:	Estimated 38097 PSMs with q<0.01
+Iteration 2:	Estimated 40874 PSMs with q<0.01
+Iteration 3:	Estimated 41483 PSMs with q<0.01
+Iteration 4:	Estimated 41751 PSMs with q<0.01
+Iteration 5:	Estimated 41836 PSMs with q<0.01
+Iteration 6:	Estimated 41755 PSMs with q<0.01
+Iteration 7:	Estimated 41796 PSMs with q<0.01
+Iteration 8:	Estimated 41724 PSMs with q<0.01
+Iteration 9:	Estimated 41718 PSMs with q<0.01
+Iteration 10:	Estimated 41722 PSMs with q<0.01
+Learned normalized SVM weights for the 3 cross-validation splits:
+ Split1	 Split2	 Split3	FeatureName
+-0.2225	-0.2399	-0.1817	rank
+ 0.0000	 0.0000	 0.0000	precursor_detected
+-0.4946	-0.4476	-0.3406	abs_ppm
+-0.3324	-0.2813	-0.2513	abs_rt_diff
+ 0.9647	 0.9602	 0.7367	complementary_ions
+ 0.5466	 0.5108	 0.4011	ion_series
+-1.3424	-1.3109	-1.0397	weighted_average_abs_fragment_ppm
+-0.3952	-0.4219	-0.3491	weighted_average_fragment_rt_deviation
+ 0.2486	 0.1849	 0.1885	precursor_rt_deviation
+ 0.0000	 0.0000	 0.0000	isotope_error_negative
+ 0.1183	 0.1160	 0.0432	isotope_error_0
+-0.1183	-0.1160	-0.0432	isotope_error_1
+ 0.0000	 0.0000	 0.0000	isotope_error_2
+ 0.0000	 0.0000	 0.0000	isotope_error_3_more
+ 0.2303	 0.2476	 0.2045	isotopes
+-0.1652	-0.0733	-0.0981	log10_kl
+ 3.1252	 3.5652	 2.7014	hyperscore
+-1.6130	-2.0301	-1.5290	matched_ion_num
+-0.7099	-0.1750	-0.1144	length_7
+ 0.1774	-0.0390	-0.0480	length_8
+ 0.3166	 0.1447	 0.1125	length_9_30
+ 0.0009	-0.0128	-0.0089	length_31
+ 0.0000	 0.0000	 0.0000	ntt
+-0.5820	-0.6340	-0.4892	nmc
+-0.0807	-0.0663	-0.0532	charge_1
+-0.2824	-0.2559	-0.2216	charge_2
+ 0.3048	 0.2744	 0.2365	charge_3
+ 0.0000	 0.0000	 0.0000	charge_4
+ 0.0000	 0.0000	 0.0000	charge_5
+ 0.0000	 0.0000	 0.0000	charge_6
+ 0.0000	 0.0000	 0.0000	charge_7_or_more
+ 0.0000	 0.0000	 0.0000	group_1
+ 0.0000	 0.0000	 0.0000	group_2
+ 0.0000	 0.0000	 0.0000	group_3
+ 0.0000	 0.0000	 0.0000	group_other
+-0.2329	-0.2621	-0.3309	15.9949M
+-4.5155	-4.3320	-3.9890	m0
+Found 41397 test set PSMs with q<0.01.
+Scoring full list of PSMs with trained SVMs.
+Features:
+rank precursor_detected abs_ppm abs_rt_diff complementary_ions ion_series weighted_average_abs_fragment_ppm weighted_average_fragment_rt_deviation precursor_rt_deviation isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more isotopes log10_kl hyperscore matched_ion_num length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M 
+Processing line 1000000
+Found 1205047 PSMs
+Evaluated set contained 680166 positives and 524881 negatives.
+Selected best-scoring PSM per file+scan+expMass (target-decoy competition): 680166 target PSMs and 524881 decoy PSMs.
+Tossing out "redundant" PSMs keeping only the best scoring PSM for each unique peptide.
+Calculating q values.
+Final list yields 83540 target peptides with q<0.01.
+Calculating posterior error probabilities (PEPs).
+Processing took 54.9450 cpu seconds or 54 seconds wall clock time.
+Process 'Percolator' finished, exit code: 0
+Percolator [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin
+Protein decoy-prefix used is rev_
+All files have been read
+Percolator version 3.06.4, Build Date Dec  4 2023 13:59:29
+Copyright (c) 2006-9 University of Washington. All rights reserved.
+Written by Lukas Käll (lukall@u.washington.edu) in the
+Department of Genome Sciences at the University of Washington.
+Issued command:
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin
+Started Wed Oct  2 23:24:50 2024
+Hyperparameters: selectionFdr=0.01, Cpos=0, Cneg=0, maxNiter=10
+Reading tab-delimited input from datafile 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin
+Features:
+rank precursor_detected abs_ppm abs_rt_diff complementary_ions ion_series weighted_average_abs_fragment_ppm weighted_average_fragment_rt_deviation precursor_rt_deviation isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more isotopes log10_kl hyperscore matched_ion_num length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M 
+Processing line 1000000
+Found 1212045 PSMs
+Concatenated search input detected and --post-processing-tdc flag set. Applying target-decoy competition on Percolator scores.
+Train/test set contains 281370 positives and 218630 negatives, size ratio=1.28697 and pi0=1
+Selecting Cpos by cross-validation.
+Selecting Cneg by cross-validation.
+Split 1:	Selected feature 17 as initial direction. Could separate 19447 training set positives with q<0.01 in that direction.
+Split 2:	Selected feature 17 as initial direction. Could separate 19062 training set positives with q<0.01 in that direction.
+Split 3:	Selected feature 17 as initial direction. Could separate 19420 training set positives with q<0.01 in that direction.
+Found 28891 test set positives with q<0.01 in initial direction
+Reading in data and feature calculation took 14.0130 cpu seconds or 14 seconds wall clock time.
+---Training with Cpos selected by cross validation, Cneg selected by cross validation, initial_fdr=0.01, fdr=0.01
+Iteration 1:	Estimated 38383 PSMs with q<0.01
+Iteration 2:	Estimated 40984 PSMs with q<0.01
+Iteration 3:	Estimated 41790 PSMs with q<0.01
+Iteration 4:	Estimated 42083 PSMs with q<0.01
+Iteration 5:	Estimated 42197 PSMs with q<0.01
+Iteration 6:	Estimated 42181 PSMs with q<0.01
+Iteration 7:	Estimated 42197 PSMs with q<0.01
+Iteration 8:	Estimated 42200 PSMs with q<0.01
+Iteration 9:	Estimated 42212 PSMs with q<0.01
+Iteration 10:	Estimated 42246 PSMs with q<0.01
+Learned normalized SVM weights for the 3 cross-validation splits:
+ Split1	 Split2	 Split3	FeatureName
+-0.2213	-0.2521	-0.1801	rank
+ 0.0000	 0.0000	 0.0000	precursor_detected
+-0.5232	-0.5610	-0.5254	abs_ppm
+-0.2488	-0.2394	-0.1787	abs_rt_diff
+ 0.8275	 0.8468	 0.7468	complementary_ions
+ 0.4967	 0.4338	 0.4352	ion_series
+-1.1544	-1.1400	-1.0729	weighted_average_abs_fragment_ppm
+-0.4408	-0.3412	-0.3658	weighted_average_fragment_rt_deviation
+ 0.1929	 0.1715	 0.1539	precursor_rt_deviation
+ 0.0000	 0.0000	 0.0000	isotope_error_negative
+ 0.1793	 0.1722	 0.1162	isotope_error_0
+-0.1793	-0.1722	-0.1162	isotope_error_1
+ 0.0000	 0.0000	 0.0000	isotope_error_2
+ 0.0000	 0.0000	 0.0000	isotope_error_3_more
+ 0.2173	 0.2476	 0.2137	isotopes
+-0.1336	-0.1140	-0.1275	log10_kl
+ 2.3892	 2.1582	 2.3451	hyperscore
+-1.0129	-0.8230	-1.1089	matched_ion_num
+-0.1171	-0.0839	-0.0520	length_7
+-0.0160	-0.0593	-0.0786	length_8
+ 0.0876	 0.0993	 0.0954	length_9_30
+-0.0014	 0.0141	 0.0030	length_31
+ 0.0000	 0.0000	 0.0000	ntt
+-0.4759	-0.4261	-0.4368	nmc
+-0.0901	-0.0844	-0.1104	charge_1
+-0.2354	-0.2256	-0.2067	charge_2
+ 0.2597	 0.2484	 0.2363	charge_3
+ 0.0000	 0.0000	 0.0000	charge_4
+ 0.0000	 0.0000	 0.0000	charge_5
+ 0.0000	 0.0000	 0.0000	charge_6
+ 0.0000	 0.0000	 0.0000	charge_7_or_more
+ 0.0000	 0.0000	 0.0000	group_1
+ 0.0000	 0.0000	 0.0000	group_2
+ 0.0000	 0.0000	 0.0000	group_3
+ 0.0000	 0.0000	 0.0000	group_other
+-0.2807	-0.2688	-0.1913	15.9949M
+-3.9822	-3.9590	-3.8926	m0
+Found 41982 test set PSMs with q<0.01.
+Scoring full list of PSMs with trained SVMs.
+Features:
+rank precursor_detected abs_ppm abs_rt_diff complementary_ions ion_series weighted_average_abs_fragment_ppm weighted_average_fragment_rt_deviation precursor_rt_deviation isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more isotopes log10_kl hyperscore matched_ion_num length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M 
+Processing line 1000000
+Found 1212045 PSMs
+Evaluated set contained 682406 positives and 529639 negatives.
+Selected best-scoring PSM per file+scan+expMass (target-decoy competition): 682406 target PSMs and 529639 decoy PSMs.
+Tossing out "redundant" PSMs keeping only the best scoring PSM for each unique peptide.
+Calculating q values.
+Final list yields 84663 target peptides with q<0.01.
+Calculating posterior error probabilities (PEPs).
+Processing took 54.6400 cpu seconds or 55 seconds wall clock time.
+Process 'Percolator' finished, exit code: 0
+Percolator [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin
+Protein decoy-prefix used is rev_
+All files have been read
+Percolator version 3.06.4, Build Date Dec  4 2023 13:59:29
+Copyright (c) 2006-9 University of Washington. All rights reserved.
+Written by Lukas Käll (lukall@u.washington.edu) in the
+Department of Genome Sciences at the University of Washington.
+Issued command:
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\percolator_3_6_4\windows\percolator.exe --no-terminate --post-processing-tdc --subset-max-train 500000 --num-threads 16 --results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_target_psms.tsv --decoy-results-peptides 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin
+Started Wed Oct  2 23:26:21 2024
+Hyperparameters: selectionFdr=0.01, Cpos=0, Cneg=0, maxNiter=10
+Reading tab-delimited input from datafile 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin
+Features:
+rank precursor_detected abs_ppm abs_rt_diff complementary_ions ion_series weighted_average_abs_fragment_ppm weighted_average_fragment_rt_deviation precursor_rt_deviation isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more isotopes log10_kl hyperscore matched_ion_num length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M 
+Processing line 1000000
+Found 1205749 PSMs
+Concatenated search input detected and --post-processing-tdc flag set. Applying target-decoy competition on Percolator scores.
+Train/test set contains 281909 positives and 218091 negatives, size ratio=1.29262 and pi0=1
+Selecting Cpos by cross-validation.
+Selecting Cneg by cross-validation.
+Split 1:	Selected feature 17 as initial direction. Could separate 19422 training set positives with q<0.01 in that direction.
+Split 2:	Selected feature 17 as initial direction. Could separate 19488 training set positives with q<0.01 in that direction.
+Split 3:	Selected feature 17 as initial direction. Could separate 19497 training set positives with q<0.01 in that direction.
+Found 29172 test set positives with q<0.01 in initial direction
+Reading in data and feature calculation took 14.1750 cpu seconds or 14 seconds wall clock time.
+---Training with Cpos selected by cross validation, Cneg selected by cross validation, initial_fdr=0.01, fdr=0.01
+Iteration 1:	Estimated 37908 PSMs with q<0.01
+Iteration 2:	Estimated 41022 PSMs with q<0.01
+Iteration 3:	Estimated 42248 PSMs with q<0.01
+Iteration 4:	Estimated 42564 PSMs with q<0.01
+Iteration 5:	Estimated 42750 PSMs with q<0.01
+Iteration 6:	Estimated 42856 PSMs with q<0.01
+Iteration 7:	Estimated 42907 PSMs with q<0.01
+Iteration 8:	Estimated 42969 PSMs with q<0.01
+Iteration 9:	Estimated 42956 PSMs with q<0.01
+Iteration 10:	Estimated 43007 PSMs with q<0.01
+Learned normalized SVM weights for the 3 cross-validation splits:
+ Split1	 Split2	 Split3	FeatureName
+-0.1215	-0.1038	-0.1407	rank
+ 0.0000	 0.0000	 0.0000	precursor_detected
+-0.4059	-0.4158	-0.4694	abs_ppm
+-0.2942	-0.2686	-0.3122	abs_rt_diff
+ 0.8153	 0.7827	 0.9377	complementary_ions
+ 0.4922	 0.5009	 0.5859	ion_series
+-1.1164	-1.1840	-1.2413	weighted_average_abs_fragment_ppm
+-0.4394	-0.4156	-0.4842	weighted_average_fragment_rt_deviation
+ 0.2126	 0.2062	 0.2421	precursor_rt_deviation
+ 0.0000	 0.0000	 0.0000	isotope_error_negative
+ 0.1366	 0.1368	 0.1389	isotope_error_0
+-0.1366	-0.1368	-0.1389	isotope_error_1
+ 0.0000	 0.0000	 0.0000	isotope_error_2
+ 0.0000	 0.0000	 0.0000	isotope_error_3_more
+ 0.2342	 0.2071	 0.2199	isotopes
+-0.1209	-0.1169	-0.1601	log10_kl
+ 2.5740	 2.3248	 3.0295	hyperscore
+-1.1962	-0.9505	-1.5237	matched_ion_num
+-0.0591	-0.0558	-0.0497	length_7
+-0.0690	-0.0295	-0.0498	length_8
+ 0.0919	 0.0614	 0.0742	length_9_30
+ 0.0070	-0.0229	-0.0287	length_31
+ 0.0000	 0.0000	 0.0000	ntt
+-0.5360	-0.4867	-0.5601	nmc
+-0.1264	-0.1240	-0.1335	charge_1
+-0.1906	-0.1883	-0.2414	charge_2
+ 0.2248	 0.2218	 0.2777	charge_3
+ 0.0000	 0.0000	 0.0000	charge_4
+ 0.0000	 0.0000	 0.0000	charge_5
+ 0.0000	 0.0000	 0.0000	charge_6
+ 0.0000	 0.0000	 0.0000	charge_7_or_more
+ 0.0000	 0.0000	 0.0000	group_1
+ 0.0000	 0.0000	 0.0000	group_2
+ 0.0000	 0.0000	 0.0000	group_3
+ 0.0000	 0.0000	 0.0000	group_other
+-0.2719	-0.2457	-0.3247	15.9949M
+-3.7649	-3.7923	-4.2298	m0
+Found 42747 test set PSMs with q<0.01.
+Scoring full list of PSMs with trained SVMs.
+Features:
+rank precursor_detected abs_ppm abs_rt_diff complementary_ions ion_series weighted_average_abs_fragment_ppm weighted_average_fragment_rt_deviation precursor_rt_deviation isotope_error_negative isotope_error_0 isotope_error_1 isotope_error_2 isotope_error_3_more isotopes log10_kl hyperscore matched_ion_num length_7 length_8 length_9_30 length_31 ntt nmc charge_1 charge_2 charge_3 charge_4 charge_5 charge_6 charge_7_or_more group_1 group_2 group_3 group_other 15.9949M 
+Processing line 1000000
+Found 1205749 PSMs
+Evaluated set contained 679810 positives and 525939 negatives.
+Selected best-scoring PSM per file+scan+expMass (target-decoy competition): 679810 target PSMs and 525939 decoy PSMs.
+Tossing out "redundant" PSMs keeping only the best scoring PSM for each unique peptide.
+Calculating q values.
+Final list yields 86008 target peptides with q<0.01.
+Calculating posterior error probabilities (PEPs).
+Processing took 54.0210 cpu seconds or 54 seconds wall clock time.
+Process 'Percolator' finished, exit code: 0
+Percolator: Convert to pepxml [Work dir: F:\Astral\DIANN\E30]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib/* com.dmtavt.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.pin 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_target_psms.tsv 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_decoy_psms.tsv interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03 DIA 0.7 F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_uncalibrated.mzML
+Process 'Percolator: Convert to pepxml' finished, exit code: 0
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_target_psms.tsv
+Process 'Percolator: Delete temp' finished, exit code: 0
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_percolator_decoy_psms.tsv
+Process 'Percolator: Delete temp' finished, exit code: 0
+Percolator: Convert to pepxml [Work dir: F:\Astral\DIANN\E30]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib/* com.dmtavt.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.pin 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_target_psms.tsv 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_decoy_psms.tsv interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01 DIA 0.7 F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML
+Process 'Percolator: Convert to pepxml' finished, exit code: 0
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_target_psms.tsv
+Process 'Percolator: Delete temp' finished, exit code: 0
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_percolator_decoy_psms.tsv
+Process 'Percolator: Delete temp' finished, exit code: 0
+Percolator: Convert to pepxml [Work dir: F:\Astral\DIANN\E30]
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib/* com.dmtavt.fragpipe.tools.percolator.PercolatorOutputToPepXML 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.pin 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_target_psms.tsv 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_decoy_psms.tsv interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02 DIA 0.7 F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_uncalibrated.mzML
+Process 'Percolator: Convert to pepxml' finished, exit code: 0
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_target_psms.tsv
+Process 'Percolator: Delete temp' finished, exit code: 0
+Percolator: Delete temp
+java -cp C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\lib\fragpipe-21.0.jar com.github.chhh.utils.FileDelete F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_percolator_decoy_psms.tsv
+Process 'Percolator: Delete temp' finished, exit code: 0
+ProteinProphet [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe proteinprophet --maxppmdiff 2000000 --minprob 0.5 --output combined F:\Astral\DIANN\E30\filelist_proteinprophet.txt
+INFO[23:30:21] Executing ProteinProphet  v5.1.0             
+ProteinProphet (C++) by Insilicos LLC and LabKey Software, after the original Perl by A. Keller (TPP v6.0.0-rc15 Noctilucent, Build 202105101442-exported (Windows_NT-x86_64))
+ (no FPKM) (no groups) (using degen pep info)
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pep.xml...
+...read in 1359 1+, 55703 2+, 23205 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pep.xml...
+...read in 244 1+, 12858 2+, 4949 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pep.xml...
+...read in 31 1+, 2667 2+, 1281 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pep.xml...
+...read in 5 1+, 637 2+, 375 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pep.xml...
+...read in 0 1+, 185 2+, 140 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pep.xml...
+...read in 1387 1+, 55717 2+, 22739 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pep.xml...
+...read in 234 1+, 13233 2+, 4911 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pep.xml...
+...read in 43 1+, 2967 2+, 1307 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pep.xml...
+...read in 11 1+, 839 2+, 421 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pep.xml...
+...read in 3 1+, 306 2+, 158 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pep.xml...
+...read in 1194 1+, 54201 2+, 23217 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pep.xml...
+...read in 195 1+, 12473 2+, 5035 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pep.xml...
+...read in 31 1+, 2649 2+, 1323 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pep.xml...
+...read in 9 1+, 676 2+, 390 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Reading in F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pep.xml...
+...read in 3 1+, 212 2+, 162 3+, 0 4+, 0 5+, 0 6+, 0 7+ spectra with min prob 0.5
+
+Initializing 141050 peptide weights: 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Calculating protein lengths and molecular weights from database F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........1000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........2000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........3000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........4000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........5000
+.........:.........:.........:.........:.........:.........:.........:.........:.WARNING: Found the following zero-mass residues in protein entry rev_sp|P07658|FDHF_ECOLI : U
+MALAAERLRTKLKNYEDIVYQEAARQDAIPEVRVACYKYEPTKTIPSLNETVLENCAGIWWQYTMYIAGKNPRDSVQARTIIKGKRSHVWVLAEDEIGLRKADETNIQAYGPEDALAALAACNGTMSRCSYHGVERVTSLVMPYEDTLKDIPAVWDCTFFQALGNPTDFKEKFLYSTGQDADSTDRCPWQIFGLEGMKEYTAGYFDPCLHRLEDWIEQTNNYHMPYGMRTAIESIIQWDTKLDWKPEVAKFFRQFGRDAATFVGEHEGWSTSPLIVDAASATKTMFIDQVIVLELDEFAKRVASLEADTQLPDEGMIYAARVEGHAARHPLESIRYGTHAPLSEVGWAKAFKERNAPKDVYQYGPYTDPLAGMDCAGQVNNQGRVPNVGAHPKGLNGTLMALSTLSRVTEVGQYFQTVGMGWLIAASKAQAYMRAAQRIESASVGTIDEVSEPTYGEVIKRYEEFGETRSAVFAKDYLNEEIIVHGMANLLAINSGNKLAIHMDAIRATEIKRPDCVIIKAGNRKANIVHNAVIPHSDAPNYGFVFVLDTNDIENIANSMAGNGVSQHLGAVSPGHUVRACCDVNNTGIVARAFKQMVYNTENGTGRSSGTTQIADPGYKEKIASLREAVYNLAEDWSVPELKGGRQRRIMPTKLRPTLIQTDNIFDWGYYGKLCLTGQNTKGQAAEARVIKGNDVVLNIKCGSACYPCVTVVKK
+........:.........6000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........7000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........8000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........9000
+.........:.........:.........:.........:.........:.........:.........:.........:.........WARNING: Found the following zero-mass residues in protein entry rev_sp|P24183|FDNG_ECOLI : U
+MAKEINVLFAKYEPTQSNADGVNPTLTNAIYGKRAVGEFGWHIPIGVTEVQQGNVNLPKLRRTVVAVARIFGRKSSVTVRDGNNIGKAAALTESIEVFQEPQAIANLLAHKTWTHFHETLRYTTGVYPFQEKKGMRLADQEYLRVVPNSVVNPHLPNTGLPTEIPEYHEPFPGEAMKNIAFLRGMGEPQMIFPGTPTGPAANGFDPIDNGTWKSGNWQILMRKPDWPKGNIDASARNYLVRRNLPWAWAWGLTNGLGSPDSNDRNAMQNGQETWSGTYIWCSSATTGDDRLHAFSSLLQGKKAILVGNADYLDELAYGNNEKAVEDSQPEHPQKYNWSMKMLPEVGKGGESQYLERLHHYIGALIEGDNRAEGPADQGKWHWQLWRGSNAISGDEEAFCTSPLRFVETQISAPDVDNSEGHNQWFTSTETVLPDIVVMYKLKSLCSVVKNKDPFSAVPNFGQCFYGTVKGEDMMNFYKIVDYTQDWKPLWDYGWNNEKQAADGYFSKLMSVFFKPYNSWYNVQDALTAKPTNAELYSQLDVQKESPLTLYGPLSTSLLGLDTLGQINSHGRLANVGGGAMGMNGLLLQIMAMTRINQAGVTHQTWGLAYLFTTTRDPASTSALVECVKLFDAKPTGCINEVVDPTYRSVHEKLLNWVCRPHTLTEDRKAYGNEDLQYNWSSKDYQRKEADYGSFLGDEFAFDDRVLLSANTYHKVYEANIKNNEILYRLVGSLFTIDTGSRIPAYIDAVSATRTFRPDVVILTADNNNKAEMAWRFGVPHAEAANGGMVMVVNANKIDVWHNTMAGRGFTPALSAVTPGHUVRAQNDVALMGLSRAFKQTLMGTENSAGSACLMGTSLWRNVTVGQENKEIFNADRDAKMLKAIRSFAEEWSIRQWKDSGPARYEPYRLRNESNVYDLLGAGKPCLAGRSVPHDPDGEIHYIAERANKAGDGLSYMLLGCGVSCYTCTNRIEKARLLKYNRAQALAQKPAFGLAAVTTGAMGGACIKFFQRRSVD
+:.........10000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.....WARNING: Found the following zero-mass residues in protein entry rev_sp|P32176|FDOG_ECOLI : U
+MVKEVNVLFSKFEPTQTNADGVFPTLTNAIFGKKAVGEYGWHIPIGITDIDKGNAKLTRIRKTVVAKAKIYGRNSSVKVTDGQAIGLKNALSEGIEVFQEPQLIANLLAHKTWYHFHETLRYTTGVYPFKDAKGLAEADDKFIRAAPNSIVNPHLPNTGLPTEFPEYHEPFPGEAMKDLAFLRGMGEQQMIFPGVGSGPPAASYDPIDWGTWKTGDWKLLQRKPDWPNGQPDASARNYLIRRNLPWAWAWGLTNGLGSPDANDRRAMQNGEPTWSGAFIWCGCSTTGDDRLQAFSSLQQGKKVIVAGTAPDTIDALAKGNSEMAVEESSPEHPIAYNWTMNLVQDPNAGGQEAYMKRLRLFIGSLIEGDTLAIGPADAGKWHWQLWRGSNVISGNEEAFCTSPLRFVETQIKSSDVENLEGHNQWFNSTETNLPDITVLFKLKSLCGIVKNKNPFSAVPNFGQCIYGNVKGEKMMEFYQLVDYGKDWKPLWDFGWSNEATAKDGFFAKMMSVFFKPYNGWYNVQGELLPKPTNATLYTQLDTQKESPLTMYGPLSQSLLGLDTLGQINSHGRLANVGGGAMGMNGLLLQIMAMTRINQAGVSHQTWGLAYLFSATKDHASTEAIYECVKLFADKPTGCINEVVDPTYRSVHQKLLNWVCRPHQLTTDRKAFGNEDLEYTWSSKDYKRKEADYGTFLGDEFGYDERVILSANTYAETYERNFKENNLLYLLVGSLFAIDTGSRIPAYYDAVAATRTFRPDIVILKAGNHIKAEMAWRFGVPHAEAANGGMVVVLNANKIDVWHNTMAGRGFTPALSAVTPGHUVRAQNDVALMGLARSFKQTLYGTENSSASACLMGTSLWRNVTVGEANQAIYNADRDEKMLKAIRDFAEEWSIQQWKDSGPARYEPFKLRSESHIFDVLGAGKPCLAGRNVPHDPDGEIHFISAKANKAGDGLSYMLLGCGVSCYTCTNRTERTRLLKYQRTEALAVSPAFGLAAATTGAMGGACIKFFQRRSVQ
+....11000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........12000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........13000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........14000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........15000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........16000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........17000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........18000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........19000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........20000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........21000
+WARNING: Found the following zero-mass residues in protein entry rev_sp|Q16881|TRXR1_HUMAN : U
+MGUCGAQLISAGSRKTVSLTTFVEACVPHIGITSDLQKKTLGCKLAAAFGQTVEGANPGLVHFGVVRENDKTNCIIKAYCKNNDRSPITWELPWFYSHYVEINEEGFKEVAKEESLGCAGYELPTFVTTPVNEYDCKVTSGAYLRQALLRGAQIAVPTLEVKDELIDGIAYIYPVNTQEEDTVPIKGTKENIKVGVTELGIKRTCADRGIALMVTNYEGEIIEESNTSQAVVRLRGPTGAEIQEVKIPVFQRIFKIGHEEMHEGIKNAMDQDFGRLLISRVMVTVDLGIGALFGACELAVYSAGVVLTKGPCYPLSFLDDSSICEYKDGPIGLYRPREGTAILFREASYIKEKGKNNTAKIRHPGIFQGYANEYVVKKERLAVRYGWNLSGIHNQVAEIMRDWDHKVTEEVKWGYNRSDQLAQGLLAAQHMLKKPICGVNVCTGGLGWRTGLPTPTVFDLVMVKKGYQAAEKAAALGGSGGGIIILDYDYSKPLDEPGNMKLLKQLRGEQYAKLTPGHGGIKRQKVFVVPLDTEAALESLTGELARGDETQDLELVFYPVCLSKFLKKVETCRTCTSRSFIVVSHGDIYAQLLARSDATATSTFGAPNEPLTKGPHHDKASRRRGDGNKGKTQLETPAAAAVAKGEACG
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........22000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........23000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........24000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........25000
+...WARNING: Found the following zero-mass residues in protein entry rev_sp|Q8IZQ5|SELH_HUMAN : U
+MSLYKKLEEVVEQPEPFKLKRPPGKKIGTWLEASSGDPRLLTVEFSGRRPKTPNVKVPLEPAELRLAQSLAAANRGYVRUSTCHEIVVTAEEMGEGGNALKERKEAVAVVAAEAKRKRGRPA
+......:.........:.........:.........:.........:.........:.........:.........:.........:.........26000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........27000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........28000
+.........:.........:.........:.........:.........:.........:.........:.........WARNING: Found the following zero-mass residues in protein entry rev_sp|Q99611|SPS2_HUMAN : U
+MSSPESSANSSDPALVAATAGRPLVEIVRPKDIIRATRNGKEVIGVIWAQHGEGYKSSKIESCFRAAQERPLCILLGGSTEASTGQLLGFRGSAKSVAAMKAIIPLNHIVFSVENRQQKALNQSHGLIGFGTIDTAAHANFTHMLGAATRNLTAMNFMAEQYALEVEERSVVMKVKNWREPNDLWQHANVAVQTGLPKTLVLVDGVVASDPMIFENPQCVVTAVGGIIIWPNVVTQGGTVATGGEEAADRFGKVMLPTVKEREEESMSQSVSLLMLMNDCETIGMAYLDSLVNACAIRGMMYPDEVLPYFFDTTQVLSLGGHRLPIVCSDMGIGLAPFTPSPGAGAPLGAEQSAEEQGGVLGRGLPPRVDPRTLGALLKLLAEQPVKCGUGKMGSFGTLRWSPSLGLAQPEFPRYNSFSRGLTLGAPGSSGEAAAMAEGCAGTASAEA
+:.........:.........29000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........30000
+.........:.........:.........:.........:.........:.........:.......WARNING: Found the following zero-mass residues in protein entry rev_sp|Q9NNW7|TRXR2_HUMAN : U
+MGUCGTVTPDLGSRKSIRLKVVEESCTPHIGVTRMVQAYSAGCKIGLAFGQTVEGANPGLFHLGLVLQPPERLCVMKVYCQSADRGAVTFELPKYHAHYVEVHEQGHRAVAEEESLGVCGYELPTFVTTPVNDYDMLDSSGGFLRQVLLRGAMIAIPTLEPRGEVVDGIAYIHPVSTAERSDVLIKQTDPSTDVGAKELNLSRTDPVRGIAWLVTDFTGTDEKGTTSDEWTVQLQGDPLRRVRSPACGRLFRTGHSAMHEIVMSSMQQDFGRLPISRMMITTDLGIGTLFGACELAVYSAGVVLTKGPSEKLWFIDDSTIGYELAGEIHTPYRPRGGTAIIIHDASLLIEKGGKAVGCVTHEDVFSAKINFYKVKRDQLQVRHGWNLSKVHNQVAEAMKRWDHPVPQAVEWGYNPADQILGGLLAAQHMLKKPICGVNVCTGGLGWRTGQPSPEVYDVVAVKRGLQAAEKACALGGSGGGVVLLDYDRQGAAAGRAAGRVGGAVAQTRWRFRGGLGRLAVAMAA
+..:.........:.........:.........31000
+.........:.........:.........:.........:.........:WARNING: Found the following zero-mass residues in protein entry rev_sp|Q9NZV5|SELN_HUMAN : UU
+MPQLLPLGRRLGEKLFQMYTATSPDEFTSSFSFLNSEIEEPKVSTIDLFYNANIHHVVTGNPLCIMMEVPFSYKELHLGALKQHSSNEQNNQLEELEKVLSWTSIFSENLLTLIPSSELVTERLTRGSGUCSQDDLAGWLLISHVLKNEAKARDFAETFPLYSVKKFPYMAVELRRAAEEWSLEQQWKIEEFVFQLPEGSPLHSDIMSGDEDLIVSPVSPGTAELEMQPIYGIDVEMNSSESAGYLWEMDVNLSRHNPVFLRFDRVHTADKSLIIHGTFQAPSFWFPFDPPESLQFEAHIRFMVTYYFDSIATLCAVAGQPAFRTKVFPRPHFMSLLRHIIVEKGKPPPPYFRNNSLYGTFMSLESPIIWWPEGLEQGPPPLFPQFHRTAFVASPSAAATWNRLGSLALRSVGLFGDKSKTMTEPLLPQFRAEITLTEESPDPPLEEEECSAAPTSRLLSLCSSUNLWPLQPQLSSHSCWQVGTQTVSCSGTLKEAIPKFEEPSIYMDGDTDLSSFLFLGDTGLTKLALEQRAAAQAEAHRACVRVAAAAAAALLAGLLALSRARRRPPAPPQAAPGPSPPGRQGPRARG
+.........:.........:.........:.........:.........32000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........33000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........34000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........35000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........36000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........37000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........38000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........39000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........40000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........41000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........42000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........43000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........44000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........45000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........46000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........47000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........48000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........49000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........50000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........51000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........52000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........53000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........54000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........55000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........56000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........57000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........58000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........59000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........60000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........61000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........62000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........63000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........64000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........65000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........66000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........67000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........68000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........69000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........70000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........71000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........72000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........73000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........74000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........75000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........76000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........77000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........78000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........79000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........80000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........81000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........82000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........83000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........84000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........85000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........86000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........87000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........88000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........89000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........90000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........91000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........92000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........93000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........94000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........95000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........96000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........97000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........98000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........99000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........100000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........101000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........102000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........103000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........104000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........105000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........106000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........107000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........108000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........109000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........110000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........111000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........112000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........113000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........114000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........115000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........116000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........117000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........118000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........119000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........120000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........121000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........122000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........123000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........124000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........125000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........126000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........127000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........128000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........129000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........130000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........131000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........132000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........133000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........134000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........135000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........136000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........137000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........138000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........139000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........140000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........141000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........142000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........143000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........144000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........145000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........146000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........147000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........148000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........149000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........150000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........151000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........152000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........153000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........154000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........155000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........156000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........157000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........158000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........159000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........160000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........161000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........162000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........163000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........164000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........165000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........166000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........167000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........168000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........169000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........170000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........171000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........172000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........173000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........174000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........175000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........176000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........177000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........178000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........179000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........180000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........181000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........182000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........183000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........184000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........185000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........186000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........187000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........188000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........189000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........190000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........191000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........192000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........193000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........194000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........195000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........196000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........197000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........198000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........199000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........200000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........201000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........202000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........203000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........204000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........205000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........206000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........207000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........208000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........209000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........210000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........211000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........212000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........213000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........214000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........215000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........216000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........217000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........218000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........219000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........220000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........221000
+.........:.........:.........:.........:.........:.........:.........WARNING: Found the following zero-mass residues in protein entry sp|O60613|SEP15_HUMAN : U
+MVAMAAGPSGCLVPAFGLRLLLATVLQAVSAFGAEFSSEACRELGFSSNLLCSSCDLLGQFNLLQLDPDCRGCCQEEAQFETKKLYAGAILEVCGUKLGRFPQVQAFVRSDKPKLFRGLQIKYVRGSDPVLKLLDDNGNIAEELSILKWNTDSVEEFLSEKLERI
+:.........:.........:.........222000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........223000
+.........:.........:.........:.........:.WARNING: Found the following zero-mass residues in protein entry sp|P07203|GPX1_HUMAN : U
+MCAARLAAAAAAAQSVYAFSARPLAGGEPVSLGSLRGKVLLIENVASLUGTTVRDYTQMNELQRRLGPRGLVVLGFPCNQFGHQENAKNEEILNSLKYVRPGGGFEPNFMLFEKCEVNGAGAHPLFAFLREALPAPSDDATALMTDPKLITWSPVCRNDVAWNFEKFLVGPDGVPLRRYSRRFQTIDIEPDIEALLSQGPSCA
+........:.........:.........:.........:.........:.........224000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........225000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........226000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........227000
+.........:.........:.........:....WARNING: Found the following zero-mass residues in protein entry sp|P22352|GPX3_HUMAN : U
+MARLLQASCLLSLLLAGFVSQSRGQEKSKMDCHGGISGTIYEYGALTIDGEEYIPFKQYAGKYVLFVNVASYUGLTGQYIELNALQEELAPFGLVILGFPCNQFGKQEPGENSEILPTLKYVRPGGGFVPNFQLFEKGDVNGEKEQKFYTFLKNSCPPTSELLGTSDRLFWEPMKVHDIRWNFEKFLVGPDGIPIMRWHHRTTVSNVKMDILSYMRRQAALGVKRK
+.....:.........:.........WARNING: Found the following zero-mass residues in protein entry sp|P24183|FDNG_ECOLI : U
+MDVSRRQFFKICAGGMAGTTVAALGFAPKQALAQARNYKLLRAKEIRNTCTYCSVGCGLLMYSLGDGAKNAREAIYHIEGDPDHPVSRGALCPKGAGLLDYVNSENRLRYPEYRAPGSDKWQRISWEEAFSRIAKLMKADRDANFIEKNEQGVTVNRWLSTGMLCASGASNETGMLTQKFARSLGMLAVDNQARVUHGPTVASLAPTFGRGAMTNHWVDIKNANVVMVMGGNAAEAHPVGFRWAMEAKNNNDATLIVVDPRFTRTASVADIYAPIRSGTDITFLSGVLRYLIENNKINAEYVKHYTNASLLVRDDFAFEDGLFSGYDAEKRQYDKSSWNYQLDENGYAKRDETLTHPRCVWNLLKEHVSRYTPDVVENICGTPKADFLKVCEVLASTSAPDRTTTFLYALGWTQHTVGAQNIRTMAMIQLLLGNMGMAGGGVNALRGHSNIQGLTDLGLLSTSLPGYLTLPSEKQVDLQSYLEANTPKATLADQVNYWSNYPKFFVSLMKSFYGDAAQKENNWGYDWLPKWDQTYDVIKYFNMMDEGKVTGYFCQGFNPVASFPDKNKVVSCLSKLKYMVVIDPLVTETSTFWQNHGESNDVDPASIQTEVFRLPSTCFAEEDGSIANSGRWLQWHWKGQDAPGEARNDGEILAGIYHHLRELYQSEGGKGVEPLMKMSWNYKQPHEPQSDEVAKENNGYALEDLYDANGVLIAKKGQLLSSFAHLRDDGTTASSCWIYTGSWTEQGNQMANRDNSDPSGLGNTLGWAWAWPLNRRVLYNRASADINGKPWDPKRMLIQWNGSKWTGNDIPDFGNAAPGTPTGPFIMQPEGMGRLFAINKMAEGPFPEHYEPIETPLGTNPLHPNVVSNPVVRLYEQDALRMGKKEQFPYVGTTYRLTEHFHTWTKHALLNAIAQPEQFVEISETLAAAKGINNGDRVTVSSKRGFIRAVAVVTRRLKPLNVNGQQVETVGIPIHWGFEGVARKGYIANTLTPNVGDANSQTPEYKAFLVNIEKA
+:.........:.........:.........:.........228000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........229000
+.........:.........:.........:.........:.........:.........:.........WARNING: Found the following zero-mass residues in protein entry sp|P36969|GPX4_HUMAN : U
+MSLGRLCRLLKPALLCGALAAPGLAGTMCASRDDWRCARSMHEFSAKDIDGHMVNLDKYRGFVCIVTNVASQUGKTEVNYTQLVDLHARYAECGLRILAFPCNQFGKQEPGSNEEIKEFAAGYNVKFDMFSKICVNGDDAHPLWKWMKIQPKGKGILGNAIKWNFTKFLIDKNGCVVKRYGPMEEPLVIEKDLPHYF
+:.........:.........:.........230000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........231000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........232000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........233000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:........WARNING: Found the following zero-mass residues in protein entry sp|P62341|SELT_HUMAN : U
+MRLLLLLLVAASAMVRSEASANLGGVPSKRLKMQYATGPLLKFQICVSUGYRRVFEEYMRVISQRYPDIRIEGENYLPQPIYRHIASFLSVFKLVLIGLIIVGKDPFAFFGMQAPSIWQWGQENKVYACMMVFFLSNMIENQCMSTGAFEITLNDVPVWSKLESGHLPSMQQLVQILDNEMKLNVHMDSIPHHRS
+.234000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........235000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........236000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........237000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........238000
+.........:.........:.........:.........:.........:.........:.........WARNING: Found the following zero-mass residues in protein entry sp|Q16881|TRXR1_HUMAN : U
+MGCAEGKAVAAAAPTELQTKGKNGDGRRRSAKDHHPGKTLPENPAGFTSTATADSRALLQAYIDGHSVVIFSRSTCTRCTEVKKLFKSLCVPYFVLELDQTEDGRALEGTLSELAAETDLPVVFVKQRKIGGHGPTLKAYQEGRLQKLLKMNGPEDLPKSYDYDLIIIGGGSGGLAAAKEAAQYGKKVMVLDFVTPTPLGTRWGLGGTCVNVGCIPKKLMHQAALLGQALQDSRNYGWKVEETVKHDWDRMIEAVQNHIGSLNWGYRVALREKKVVYENAYGQFIGPHRIKATNNKGKEKIYSAERFLIATGERPRYLGIPGDKEYCISSDDLFSLPYCPGKTLVVGASYVALECAGFLAGIGLDVTVMVRSILLRGFDQDMANKIGEHMEEHGIKFIRQFVPIKVEQIEAGTPGRLRVVAQSTNSEEIIEGEYNTVMLAIGRDACTRKIGLETVGVKINEKTGKIPVTDEEQTNVPYIYAIGDILEDKVELTPVAIQAGRLLAQRLYAGSTVKCDYENVPTTVFTPLEYGACGLSEEKAVEKFGEENIEVYHSYFWPLEWTIPSRDNNKCYAKIICNTKDNERVVGFHVLGPNAGEVTQGFAAALKCGLTKKQLDSTIGIHPVCAEVFTTLSVTKRSGASILQAGCUG
+:.........:.........:.........239000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........240000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........241000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........242000
+.........WARNING: Found the following zero-mass residues in protein entry sp|Q86VQ6|TRXR3_HUMAN : U
+MERSPPQSPGPGKAGDAPNRRSGHVRGARVLSPPGRRARLSSPGPSRSSEAREELRRHLVGLIERSRVVIFSKSYCPHSTRVKELFSSLGVECNVLELDQVDDGARVQEVLSEITNQKTVPNIFVNKVHVGGCDQTFQAYQSGLLQKLLQEDLAYDYDLIIIGGGSGGLSCAKEAAILGKKVMVLDFVVPSPQGTSWGLGGTCVNVGCIPKKLMHQAALLGQALCDSRKFGWEYNQQVRHNWETMTKAIQNHISSLNWGYRLSLREKAVAYVNSYGEFVEHHKIKATNKKGQETYYTAAQFVIATGERPRYLGIQGDKEYCITSDDLFSLPYCPGKTLVVGASYVALECAGFLAGFGLDVTVMVRSILLRGFDQEMAEKVGSYMEQHGVKFLRKFIPVMVQQLEKGSPGKLKVLAKSTEGTETIEGVYNTVLLAIGRDSCTRKIGLEKIGVKINEKSGKIPVNDVEQTNVPYVYAVGDILEDKPELTPVAIQSGKLLAQRLFGASLEKCDYINVPTTVFTPLEYGCCGLSEEKAIEVYKKENLEIYHTLFWPLEWTVAGRENNTCYAKIICNKFDHDRVIGFHILGPNAGEVTQGFAAAMKCGLTKQLLDDTIGIHPTCGEVFTTLEITKSSGLDITQKGCUG
+:.........:.........:.........:.........:.........:.........:..WARNING: Found the following zero-mass residues in protein entry sp|Q8IZQ5|SELH_HUMAN : U
+MAPRGRKRKAEAAVVAVAEKREKLANGGEGMEEATVVIEHCTSURVYGRNAAALSQALRLEAPELPVKVNPTKPRRGSFEVTLLRPDGSSAELWTGIKKGPPRKLKFPEPQEVVEELKKYLS
+.......:.........:.........243000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........244000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........245000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........246000
+.........:.........:.........:.........:.........WARNING: Found the following zero-mass residues in protein entry sp|Q99611|SPS2_HUMAN : U
+MAEASATGACGEAMAAAEGSSGPAGLTLGRSFSNYRPFEPQALGLSPSWRLTGFSGMKGUGCKVPQEALLKLLAGLTRPDVRPPLGRGLVGGQEEASQEAGLPAGAGPSPTFPALGIGMDSCVIPLRHGGLSLVQTTDFFYPLVEDPYMMGRIACANVLSDLYAMGITECDNMLMLLSVSQSMSEEEREKVTPLMVKGFRDAAEEGGTAVTGGQTVVNPWIIIGGVATVVCQPNEFIMPDSAVVGDVLVLTKPLGTQVAVNAHQWLDNPERWNKVKMVVSREEVELAYQEAMFNMATLNRTAAGLMHTFNAHAATDITGFGILGHSQNLAKQQRNEVSFVIHNLPIIAKMAAVSKASGRFGLLQGTSAETSGGLLICLPREQAARFCSEIKSSKYGEGHQAWIVGIVEKGNRTARIIDKPRVIEVLPRGATAAVLAPDSSNASSEPSS
+:.........:.......WARNING: Found the following zero-mass residues in protein entry sp|Q9BQE4|SELS_HUMAN : U
+MERQEESLSARPALETEGLRFLHTTVGSLLATYGWYIVFSCILLYVVFQKLSARLRALRQRQLDRAAAAVEPDVVVKRQEALAAARLKMQEELNAQVEKHKEKLKQLEEEKRRQKIEMWDSMQEGKSYKGNAKKPQEEDSPGPSTSSVLKRKSDRKPLRGGGYNPLSGEGGGACSWRPGRRGPSSGGUG
+..:.........:.........:.......WARNING: Found the following zero-mass residues in protein entry sp|Q9BVL4|SELO_HUMAN : U
+MAVYRAALGASLAAARLLPLGRCSPSPAPRSTLSGAAMEPAPRWLAGLRFDNRALRALPVEAPPPGPEGAPSAPRPVPGACFTRVQPTPLRQPRLVALSEPALALLGLGAPPAREAEAEAALFFSGNALLPGAEPAAHCYCGHQFGQFAGQLGDGAAMYLGEVCTATGERWELQLKGAGPTPFSRQADGRKVLRSSIREFLCSEAMFHLGVPTTRAGACVTSESTVVRDVFYDGNPKYEQCTVVLRVASTFIRFGSFEIFKSADEHTGRAGPSVGRNDIRVQLLDYVISSFYPEIQAAHASDSVQRNAAFFREVTRRTARMVAEWQCVGFCHGVLNTDNMSILGLTIDYGPFGFLDRYDPDHVCNASDNTGRYAYSKQPEVCRWNLRKLAEALQPELPLELGEAILAEEFDAEFQRHYLQKMRRKLGLVQVELEEDGALVSKLLETMHLTGADFTNTFYLLSSFPVELESPGLAEFLARLMEQCASLEELRLAFRPQMDPRQLSMMLMLAQSNPQLFALMGTRAGIARELERVEQQSRLEQLSAAELQSRNQGHWADWLQAYRARLDKDLEGAGDAAAWQAEHVRVMHANNPKYVLRNYIAQNAIEAAERGDFSEVRRVLKLLETPYHCEAGAATDAEATEADGADGRQRSYSSKPPLWAAELCVTUSS
+..247000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........248000
+.........:.........:.........:.......WARNING: Found the following zero-mass residues in protein entry sp|Q9NNW7|TRXR2_HUMAN : U
+MAAMAVALRGLGGRFRWRTQAVAGGVRGAARGAAAGQRDYDLLVVGGGSGGLACAKEAAQLGRKVAVVDYVEPSPQGTRWGLGGTCVNVGCIPKKLMHQAALLGGLIQDAPNYGWEVAQPVPHDWRKMAEAVQNHVKSLNWGHRVQLQDRKVKYFNIKASFVDEHTVCGVAKGGKEILLSADHIIIATGGRPRYPTHIEGALEYGITSDDIFWLKESPGKTLVVGASYVALECAGFLTGIGLDTTIMMRSIPLRGFDQQMSSMVIEHMASHGTRFLRGCAPSRVRRLPDGQLQVTWEDSTTGKEDTGTFDTVLWAIGRVPDTRSLNLEKAGVDTSPDTQKILVDSREATSVPHIYAIGDVVEGRPELTPIAIMAGRLLVQRLFGGSSDLMDYDNVPTTVFTPLEYGCVGLSEEEAVARHGQEHVEVYHAHYKPLEFTVAGRDASQCYVKMVCLREPPQLVLGLHFLGPNAGEVTQGFALGIKCGASYAQVMRTVGIHPTCSEEVVKLRISKRSGLDPTVTGCUG
+..:.........:.........:.........:.........:.........:.........249000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........250000
+.........:.........:.........:.........:.........:.........:.........:.........:.WARNING: Found the following zero-mass residues in protein entry sp|Q9Y6D0|SELK_HUMAN : U
+MVYISNGQVLDSRSQSPWRLSLITDFFWGIAEFVVLFFKTLLQQDVKKRRSYGNSSDSRYDDGRGPPGNPPRRMGRINHLRGPSPPPMAGGUGR
+........:.........251000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........252000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........253000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........254000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........255000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........256000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........257000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........258000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........259000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........260000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........261000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........262000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........263000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........264000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........265000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........266000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........267000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........268000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........269000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........270000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........271000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........272000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........273000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........274000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........275000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........276000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........277000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........278000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........279000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........280000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........281000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........282000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........283000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........284000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........285000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........286000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........287000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........288000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........289000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........290000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........291000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........292000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........293000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........294000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........295000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........296000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........297000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........298000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........299000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........300000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........301000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........302000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........303000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........304000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........305000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........306000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........307000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........308000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........309000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........310000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........311000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........312000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........313000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........314000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........315000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........316000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........317000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........318000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........319000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........320000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........321000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........322000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........323000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........324000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........325000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........326000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........327000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........328000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........329000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........330000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........331000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........332000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........333000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........334000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........335000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........336000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........337000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........338000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........339000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........340000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........341000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........342000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........343000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........344000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........345000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........346000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........347000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.WARNING: Found the following zero-mass residues in protein entry tr|B8ZWD9|B8ZWD9_HUMAN : U
+MGWTSLCSGRGVGVEGAUWRDGGRGCTDWRSEETQSPSRSTGQDVAAEWGSEESVAESLEAEFEKAAEEVRHLKTKPSDEEMLFIYGHYKQATVGDINTERPGMLDFTGKAKWDAWNELKGTSKEDAMKAYINKVEELKKKYGI
+........348000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........349000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........350000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........351000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........352000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........353000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........354000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........355000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........356000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........357000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........358000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........359000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........360000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........361000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........362000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........363000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........364000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........365000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........366000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........367000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........368000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........369000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........370000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........371000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........372000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........373000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........374000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........375000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........376000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........377000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........378000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........379000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........380000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........381000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........382000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........383000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........384000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........385000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........386000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........387000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........388000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........389000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........390000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........391000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........392000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........393000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........394000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........395000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........396000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........397000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........398000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........399000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........400000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........401000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........402000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........403000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........404000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........405000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........406000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........407000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........408000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........409000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........410000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........411000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........412000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........413000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........414000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........415000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........416000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........417000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........418000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........419000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........420000
+.........:.........WARNING: Found the following zero-mass residues in protein entry tr|Q7L4Q3|Q7L4Q3_HUMAN : U
+MCAARLAAAAAAAQSVYAFSARPLAGGEPVSLGSLRGKVLLIENVASLUGTTVRDYTQMNELQRRLGPRGLVVLGFPCNQFGHQENAKNEEILNSLKYVRPGGGFEPNFMLFEKCEVNGAGAHPLFAFLREALPAPSDDATALMTDPKLITWSPVCRNDVAWNFEKFLVGPDGVPLRRYSRRFQTIDIEPDIEALLSQGPSCA
+:.........:.........:.........:.........:.........:.........:.........:.........421000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........422000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........423000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........424000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........425000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........426000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........427000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........428000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........429000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........430000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........431000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........432000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........433000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........434000
+.........:.........:.........:.........:.........:.........:.........:.........:.........:.........435000
+.........:.........:.........:.........  Total: 435390
+Computing degenerate peptides for 132811 proteins: 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Computing probabilities for 148980 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 148980 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 148980 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 148980 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 148980 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 148980 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Computing probabilities for 148980 proteins.  Loop 1: 0%...20%...40%...60%...80%...100%  Loop 2: 0%...20%...40%...60%...80%...100%
+Calculating sensitivity...and error tables...
+Computing MU for 148980 proteins: 0%...10%...20%...30%...40%...50%...60%...70%INFO: mu=3.03905e-05, db_size=267446281
+...80%...90%...100%
+INFO[23:33:33] Done                                         
+Process 'ProteinProphet' finished, exit code: 0
+PhilosopherDbAnnotate [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe database --annotate F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas --prefix rev_
+INFO[23:33:33] Executing Database  v5.1.0                   
+INFO[23:33:33] Annotating the database                      
+INFO[23:33:41] Done                                         
+Process 'PhilosopherDbAnnotate' finished, exit code: 0
+PhilosopherFilter [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe filter --picked --prot 0.01 --minPepLen 8 --tag rev_ --pepxml F:\Astral\DIANN\E30 --protxml F:\Astral\DIANN\E30\combined.prot.xml --razor
+INFO[23:33:41] Executing Filter  v5.1.0                     
+INFO[23:33:41] Processing peptide identification files      
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pep.xml 
+INFO[23:33:41] Parsing F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pep.xml 
+INFO[23:35:04] 1+ Charge profile                             decoy=288 target=4461
+INFO[23:35:04] 2+ Charge profile                             decoy=7077 target=208246
+INFO[23:35:04] 3+ Charge profile                             decoy=3271 target=86342
+INFO[23:35:04] 4+ Charge profile                             decoy=0 target=0
+INFO[23:35:04] 5+ Charge profile                             decoy=0 target=0
+INFO[23:35:04] 6+ Charge profile                             decoy=0 target=0
+INFO[23:35:05] Database search results                       ions=140789 peptides=123683 psms=309685
+INFO[23:35:05] Converged to 1.00 % FDR with 254356 PSMs      decoy=2543 threshold=0.910607 total=256899
+INFO[23:35:05] Converged to 1.00 % FDR with 83743 Peptides   decoy=837 threshold=0.96363 total=84580
+INFO[23:35:05] Converged to 1.00 % FDR with 97807 Ions       decoy=978 threshold=0.95841 total=98785
+INFO[23:35:05] Protein inference results                     decoy=8990 target=41850
+INFO[23:35:06] Converged to 1.00 % FDR with 10271 Proteins   decoy=102 threshold=0.9903 total=10373
+INFO[23:35:07] 2D FDR estimation: Protein mirror image       decoy=10271 target=10271
+INFO[23:35:08] Second filtering results                      ions=124548 peptides=107634 psms=290941
+INFO[23:35:08] Converged to 1.00 % FDR with 280228 PSMs      decoy=2802 threshold=0.758051 total=283030
+INFO[23:35:08] Converged to 1.00 % FDR with 92631 Peptides   decoy=926 threshold=0.895167 total=93557
+INFO[23:35:09] Converged to 1.00 % FDR with 108395 Ions      decoy=1083 threshold=0.881317 total=109478
+INFO[23:35:09] Post processing identifications              
+INFO[23:35:12] Assigning protein identifications to layers  
+INFO[23:35:42] Processing protein inference                 
+INFO[23:35:43] Synchronizing PSMs and proteins              
+INFO[23:35:46] Final report numbers after FDR filtering, and post-processing  ions=108387 peptides=92624 proteins=10271 psms=280209
+INFO[23:35:46] Saving                                       
+INFO[23:36:00] Done                                         
+Process 'PhilosopherFilter' finished, exit code: 0
+PhilosopherReport [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe report
+INFO[23:36:00] Executing Report  v5.1.0                     
+INFO[23:36:00] Creating reports                             
+INFO[23:36:05] Done                                         
+Process 'PhilosopherReport' finished, exit code: 0
+SpecLibGen [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\AppData\Local\Programs\Python\Python39\python -u C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\speclib\gen_con_spec_lib.py F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas F:\Astral\DIANN\E30 unused F:\Astral\DIANN\E30 True unused use_easypqp noiRT;noIM 16 "--unimod C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types [\'b\',\'y\',]" "--rt_lowess_fraction 0.0" delete_intermediate_files F:\Astral\DIANN\E30\filelist_speclibgen.txt
+File list provided
+Using (un)calibrated.mzML files.
+Spectral library building
+Commands to execute:
+'C:\Users\Cecel\AppData\Local\Programs\Python\Python39\Scripts\easypqp.exe' convert --unimod C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types '['"'"'b'"'"','"'"'y'"'"',]' --enable_unannotated --pepxml '['"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pep.xml'"'"']' --spectra 'F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML' --exclude-range -1.5,3.5 --psms 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.psmpkl --peaks 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.peakpkl
+'C:\Users\Cecel\AppData\Local\Programs\Python\Python39\Scripts\easypqp.exe' convert --unimod C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types '['"'"'b'"'"','"'"'y'"'"',]' --enable_unannotated --pepxml '['"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pep.xml'"'"']' --spectra 'F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_uncalibrated.mzML' --exclude-range -1.5,3.5 --psms 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.psmpkl --peaks 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.peakpkl
+'C:\Users\Cecel\AppData\Local\Programs\Python\Python39\Scripts\easypqp.exe' convert --unimod C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types '['"'"'b'"'"','"'"'y'"'"',]' --enable_unannotated --pepxml '['"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pep.xml'"'"', '"'"'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pep.xml'"'"']' --spectra 'F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_uncalibrated.mzML' --exclude-range -1.5,3.5 --psms 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.psmpkl --peaks 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.peakpkl
+'C:\Users\Cecel\AppData\Local\Programs\Python\Python39\Scripts\easypqp.exe' library --psmtsv 'F:\Astral\DIANN\E30\psm.tsv' --peptidetsv 'F:\Astral\DIANN\E30\peptide.tsv' --out easypqp_lib_openswath.tsv --rt_lowess_fraction 0.0 'F:\Astral\DIANN\E30\filelist_easypqp_library.txt'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+easypqp, version 0.1.49
+Executing ['C:\\Users\\Cecel\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\easypqp.exe', 'convert', '--unimod', 'C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml', '--max_delta_unimod', '0.02', '--max_delta_ppm', '15.0', '--fragment_types', "['b','y',]", '--enable_unannotated', '--pepxml', "['F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pep.xml']", '--spectra', 'F:\\Astral\\E30\\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML', '--exclude-range', '-1.5,3.5', '--psms', '20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.psmpkl', '--peaks', '20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.peakpkl']
+2024-10-02 23:36:17 - Info: Converting ['F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pep.xml'].
+2024-10-02 23:36:17 - Info: Parsing run 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.
+2024-10-02 23:36:17 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank1.pep.xml
+2024-10-02 23:36:25 - Info: 80267 PSMs parsed.
+2024-10-02 23:36:25 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank2.pep.xml
+2024-10-02 23:36:27 - Info: 18051 PSMs parsed.
+2024-10-02 23:36:27 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank3.pep.xml
+2024-10-02 23:36:27 - Info: 3979 PSMs parsed.
+2024-10-02 23:36:27 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank4.pep.xml
+2024-10-02 23:36:27 - Info: 1017 PSMs parsed.
+2024-10-02 23:36:27 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_rank5.pep.xml
+2024-10-02 23:36:27 - Info: 325 PSMs parsed.
+2024-10-02 23:36:27 - Info: Generate theoretical spectra.
+2024-10-02 23:36:37 - Info: Processing spectra from file F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01_uncalibrated.mzML.
+2024-10-02 23:39:06 - Info: Loaded 403785 spectra
+2024-10-02 23:39:06 - Info: Collecting PSMs...
+C:\Users\Cecel\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\fromnumeric.py:59: FutureWarning: 'DataFrame.swapaxes' is deprecated and will be removed in a future version. Please use 'DataFrame.transpose' instead.
+  return bound(*args, **kwds)
+2024-10-02 23:39:23 - Info: Got 103639 PSMs
+2024-10-02 23:39:23 - Info: Generating Transitions...
+2024-10-02 23:39:25 - Info: Generated 1988357 transitions
+2024-10-02 23:39:29 - Info: PSMs successfully converted and stored in 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.psmpkl.
+2024-10-02 23:39:30 - Info: Peaks successfully converted and stored in 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.peakpkl.
+2024-10-02 23:39:30 - Info: Total elapsed time 3.21 minutes.
+Executing ['C:\\Users\\Cecel\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\easypqp.exe', 'convert', '--unimod', 'C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml', '--max_delta_unimod', '0.02', '--max_delta_ppm', '15.0', '--fragment_types', "['b','y',]", '--enable_unannotated', '--pepxml', "['F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pep.xml']", '--spectra', 'F:\\Astral\\E30\\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_uncalibrated.mzML', '--exclude-range', '-1.5,3.5', '--psms', '20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.psmpkl', '--peaks', '20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.peakpkl']
+2024-10-02 23:39:32 - Info: Converting ['F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pep.xml'].
+2024-10-02 23:39:32 - Info: Parsing run 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.
+2024-10-02 23:39:32 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank1.pep.xml
+2024-10-02 23:39:39 - Info: 79843 PSMs parsed.
+2024-10-02 23:39:39 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank2.pep.xml
+2024-10-02 23:39:41 - Info: 18378 PSMs parsed.
+2024-10-02 23:39:41 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank3.pep.xml
+2024-10-02 23:39:41 - Info: 4317 PSMs parsed.
+2024-10-02 23:39:41 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank4.pep.xml
+2024-10-02 23:39:41 - Info: 1271 PSMs parsed.
+2024-10-02 23:39:41 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_rank5.pep.xml
+2024-10-02 23:39:41 - Info: 467 PSMs parsed.
+2024-10-02 23:39:41 - Info: Generate theoretical spectra.
+2024-10-02 23:39:51 - Info: Processing spectra from file F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02_uncalibrated.mzML.
+2024-10-02 23:42:27 - Info: Loaded 403778 spectra
+2024-10-02 23:42:27 - Info: Collecting PSMs...
+C:\Users\Cecel\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\fromnumeric.py:59: FutureWarning: 'DataFrame.swapaxes' is deprecated and will be removed in a future version. Please use 'DataFrame.transpose' instead.
+  return bound(*args, **kwds)
+2024-10-02 23:42:43 - Info: Got 104276 PSMs
+2024-10-02 23:42:43 - Info: Generating Transitions...
+2024-10-02 23:42:45 - Info: Generated 1995692 transitions
+2024-10-02 23:42:49 - Info: PSMs successfully converted and stored in 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.psmpkl.
+2024-10-02 23:42:50 - Info: Peaks successfully converted and stored in 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.peakpkl.
+2024-10-02 23:42:50 - Info: Total elapsed time 3.30 minutes.
+Executing ['C:\\Users\\Cecel\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\easypqp.exe', 'convert', '--unimod', 'C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml', '--max_delta_unimod', '0.02', '--max_delta_ppm', '15.0', '--fragment_types', "['b','y',]", '--enable_unannotated', '--pepxml', "['F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pep.xml', 'F:\\\\Astral\\\\DIANN\\\\E30\\\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pep.xml']", '--spectra', 'F:\\Astral\\E30\\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_uncalibrated.mzML', '--exclude-range', '-1.5,3.5', '--psms', '20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.psmpkl', '--peaks', '20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.peakpkl']
+2024-10-02 23:42:52 - Info: Converting ['F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pep.xml', 'F:\\Astral\\DIANN\\E30\\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pep.xml'].
+2024-10-02 23:42:52 - Info: Parsing run 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.
+2024-10-02 23:42:52 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank1.pep.xml
+2024-10-02 23:43:00 - Info: 78612 PSMs parsed.
+2024-10-02 23:43:00 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank2.pep.xml
+2024-10-02 23:43:01 - Info: 17703 PSMs parsed.
+2024-10-02 23:43:01 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank3.pep.xml
+2024-10-02 23:43:02 - Info: 4003 PSMs parsed.
+2024-10-02 23:43:02 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank4.pep.xml
+2024-10-02 23:43:02 - Info: 1075 PSMs parsed.
+2024-10-02 23:43:02 - Info: Parsing pepXML: F:\Astral\DIANN\E30\interact-20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_rank5.pep.xml
+2024-10-02 23:43:02 - Info: 377 PSMs parsed.
+2024-10-02 23:43:02 - Info: Generate theoretical spectra.
+2024-10-02 23:43:12 - Info: Processing spectra from file F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03_uncalibrated.mzML.
+2024-10-02 23:45:44 - Info: Loaded 403754 spectra
+2024-10-02 23:45:44 - Info: Collecting PSMs...
+C:\Users\Cecel\AppData\Local\Programs\Python\Python39\lib\site-packages\numpy\core\fromnumeric.py:59: FutureWarning: 'DataFrame.swapaxes' is deprecated and will be removed in a future version. Please use 'DataFrame.transpose' instead.
+  return bound(*args, **kwds)
+2024-10-02 23:45:59 - Info: Got 101770 PSMs
+2024-10-02 23:45:59 - Info: Generating Transitions...
+2024-10-02 23:46:01 - Info: Generated 1960848 transitions
+2024-10-02 23:46:05 - Info: PSMs successfully converted and stored in 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.psmpkl.
+2024-10-02 23:46:06 - Info: Peaks successfully converted and stored in 20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.peakpkl.
+2024-10-02 23:46:06 - Info: Total elapsed time 3.23 minutes.
+2024-10-02 23:46:08 - Info: There are psm.tsv and peptide.tsv. Will ignore --psm_fdr_threshold, --peptide_fdr_threshold, --protein_fdr_threshold, --pi0_lambda, --proteotypic, and --no-proteotypic.
+2024-10-02 23:46:08 - Info: Reading file F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.psmpkl.
+2024-10-02 23:46:08 - Info: Reading file F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.psmpkl.
+2024-10-02 23:46:08 - Info: Reading file F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.psmpkl.
+2024-10-02 23:46:09 - Info: In total 309685 PSMs loaded.
+2024-10-02 23:46:13 - Info: 269781 redundant PSMs identified after filtering with F:\Astral\DIANN\E30\psm.tsv and F:\Astral\DIANN\E30\peptide.tsv
+2024-10-02 23:46:22 -                                            base_name  modified_peptide
+0  20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th...             90304
+1  20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th...             90633
+2  20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th...             88844
+2024-10-02 23:46:22 - Info: easypqp_rt_alignment_20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01; Peptide overlap between run and reference: 77601.
+2024-10-02 23:48:06 - Info: easypqp_rt_alignment_20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01; Lowess fraction used: 0.08.
+2024-10-02 23:48:07 - Info: easypqp_rt_alignment_20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02; Peptide overlap between run and reference: 90633.
+2024-10-02 23:50:16 - Info: easypqp_rt_alignment_20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02; Lowess fraction used: 0.08.
+2024-10-02 23:50:18 - Info: easypqp_rt_alignment_20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03; Peptide overlap between run and reference: 76803.
+2024-10-02 23:51:53 - Info: easypqp_rt_alignment_20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03; Lowess fraction used: 0.08.
+2024-10-02 23:51:58 - Info: Parsing file F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.peakpkl.
+2024-10-02 23:52:08 - Info: Parsing file F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_02.peakpkl.
+2024-10-02 23:52:18 - Info: Parsing file F:\Astral\DIANN\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_03.peakpkl.
+2024-10-02 23:52:47 - Info: Library successfully generated.
+2024-10-02 23:52:47 - Info: Total elapsed time: 6.64 minutes.
+Done generating spectral library
+2024-10-02 23:53:08,785:INFO:took 0:17:00.287547
+Process 'SpecLibGen' finished, exit code: 0
+DIA-NN [Work dir: F:\Astral\DIANN\E30]
+C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\diann\1.8.2_beta_8\win\DiaNN.exe --lib library.tsv --threads 16 --verbose 1 --out diann-output\report.tsv --qvalue 0.01 --matrix-qvalue 0.01 --matrices --no-prot-inf --smart-profiling --no-quant-files --peak-center --no-ifs-removal --report-lib-info --cfg F:\Astral\DIANN\E30\filelist_diann.txt
+DIA-NN 1.8.2 beta 8 (Data-Independent Acquisition by Neural Networks)
+Compiled on Sep 15 2022 18:28:57
+Current date and time: Wed Oct  2 23:53:09 2024
+CPU: GenuineIntel 11th Gen Intel(R) Core(TM) i7-11700 @ 2.50GHz
+SIMD instructions: AVX AVX2 AVX512CD AVX512F FMA SSE4.1 SSE4.2 
+Logical CPU cores: 16
+Thread number set to 16
+Output will be filtered at 0.01 FDR
+Precursor/protein x sample matrices will be filtered at 0.01 precursor & protein-level FDR
+Precursor/protein x samples expression level matrices will be saved along with the main report
+Protein inference will not be performed
+When generating a spectral library, in silico predicted spectra will be retained if deemed more reliable than experimental ones
+.quant files will not be saved to the disk
+Fixed-width center of each elution peak will be used for quantification
+Interference removal from fragment elution curves disabled
+DIA-NN will optimise the mass accuracy automatically using the first run in the experiment. This is useful primarily for quick initial analyses, when it is not yet known which mass accuracy setting works best for a particular acquisition scheme.
+
+3 files will be processed
+[0:00] Loading spectral library library.tsv
+[0:04] Finding proteotypic peptides (assuming that the list of UniProt ids provided for each peptide is complete)
+[0:04] Spectral library loaded: 10271 protein isoforms, 10271 protein groups and 109082 precursors in 95327 elution groups.
+[0:04] Initialising library
+[0:04] Saving the library to library.tsv.speclib
+
+[0:05] File #1/3
+[0:05] Loading run F:\Astral\E30\20230324_OLEP08_200ng_30min_E30H50Y20_180K_2Th3p5ms_01.raw
+Process 'DIA-NN' finished, exit code: -1073741819
+Process returned non-zero exit code, stopping
+
+~~~~~~~~~~~~~~~~~~~~
+Cancelling 5 remaining tasks
