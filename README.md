@@ -1,11 +1,10 @@
 # SEMQuant
 
-This repository contains tools for SEMQuant developed by Biocomputing-Research-Group. These include Raxport, SiprosEnsemble and some other scripts.
+This repository contains tools for SEMQuant developed by Biocomputing-Research-Group. These include Raxport, SiprosEnsemble, DIANN and some other scripts.
 
 [You can find the simple tutorial for download the yeast-ups1 2fmol on our wiki page](https://github.com/xyz1396/SiprosToolKits-Sipros4/wiki/13C-labeled-E.-coli-SIP-proteomic-search-tutorial)
 
 ### Install environment
-
 
 This repository contains tools for SEMQuant developed by Biocomputing-Research-Group. These include Raxport, SiprosEnsemble, Sipros5 and some scripts. there are two pipeline for SEMQuant: SEMQUant-DDA and SEMQuant-DIA.
 
@@ -26,8 +25,11 @@ Raxport relies on .net. Some other scripts rely on python2, python3, and R.
 ### Make folder for the workflow
 
 ```bash
+#work_dir = YOUR_WORKING_DIRECTORY
+export work_dir=/home/UNT/bz0053/Documents/Projects/test
+export tool_dir=/home/UNT/bz0053/Documents/Projects/SEMQuant/SEMQuant-DDA
 # generate the following folder under your work_dir 
-mkdir raw samples result 
+mkdir raw samples results 
 
 ### Download raw file
 
@@ -38,19 +40,16 @@ wget ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/01/PXD002099/*_2fmol*.raw
 ```
 The raw folder should contain 3 samples.
 
-### Convert raw to mzml
+### Convert raw to FT2
 
 ```bash
-conda activate mono
-# -j is the threads that you plan to use
-# -f set the spectra output format to indexed mzML
-# -L select MS level to be MS2
-mono ThermoRawFileParser.exe -d=./raw -o=./raw -f=2 -L=2 
+$tool_dir/Raxport -i $work_dir/raw -o $work_dir/raw
+#conda activate mono
 ```
 ### Generate Reverse Sequences
 
 ``` bash
-python sipros_prepare_protein_database.py -i work_dir/db.fasta -o db_rev.fasta -c work_dir/configs/SiprosConfig_db.cfg
+python $tool_dir/sipros5/script3/sipros_prepare_protein_database.py -i work_dir/YOUR_DB.fasta -o db_rev.fasta -c tool_dir/configs/SiprosConfig_yeast.cfg
 
 #need to update the FASTA_Database path in .cfg file 
 FASTA_Database = work_dir/db_rev.fasta
@@ -67,10 +66,10 @@ There are two two to run Sipros_OpemMP for database searching: one for running o
 
 # Single MS2 file
 Sipros_OpemMP -o output_dir -f ms_data -c SiprosConfig.cfg
-
+$tool_dir/SiprosEnsembleOMP -o $work_dir/results -f $work_dir/raw/YOUR_MS2.FT2 -c $tool_dir/configs/SiprosConfig.cfg
 # Multiple MS2 files in a working directory
 Sipros_OpemMP -o output_dir -w work_dir -c SiprosConfig.cfg
-
+$tool_dir/SiprosEnsembleOMP -o $work_dir/results -w $work_dir/raw -c $tool_dir/configs/SiprosConfig.cfg
 ```
 
 Results (`.Spe2Pep` files) will be saved on the output directory. if you have many configure files, specify `-g`, like `Sipros_OpemMP -o output_dir -w workingdirectory -g configurefiledirectory`. Use `./Sipros_OpemMP -h` for help information. 
@@ -110,6 +109,24 @@ java -Xmx21G -Dlibs.bruker.dir=/home/UNT/bz0053/Documents/fragpipe/tools/MSFragg
 ```
 ## SEMQuant-Astral
 SEMQuant-Astral
+
+### Make folder for the workflow
+
+```bash
+#work_dir = YOUR_WORKING_DIRECTORY
+export work_dir=/home/UNT/bz0053/Documents/Projects/test/
+export tool_dir=/home/UNT/bz0053/Documents/Projects/SEMQuant/SEMQuant-Astral
+# generate the following folder under your work_dir 
+mkdir raw samples results 
+
+### Download raw file
+
+``` bash
+cd raw 
+# Download raw file with three-mixed species Astral data - E45 in your work_dir
+wget ftp://www.ebi.ac.uk/pride/archive/projects/PXD046444/20230324_OLEP08_200ng_30min_E45H50Y5*.raw
+```
+The raw folder should contain 3 samples.
 
 ### Convert raw to FT2 use Raxport
 
