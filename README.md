@@ -149,46 +149,46 @@ Need in-house sipros 5, provided upon request for now
 ### Percolator
 ```bash
 Percolator [Work dir: /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/2]
-/home/UNT/bz0053/Documents/fragpipe/tools/percolator_3_6_4/linux/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 23 --results-psms 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02_percolator_target_psms.tsv --decoy-results-psms 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02.pin
+$tool_dir/percolator --only-psms --no-terminate --post-processing-tdc --num-threads 23 --results-psms 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02_percolator_target_psms.tsv --decoy-results-psms 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02_percolator_decoy_psms.tsv --protein-decoy-pattern rev_ 20230324_OLEP08_200ng_30min_E45H50Y5_180K_2Th3p5ms_02.pin
 
 ```
 
 ### convert percolator output for protein inference input
 ```bash
-python Percolator2PeptideProphet.py ~/three-species/result_V2/SE_percolator_DIANN/E20/01/20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01.target.Spe2Pep.txt ~/three-species/result_V2/SE_percolator_DIANN/E20/01/20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01.pin ~/three-species/result_V2/SE_percolator_DIANN/E20/01/ 20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01
+python $tool_dir/Percolator2PeptideProphet.py ~/three-species/result_V2/SE_percolator_DIANN/E20/01/20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01.target.Spe2Pep.txt ~/three-species/result_V2/SE_percolator_DIANN/E20/01/20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01.pin ~/three-species/result_V2/SE_percolator_DIANN/E20/01/ 20230324_OLEP08_200ng_30min_E20H50Y30_180K_2Th3p5ms_01
 ```
 
 ### Protein inference
 ```bash
 ProteinProphet [Work dir: /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45]
-/home/UNT/bz0053/Documents/fragpipe/tools/philosopher_v5.1.0_linux_amd64/philosopher proteinprophet --maxppmdiff 2000000 --output combined /home/UNT/bz0053/Documents/Projects/MBR/dataset/Astral/fragpipe_MBR/E45/filelist_proteinprophet.txt
+$tool_dir/philosopher_v5.1.0_linux_amd64/philosopher proteinprophet --maxppmdiff 2000000 --output combined $work_dir/E45/filelist_proteinprophet.txt
 ```
 ### FDR control
 ```bash
 #Process 'ProteinProphet' finished, exit code: 0
 PhilosopherDbAnnotate [Work dir: F:\Astral\DIANN\E30]
-C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe database --annotate F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas --prefix rev_
+$tool_dir\philosopher_v5.1.0_windows_amd64\philosopher.exe database --annotate F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas --prefix rev_
 Process 'PhilosopherDbAnnotate' finished, exit code: 0
 
 #PhilosopherFilter [Work dir: F:\Astral\DIANN\E30]
-C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\philosopher_v5.1.0_windows_amd64\philosopher.exe filter --picked --prot 0.01 --minPepLen 8 --tag rev_ --pepxml F:\Astral\DIANN\E30 --protxml F:\Astral\DIANN\E30\combined.prot.xml --razor
+$tools_dir\philosopher_v5.1.0_windows_amd64\philosopher.exe filter --picked --prot 0.01 --minPepLen 8 --tag rev_ --pepxml F:\Astral\DIANN\E30 --protxml F:\Astral\DIANN\E30\combined.prot.xml --razor
 
 ```
 
 ### generate spec lib
 ```bash
 SpecLibGen [Work dir: F:\Astral\DIANN\E30]
-C:\Users\Cecel\AppData\Local\Programs\Python\Python39\python -u C:\Users\Cecel\Documents\FragPipe-21.0\fragpipe\tools\speclib\gen_con_spec_lib.py F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas F:\Astral\DIANN\E30 unused F:\Astral\DIANN\E30 True unused use_easypqp noiRT;noIM 16 "--unimod C:/Users/Cecel/Documents/FragPipe-21.0/fragpipe/tools/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types [\'b\',\'y\',]" "--rt_lowess_fraction 0.0" delete_intermediate_files F:\Astral\DIANN\E30\filelist_speclibgen.txt
+python -u $tool_dir\speclib\gen_con_spec_lib.py F:\Astral\2024-09-22-decoys-mix_HYE.fasta.fas F:\Astral\DIANN\E30 unused F:\Astral\DIANN\E30 True unused use_easypqp noiRT;noIM 16 "--unimod $tool_dir/unimod_old.xml --max_delta_unimod 0.02 --max_delta_ppm 15.0 --fragment_types [\'b\',\'y\',]" "--rt_lowess_fraction 0.0" delete_intermediate_files $work_dir\E45\filelist_speclibgen.txt
 
 ```
 
 ### DIANN for quantification
 ```bash
 DIA-NN [Work dir: /home/UNT/bz0053/Documents/MBR/DIANN/E30]
-/home/UNT/bz0053/Documents/fragpipe/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8 --lib library.tsv --threads 15 --verbose 1 --out diann-output/report.tsv --qvalue 0.01 --matrix-qvalue 0.01 --matrices --no-prot-inf --smart-profiling --no-quant-files --peak-center --no-ifs-removal --report-lib-info --cfg /home/UNT/bz0053/Documents/MBR/DIANN/E30/filelist_diann.txt--
+$tool_dir/fragpipe/tools/diann/1.8.2_beta_8/linux/diann-1.8.1.8 --lib library.tsv --threads 15 --verbose 1 --out diann-output/report.tsv --qvalue 0.01 --matrix-qvalue 0.01 --matrices --no-prot-inf --smart-profiling --no-quant-files --peak-center --no-ifs-removal --report-lib-info --cfg $work_dir/E45/filelist_diann.txt--
 DIA-NN 1.8.2 beta 8 (Data-Independent Acquisition by Neural Networks)
 ```
 
 ### Citation
 
-under review
+Testing
