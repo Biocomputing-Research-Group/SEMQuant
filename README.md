@@ -6,7 +6,7 @@ This repository contains tools for SEMQuant developed by Biocomputing-Research-G
 
 ### Install environment
 
-This repository contains tools for SEMQuant developed by Biocomputing-Research-Group. These include Raxport, SiprosEnsemble, Sipros5 and some scripts. there are two pipeline for SEMQuant: SEMQUant-DDA and SEMQuant-DIA.
+This repository contains tools for SEMQuant developed by Biocomputing-Research-Group. These include Raxport, SiprosEnsemble, Sipros5 and some scripts. there are two pipeline for SEMQuant: SEMQUant-DDA and SEMQuant-Astral.
 
 ## SEMQuant-DDA
 SEMQuant-DDA 
@@ -26,8 +26,8 @@ Raxport relies on .net. Some other scripts rely on python2, python3, and R.
 
 ```bash
 #work_dir = YOUR_WORKING_DIRECTORY
-export work_dir=/home/UNT/bz0053/Documents/Projects/test
-export tool_dir=/home/UNT/bz0053/Documents/Projects/SEMQuant/SEMQuant-DDA
+#export work_dir=/home/UNT/bz0053/Documents/Projects/test
+#export tool_dir=/home/UNT/bz0053/Documents/Projects/SEMQuant/SEMQuant-DDA
 # generate the following folder under your work_dir 
 mkdir raw samples results 
 
@@ -142,7 +142,19 @@ mono ThermoRawFileParser.exe -d=./raw -o=./raw -f=2 -L=2
 
 There are two two to run Sipros_OpemMP for database searching: one for running on a single MS2 file via `-f` and another another processing multiple MS2 files via `-w workingdirectory`.
 
-Need in-house sipros 5, provided upon request for now
+```bash
+#!/bin/bash
+
+# Single MS2 file
+Sipros -o output_dir -f ms_data -c SiprosConfig.cfg
+$tool_dir/Sipros -o $work_dir/results -f $work_dir/raw/YOUR_MS2.FT2 -c $tool_dir/configs/SiprosConfig.cfg
+# Multiple MS2 files in a working directory
+Sipros -o output_dir -w work_dir -c SiprosConfig.cfg
+$tool_dir/Sipros -o $work_dir/results -w $work_dir/raw -c $tool_dir/configs/SiprosConfig.cfg
+```
+
+Note that the source code for the Sipros-Astral mode is currently in-house and will be made available after publication via: https://github.com/xyz1396/sipros5.git. In the meantime, we provide a compiled binary named ```Sipros``` for immediate use.
+
 
 ### Use Rscript to generate PSM features for Percolator required input
 
