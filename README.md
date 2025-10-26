@@ -140,7 +140,7 @@ mono ThermoRawFileParser.exe -d=./raw -o=./raw -f=2 -L=2
 
 ### Running The Database-searching
 
-There are two two to run Sipros_OpemMP for database searching: one for running on a single MS2 file via `-f` and another another processing multiple MS2 files via `-w workingdirectory`.
+There are two ways to run Sipros_OpemMP for database searching: one for running on a single MS2 file via `-f` and another another processing multiple MS2 files via `-w workingdirectory`.
 
 ```bash
 #!/bin/bash
