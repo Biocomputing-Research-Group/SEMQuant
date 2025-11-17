@@ -157,9 +157,6 @@ Sipros -o output_dir -w work_dir -c SiprosConfig.cfg
 $tool_dir/Sipros -o $work_dir/results -w $work_dir/raw -c $tool_dir/configs/SiprosConfig.cfg
 ```
 
-Note that the source code for the Sipros-Astral mode is currently in-house and will be made available after publication via: https://github.com/xyz1396/sipros5.git. In the meantime, we provide a compiled binary named ```Sipros``` for immediate use.
-
-
 ### Use Rscript to generate PSM features for Percolator required input
 
 ### Percolator
