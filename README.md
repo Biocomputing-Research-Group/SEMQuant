@@ -368,4 +368,23 @@ $astral_dir/diann/diann-1.8.1.8 \
 
 ## Citation
 
-<!-- Add the SEMQuant publication reference here. -->
+If you use SEMQuant in your research, please cite:
+
+> Zhang B., Feng S., Xiong Y., Pan C., Guo X. SEMQuant: A computational platform for accurate and
+> comprehensive quantitative metaproteomics analysis. *Journal of Computer Science and Technology*,
+> 2026, 41(3): 1087–1100. https://doi.org/10.1007/s11390-026-5122-3
+
+```bibtex
+@article{zhang2026semquant,
+  title   = {SEMQuant: A Computational Platform for Accurate and Comprehensive
+             Quantitative Metaproteomics Analysis},
+  author  = {Zhang, Bailu and Feng, Shichao and Xiong, Yi and Pan, Chongle and Guo, Xuan},
+  journal = {Journal of Computer Science and Technology},
+  volume  = {41},
+  number  = {3},
+  pages   = {1087--1100},
+  year    = {2026},
+  doi     = {10.1007/s11390-026-5122-3},
+  url     = {https://doi.org/10.1007/s11390-026-5122-3}
+}
+```
